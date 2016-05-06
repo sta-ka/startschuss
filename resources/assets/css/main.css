@@ -1,0 +1,491 @@
+/***************************************
+    Twitter Änderungen
+***************************************/
+
+.navbar .divider-vertical {
+    height: 40px;
+    margin: 0;
+    border-right: 1px solid #DADADA;
+    border-left: 1px solid #DADADA;
+}
+
+.navbar-nav a.text {
+    text-decoration: none;
+    cursor: default;
+}
+
+#datatable_length .form-element {
+    width: 75px;
+}
+
+#datatable_filter .form-element {
+    width: 120px;
+}
+
+.form-element {
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555555;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    /*border-radius: 4px;*/
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.form-element:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+/*.navbar {
+ margin-bottom: 0;
+ border: 0;
+ min-height: 40px;
+ height: 40px;
+}*/
+
+/*.navbar-nav > li > a {
+ padding-top: 10px;
+ padding-bottom: 10px;
+}*/
+
+/*.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+ color: #ffffff;
+ background-color: #43608F;
+}*/
+
+/*.pager li  {
+ margin: 0 8px;
+}*/
+
+/*h1, h2, h3, h4, h5, h6 {
+ margin: 0 0 10px; 
+ font-family: inherit;
+ font-weight: bold;
+ line-height: 20px;
+ color: inherit;
+ text-rendering: optimizelegibility;
+}*/
+
+/*ul, ol {
+ padding: 0;
+}*/
+
+/*label {
+ font-weight: normal !important;
+}*/
+
+/*.btn-primary {
+ background-color: #43608f;
+ border-color: #365382; 
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+ background-color: #365382; 
+ border-color: #2A4776; 
+}
+
+.btn-success {
+ background-color: #a0cd66;
+ border-color: #93C059; 
+}
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active,
+.open .dropdown-toggle.btn-primary {
+ background-color: #93C059; 
+ border-color: #87B44D; 
+}
+
+.label-success {
+ background-color: #a0cd66;
+}*/
+
+/***************************************
+		Basics
+***************************************/
+
+html, body {
+    height: 100%;
+}
+
+body {
+    overflow-y: scroll;
+}
+
+form {
+    display: inline;
+}
+
+/* iPad/iPhone: disable special webkit appearance */
+input, button, select, textarea {
+    /* -webkit-appearance: none;*/
+    -webkit-border-radius: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    -webkit-border-radius: 0;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #333;
+}
+
+a.image-link:hover {
+    text-decoration: none;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ul {
+    list-style: disc;
+}
+
+hr {
+    border: 0 #ccc solid;
+    border-top-width: 1px;
+    clear: both;
+    height: 0;
+}
+
+.form-control.small {
+    width: 120px;
+}
+
+.form-control.medium {
+    width: 180px;
+}
+
+/***************************************
+		Basics Heading
+***************************************/
+
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+h4 {
+    font-size: 16px;
+}
+
+h5 {
+    font-size: 15px;
+}
+
+h6 {
+    font-size: 13px;
+}
+
+/***************************************
+		Basics Spacing
+***************************************/
+p,
+dl,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+ul,
+pre,
+fieldset,
+figure {
+    margin-bottom: 10px;
+}
+
+ol, ul {
+    margin-left: 20px;
+}
+
+/***************************************
+    Wrapper
+***************************************/
+
+#wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -130px;
+    padding: 0 0 130px;
+}
+
+/***************************************
+		Header
+***************************************/
+
+#header .content-area {
+    position: relative;
+}
+
+#header a {
+    text-decoration: none;
+    color: black;
+}
+
+#header a:hover {
+    text-decoration: none;
+}
+
+#header #top {
+    background: #f5f6f5;
+    height: 10px;
+}
+
+#header #background {
+    height: 110px;
+    background-color: #43608F;
+}
+
+#header img {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    height: 65px;
+}
+
+#header h1 {
+    margin: 0;
+    padding: 20px;
+}
+
+#header h1 a {
+    color: #f5f6f5;
+    text-shadow: 3px 3px 3px black;
+}
+
+/***************************************
+		Content
+***************************************/
+
+#content {
+    background: white url("../img/main_shadow.gif") repeat-x top left;
+    padding-top: 10px;
+    overflow: hidden;
+}
+
+#main {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+/***************************************
+		Links
+***************************************/
+
+a.green {
+    background: url("../img/icons/arrow_green.png") no-repeat 10px center;
+    padding-left: 30px;
+}
+
+a.green:hover {
+    text-decoration: underline;
+}
+
+.alert.alert-danger a {
+    color: inherit;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.alert-danger a:hover {
+    text-decoration: none;
+}
+
+/***************************************
+		Messages
+***************************************/
+
+#messages {
+    margin-bottom: 10px;
+}
+
+#messages .alert-success, #messages .alert-danger {
+    line-height: 40px;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#messages .alert-success p, #messages .alert-danger p {
+    width: 960px;
+    margin: 0 auto;
+}
+
+#messages .alert-success p {
+    background-image: url("../img/icons/success.png");
+}
+
+#messages .alert-danger p {
+    background-image: url("../img/icons/error.png");
+}
+
+#messages .alert-success p, #messages .alert-danger p {
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+
+.alert-success p, .alert-danger p {
+    padding-left: 45px;
+}
+
+/***************************************
+		Validation Errors
+***************************************/
+
+.validation-errors {
+    list-style: none;
+    margin-bottom: 20px !important;
+    border: 1px solid #cccccc;
+    /*border-radius: 3px;*/
+    background: #eeeeee;
+}
+
+ul.validation-errors {
+    padding: 6px 0;
+    margin-left: 0;
+}
+
+.validation-errors strong {
+    color: #D91E10;
+}
+
+.validation-errors li {
+    margin: 1px 0px;
+    padding: 5px 0 5px 35px;
+    background: url("../img/icons/no.png") no-repeat 10px center
+}
+
+/***************************************
+		Footer
+***************************************/
+
+#footer {
+    background: #f5f6f5;
+    height: 120px;
+    font-size: 12px;
+    border-top: 3px solid #43608F;
+    border-bottom: 3px solid #43608F;
+    outline-bottom: 10px solid #f5f6f5;
+}
+
+#footer p:first-child {
+    padding-top: 12px;
+}
+
+#footer ul {
+    list-style: none;
+    padding-top: 6px;
+    width: 200px;
+}
+
+#footer h5 {
+    margin: 12px 0 0 20px;
+}
+
+#footer li {
+    float: left;
+    padding-bottom: 2px;
+    width: 100px;
+}
+
+#footer li.active {
+    text-decoration: underline;
+}
+
+#bottom {
+    background: #f5f6f5;
+    height: 10px;
+}
+
+/***************************************
+    Info Box
+***************************************/
+
+.info-box {
+    padding: 15px;
+    margin-bottom: 30px !important;
+    border: 1px solid #cccccc;
+    /* border-radius: 3px;*/
+    background: #eeeeee;
+    overflow: hidden;
+}
+
+.info-box p {
+    margin-bottom: 5px;
+}
+
+.info-box a.btn {
+    float: right;
+    margin: 0 4px 4px;
+}
+
+/***************************************
+    Datatable
+***************************************/
+
+#datatable {
+    margin-bottom: 15px;
+}
+
+/***************************************
+    Dashboard Applicant
+***************************************/
+
+#dashboard h3 {
+    border-bottom: 2px solid #43608F;
+    display: inline-block;
+    padding: 0 8px;
+}
+
+#events > ul {
+    list-style-type: none;
+    margin-left: 0;
+}
+
+#events > ul li {
+    margin-left: 5px;
+}
+#events .name {
+    font: 18px bold;
+    line-height: 30px;
+    vertical-align: middle;
+}
+
+#events .name a {
+    color: #88C736;
+}
+
+#events .date {
+    font-style: italic;
+}
+
+
+
+

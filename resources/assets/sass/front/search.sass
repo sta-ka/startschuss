@@ -1,0 +1,43 @@
+#cloud
+  position: relative
+  height: 110px
+
+#cloud > a
+  position: absolute
+  font-size: 15px
+  display: inline
+  margin: 0
+  padding: 1px 2px
+  text-decoration: none
+  line-height: 1em
+  cursor: pointer
+  white-space: nowrap
+  background: #f5f6f5
+
+  &.emphasized
+    font-size: 18px
+
+  &:hover, &.active
+    background: #E2E2E2
+    font-weight: bold
+
+#search-results
+  width: 680px
+
+#search h3
+  margin-top: 0
+
+#regions ul, #job-type-search ul
+  padding: 2px
+
+  & li
+    padding: 2px
+
+#job-type-search ul li
+  padding: 1px 4px
+  width: 105px
+  float: left
+
+  &.active
+    font-weight: bold
+    text-decoration: underline

@@ -1,0 +1,89 @@
+#event #information
+  height: 120px
+  border-bottom: 2px solid $primaryColor
+  margin-bottom: 10px
+
+#event #profile p, #event #program p
+  line-height: 22px
+  text-align: justify
+
+#event #profile li, #event #program li
+  line-height: 22px
+
+/* Tabs */
+#event > ul
+  width: 650px
+  overflow: hidden
+
+  & li
+    float: left
+    font-size: 16px
+    cursor: pointer
+    margin: 7px 15px 7px 0
+
+    &.current
+      font-weight: bold
+      border-bottom: 3px solid $primaryColor
+
+#event .dyn-tabs
+  display: none
+
+/* Teilnehmer & Interviews */
+#event #participants, #event #interviews
+  overflow: hidden
+  width: 630px
+  border: 1px solid #8e96a7
+  margin-bottom: 10px
+
+#event #participants h2, #event #interviews h2
+  background: white
+
+#event #participants li, #event #interviews li
+  float: left
+  width: 130px
+  height: 60px
+  display: table
+  border: 1px solid #8e96a7
+  text-align: center
+  margin: 0 12px 10px
+
+#event #participants li .image, #event #interviews li .image
+  display: table-cell
+  vertical-align: middle
+
+#event #participants li .text, #event #interviews li .text
+  display: table-cell
+  vertical-align: middle
+  background: #f5f6f5
+
+#event #participants li a, #event #interviews li a
+  text-decoration: none
+
+#event #participants p, #event #interviews p
+  margin: 10px
+
+/* Missing Event */
+#missing-event
+  width: 680px
+  overflow: hidden
+  border: 1px solid $primaryColor
+  margin: 20px 0 30px
+  background: $primaryColor
+  color: white
+
+  & h3
+    padding: 0 20px 5px
+
+  & p
+    width: 550px
+    padding: 0 20px 5px
+    font-weight: normal
+
+  & a
+    color: #e7e7e7
+    text-decoration: underline
+
+    &:hover
+      text-decoration: none
+
+

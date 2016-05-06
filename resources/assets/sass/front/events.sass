@@ -1,0 +1,62 @@
+#events
+  width: 680px
+  overflow: hidden
+  border: 1px solid #8e96a7
+  margin-left: 0
+
+#events > ul.eventslist li
+  border-bottom: 1px solid #8e96a7
+  margin-left: 30px
+
+#events table
+  width: 100%
+  border-collapse: collapse
+
+#events table td
+  padding: 3px 0 4px
+  vertical-align: middle
+
+#events .name
+  font: 20px bold
+  line-height: 40px
+  vertical-align: middle
+
+#events .name a
+  color: $secondaryColor
+
+#events .date
+  font-style: italic
+
+#events p
+  margin: 10px
+
+#region-description, #city-description
+  width: 680px
+  line-height: 22px
+
+#region-description p, #city-description p
+  text-align: justify
+
+#region-description a, #city-description a
+  color: $secondaryColor
+  text-decoration: underline
+
+  &:hover
+    text-decoration: none
+
+/* Events Widget */
+#events-widget li
+  padding: 5px 0 5px 5px
+  border-bottom: 1px solid #8e96a7
+
+#events-widget li:last-child
+  border-bottom: none
+
+#events-widget span.name a
+  color: $secondaryColor
+
+#events-widget span.date
+  font-style: italic
+
+#events-widget span.location
+  font-weight: bold

@@ -1,0 +1,667 @@
+/***************************************
+		Events
+***************************************/
+
+#events {
+    width: 680px;
+    overflow: hidden;
+    border: 1px solid #8e96a7;
+    margin-left: 0;
+}
+
+#events h1, #events h2 {
+    padding: 10px;
+    border-bottom: 2px solid #43608F;
+}
+
+#events > ul {
+    list-style-type: none;
+    margin-left: 0;
+}
+
+#events > ul li {
+    border-bottom: 1px solid #8e96a7;
+    margin-left: 30px;
+}
+
+#events table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#events table td {
+    padding: 3px 0 4px;
+    vertical-align: middle;
+}
+
+#events .name {
+    font: 20px bold;
+    line-height: 40px;
+    vertical-align: middle;
+}
+
+#events .name a {
+    color: #88C736;
+}
+
+#events .date {
+    font-style: italic;
+}
+
+#events p {
+    margin: 10px;
+}
+
+#region-description, #city-description {
+    width: 680px;
+    line-height: 22px;
+}
+
+#region-description p, #city-description p {
+    text-align: justify;
+}
+
+#missing-event {
+    width: 680px;
+    overflow: hidden;
+    border: 1px solid #43608F;
+    margin-top: 20px;
+    background: #43608F;
+    color: white;
+}
+
+#missing-event p {
+    width: 550px;
+}
+
+/***************************************
+		Missing Event
+***************************************/
+
+#missing-event h3 {
+    padding: 15px 20px 5px;
+}
+
+#missing-event p {
+    padding: 0 20px 5px;
+    font-weight: normal;
+}
+
+#missing-event a {
+    color: #e7e7e7;
+    text-decoration: underline;
+}
+
+/***************************************
+		Sidebar (Regions and Search)
+***************************************/
+
+#cloud {
+    position: relative;
+    height: 110px;
+}
+
+#cloud > a {
+    position: absolute;
+    font-size: 15px;
+    display: inline;
+    margin: 0;
+    padding: 1px 2px;
+    text-decoration: none;
+    line-height: 1em;
+    cursor: pointer;
+    white-space: nowrap;
+    background: #f5f6f5;
+}
+
+#cloud > a.emphasized {
+    font-size: 18px;
+}
+
+#cloud > a:hover, #cloud > a.active {
+    background: #E2E2E2;
+    font-weight: bold;
+}
+
+#search-results {
+    width: 680px;
+}
+
+#regions h3, #search h3, #job-type-search h3 {
+    border-bottom: 2px solid #43608F;
+}
+
+#job-type-search h3 {
+    margin-bottom: 5px;
+}
+
+#regions ul, #job-type-search ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding: 2px;
+}
+
+#regions ul li {
+    padding: 2px;
+}
+
+#job-type-search ul li {
+    padding: 1px 4px;
+    width: 105px;
+    float: left;
+}
+
+#job-type-search ul li.active {
+    font-weight: bold;
+}
+
+/***************************************
+		Companies, Organizers
+***************************************/
+#companies, #organizers {
+    /*margin-top: 5px;*/
+    overflow: hidden;
+}
+
+#companies h2, #organizers h2 {
+    padding: 5px;
+    border-bottom: 2px solid #43608F;
+}
+
+#companies ul, #organizers ul {
+    list-style-type: none;
+    margin-left: 0;
+}
+
+#companies li, #organizers li {
+    float: left;
+    width: 98px;
+    height: 78px;
+    display: table;
+    text-align: center;
+    margin: 5px;
+    border: 1px solid #8e96a7;
+    /*border-radius: 3px;*/
+}
+
+#companies li .image, #organizers li .image {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#companies p, #organizers p {
+    float: right;
+    padding: 3px;
+}
+
+#companies a:hover, #organizers a:hover {
+    text-decoration: none;
+}
+
+#companies a.green:hover, #organizers a.green:hover {
+    text-decoration: underline;
+}
+
+/***************************************
+		Event Details
+***************************************/
+#event h1 {
+    padding: 10px;
+    border-bottom: 2px solid #43608F;
+}
+
+#event #information {
+    height: 120px;
+    border-bottom: 2px solid #43608F;
+    margin-bottom: 10px;
+}
+
+#event #profile p, #event #program p {
+    line-height: 22px;
+    text-align: justify;
+}
+
+#event #profile li, #event #program li {
+    line-height: 22px;
+}
+
+/* Tabs */
+#event > ul {
+    width: 650px;
+    list-style-type: none;
+    margin-left: 0;
+    overflow: hidden
+}
+
+#event > ul li {
+    float: left;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 7px 15px 7px 0;
+}
+
+#event > ul li.current {
+    font-weight: bold;
+    border-bottom: 3px solid #43608F;
+}
+
+#event .dyn-tabs {
+    display: none;
+}
+
+/* Teilnehmer & Interviews */
+#event #participants, #event #interviews {
+    overflow: hidden;
+    width: 630px;
+    border: 1px solid #8e96a7;
+    margin-bottom: 10px;
+}
+
+#event #participants h2, #event #interviews h2 {
+    background: white;
+    padding: 10px;
+    border-bottom: 2px solid #43608F;
+}
+
+#event #participants ul, #event #interviews ul {
+    list-style-type: none;
+    margin-left: 0;
+}
+
+#event #participants li, #event #interviews li {
+    float: left;
+    width: 130px;
+    height: 60px;
+    display: table;
+    border: 1px solid #8e96a7;
+    text-align: center;
+    margin: 0 12px 10px;
+}
+
+#event #participants li .image, #event #interviews li .image {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#event #participants li .text, #event #interviews li .text {
+    display: table-cell;
+    vertical-align: middle;
+    background: #f5f6f5;
+}
+
+#event #participants li a, #event #interviews li a {
+    text-decoration: none;
+}
+
+#event #participants p, #event #interviews p {
+    margin: 10px;
+}
+
+/* organizer */
+#organizer h5 {
+    padding: 5px;
+    border-bottom: 2px solid #43608F;
+}
+
+/* Events Widget */
+#events-widget h3 {
+    padding: 5px;
+    margin-bottom: 0;
+    border-bottom: 2px solid #43608F;
+}
+
+#events-widget ul {
+    list-style-type: none;
+    margin-left: 0;
+}
+
+#events-widget li {
+    padding: 5px 0 5px 5px;
+    border-bottom: 1px solid #8e96a7;
+}
+
+#events-widget li:last-child {
+    border-bottom: none;
+}
+
+#events-widget span.name a {
+    color: #88C736 !important;
+}
+
+#events-widget span.date {
+    font-style: italic;
+}
+
+#events-widget span.location {
+    font-weight: bold;
+}
+
+/***************************************
+		Events
+***************************************/
+
+#jobs {
+    width: 680px;
+    overflow: hidden;
+    border: 1px solid #8e96a7;
+    /*border-radius: 3px; */
+    margin-left: 0;
+}
+
+#jobs h1, #jobs h2 {
+    padding: 10px;
+    border-bottom: 2px solid #43608F;
+}
+
+#jobs > ul {
+    list-style-type: none;
+    margin-left: 0;
+}
+
+#jobs > ul li {
+    border-bottom: 1px solid #8e96a7;
+    margin-left: 30px;
+}
+
+#jobs table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#jobs table td {
+    padding: 3px 0 4px;
+    vertical-align: middle;
+}
+
+#jobs .logo {
+    text-align: center;
+}
+
+#jobs .name {
+    font: 20px bold;
+    line-height: 40px;
+    vertical-align: middle;
+}
+
+#jobs .name a {
+    color: #88C736;
+}
+
+#jobs .date {
+    font-style: italic;
+}
+
+#jobs p {
+    margin: 10px;
+}
+
+/***************************************
+		Organizer Details
+***************************************/
+
+#organizer-details {
+    padding-right: 15px;
+}
+
+#organizer-details h1 {
+    padding: 10px;
+    border-bottom: 2px solid #43608F;
+}
+
+#organizer-details > #profile p {
+    line-height: 22px;
+    text-align: justify;
+}
+
+/***************************************
+		Company Database,
+		Organizer Database
+***************************************/
+
+#company-database table td, #organizer-database table td {
+    vertical-align: middle;
+    padding: 0 4px;
+}
+
+#company-database > ul, #organizer-database > ul {
+    width: 520px;
+    list-style: none;
+    margin-top: 10px;
+}
+
+#company-database > ul li, #organizer-database > ul li {
+    border-bottom: 1px solid #8e96a7;
+    margin-top: 5px;
+    margin-left: 10px;
+    padding: 5px;
+}
+
+#letters ul {
+    overflow: hidden;
+    list-style: none;
+    margin-top: 20px;
+}
+
+#letters ul li {
+    float: left;
+    border-right: 1px solid #8e96a7;
+    padding-right: 5px;
+    margin-right: 5px;
+}
+
+#letters ul li:last-child {
+    border: none;
+}
+
+/***************************************
+		Company details
+***************************************/
+
+/* Tabs */
+#company > ul {
+    width: 650px;
+    list-style-type: none;
+    margin-left: 0;
+    overflow: hidden
+}
+
+#company > ul li {
+    float: left;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 7px 15px 7px 0;
+}
+
+#company > ul li.current {
+    font-weight: bold;
+    border-bottom: 3px solid #43608F;
+}
+
+#company .dyn-tabs {
+    display: none;
+}
+
+/***************************************
+		Guide
+***************************************/
+
+.article {
+    margin-bottom: 15px;
+    overflow: hidden;
+    text-align: justify;
+}
+
+.article img, #article img {
+    margin: 0 15px 10px 0;
+    float: left;
+    line-height: 22px;
+}
+
+#article h2, #article-teaser h2 {
+    padding: 5px;
+    border-bottom: 2px solid #43608F;
+}
+
+#article h3 {
+    display: inline-block;
+    font-size: 16px;
+    padding: 3px;
+    border-bottom: 1px solid #43608F;
+}
+
+#article ul{
+    margin: 20px 10px;
+    text-align: justify;
+    padding: 10px;
+    background: #eeeeee;
+}
+
+#article ul li {
+    padding-top: 10px;
+    margin-left: 20px;
+}
+
+#article {
+    padding-right: 15px;
+}
+
+#article a {
+    color: #88C736;
+    text-decoration: underline;
+}
+
+#article a:hover {
+    text-decoration: none;
+}
+
+#article p {
+    text-align: justify;
+}
+
+.article-body {
+    line-height: 22px;
+    text-align: justify;
+    height: 185px;
+}
+
+.article-preview {
+    overflow: hidden;
+}
+
+.article-preview {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.article-preview h4 {
+    margin-top: 0;
+}
+
+.article-preview p {
+    margin-bottom: 4px;
+}
+
+#article .btn-block, #article-teaser .btn-block {
+    margin-top: 25px;
+}
+
+#more-articles {
+    width: 960px;
+    float: left;
+    padding: 30px;
+    margin: 10px 0 30px -10px;
+    font-weight: 200;
+    line-height: 2.1428571435;
+    color: inherit;
+    background-color: #eeeeee;
+}
+
+#more-articles h1 {
+    font-size: 40px;
+}
+
+/***************************************
+		Pagination
+***************************************/
+
+/*.pagination {
+ float: right;
+ margin: 3px 5px 5px 0;
+ border: none;
+}
+
+.pagination ul {
+ list-style: none;
+}
+
+.pagination li {
+ float: left;
+ padding: 2px 1px;
+}
+
+.pagination .disabled {
+ display: none;
+}
+
+.pagination a{
+ border: solid 1px #88C736;
+ color: black;
+}
+
+.pagination li.active, .pagination a:hover{
+ background: #88C736;
+ color: #FFFFFF;
+ font-weight: bold;
+ padding: 2px 5px;
+}
+
+.pagination .next_page, .pagination .previous_page{
+ font-weight: bold;
+}
+
+.pagination li.next_page a, .pagination li.previous_page a{
+ border: none;
+ color: #88C736;
+}
+
+.pagination li.next_page a:hover , .pagination  li.previous_page a:hover {
+ color: #FFFFFF;
+ padding: 4px 5px;
+}
+
+.pagination a:link, .pagination a:visited {
+ padding: 3px 5px;
+ text-decoration: none;
+}*/
+
+/***************************************
+		Pager
+***************************************/
+
+.pager .disabled {
+    display: none;
+}
+
+.pager li > a {
+    /*background: #88C736;*/
+    background-color: #a0cd66;
+    border-color: #93C059; /*5% darken [#a0cd66]*/
+    color: white;
+    font-weight: normal;
+    font-size: 17px;
+    border: none;
+    display: inline-block;
+    padding: 3px 14px;
+    text-decoration: none;
+    width: 60px;
+}
+
+.pager li > a:hover {
+    background: #84C234;
+    background-color: #93C059; /*5% darken [#a0cd66]*/
+    border-color: #87B44D; /*10% darken [#a0cd66]*/
+}
+
+
+
+

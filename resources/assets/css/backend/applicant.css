@@ -1,0 +1,13 @@
+/***************************************
+		Profile
+***************************************/ 
+
+.education .timespan, .experience .timespan {
+	color: #9f9f9f;
+	margin-bottom: 0;
+	font-size: 12px;
+}
+
+.education .university, .experience .company {
+	font-size: 18px;
+}

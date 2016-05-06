@@ -1,0 +1,70 @@
+.article
+  margin-bottom: 15px
+  position: relative
+
+.article__body
+  text-align: justify
+  line-height: 20px
+  margin-bottom: 30px
+
+.article__link
+  position: absolute
+  bottom: 0
+  right: 0
+  
+.article img, #article img
+  margin: 0 15px 10px 0
+  float: left
+  line-height: 22px
+
+/*Single Article*/
+#article
+  padding-right: 15px
+
+  & h3
+    display: inline-block
+    font-size: 16px
+    padding: 0 3px 2px
+    border-bottom: 1px solid $primaryColor
+
+#article ul
+  margin: 20px 10px
+  text-align: justify
+  padding: 10px
+  background: #eeeeee
+
+  & li
+    padding-top: 10px
+    margin-left: 20px
+
+#article a
+  color: $secondaryColor
+  text-decoration: underline
+
+  &:hover
+    text-decoration: none
+
+.article-preview
+  overflow: hidden
+  margin-bottom: 20px
+  position: relative
+
+  & h4
+    margin-top: 0
+
+#more-articles, #article-featured
+  display: flex
+
+#more-articles__header
+  width: 960px
+  float: left
+  padding: 30px
+  margin: 10px 0 20px -10px
+  font-weight: 200
+  line-height: 2.1428571435
+  color: inherit
+  background-color: #eeeeee
+
+  & h1
+    font-size: 40px
+

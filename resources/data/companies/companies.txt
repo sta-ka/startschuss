@@ -1,0 +1,166 @@
+﻿ABB;ABB AG;abb
+Acando;Acando Gmbh;acando
+arcada;acarda Gmbh;acarda
+Accenture;Accenture;accenture
+adesso;adesso AG;adesso
+adidas;adidas AG;adidas
+Adobe Systems;Adobe Systems GmbH;adobe-systems
+airberlin;airberlin;airberlin
+Airbus Group;Airbus Group;airbus-group
+ALBA GROUP;ALBA GROUP;alba-group
+ALDI NORD;ALDI NORD;aldi-nord
+ALDI SÜD;ALDI SÜD;aldi-süd
+Allianz;Allianz;allianz
+ALTANA;ALTANA AG;altana
+Altran;Altran Group;altran
+Arthur D. Little;Arthur D. Little;arthur-d-little
+A.S.I.;A.S.I. Wirtschaftsberatung AG;asi-wirtschaftsberatung
+A.T. Kearney;A.T. Kearney GmbH;a-t-kearney
+AUDI;AUDI AG;audi
+STORCK;AUGUST STORCK KG;august-storck
+Auswärtiges Amt;Auswärtiges Amt;auswärtiges-amt
+AVM;AVM Gmbh;avm
+AXA;AXA Konzern AG;axa
+Axel Springer;Axel Springer;axel-springer
+Axway;Axway GmbH;axway
+Bain & Company;Bain & Company;bain-and-company
+BASF;BASF;basf
+Bayer;Bayer AG;bayer
+BB Engineering;BB Engineering;bb-engineering
+BearingPoint;BearingPoint GmbH;bearingpoint
+Beiersdorf;Beiersdorf AG;beiersdorf
+Bertelsmann;Bertelsmann;bertelsmann
+Bertrandt;Bertrandt AG;bertrandt
+Bilfinger;Bilfinger SE;bilfinger
+BMW Group;BMW Group;bmw
+Bosch Rexroth;Bosch Rexroth AG;bosch-rexroth
+Brose;Brose Fahrzeugteile GmbH & Co. KG ;brose
+Brunel;Brunel GmbH;brunel
+Bundeswehr;Bundeswehr;bundeswehr
+Camelot;Camelot Management Consultants AG;camelot
+Capgemini;Capgemini;capgemini
+CLAAS;CLAAS KGaA mbH;claas
+Coca-Cola;Coca-Cola Erfrischungsgetränke AG;coca-cola-erfrischungsgetränke
+comdirect;Comdirect Bank AG;comdirect
+Commerzbank;Commerzbank AG;commerzbank
+Computacenter;Computacenter;computacenter
+CONOGY;Conogy Gmbh;conogy
+Continental;Continental AG;continental
+ConVista;ConVista Consulting AG;convista-consulting
+Daimler;Daimler AG;daimler
+DATEV;DATEV eG;datev
+Dell;Dell;dell
+Deloitte;1. Deloitte & Touche GmbH;deloitte
+Deutsche Bahn;Deutsche Bahn AG;deutsche-bahn
+Deutsche Bank;Deutsche Bank AG;deutsche-bank
+Deutsche Börse;Deutsche Börse AG;deutsche-boerse
+Deutsche Bundesbank;Deutsche Bundesbank;deutsche-bundesbank
+Deutsche Lufthansa;Deutsche Lufthansa AG;deutsche-lufthansa
+Deutsche Post;Deutsche Post AG;deutsche-post
+Deutsche Telekom;Deutsche Telekom AG;deutsche-telekom
+DEUTZ;DEUTZ AG;deutz
+d-fine;d-fine GmbH;d-fine
+DIS;DIS AG;dis
+Dräger;Drägerwerk AG & Co. KGaA;draeger
+Dr. Oetker;Dr. Oetker GmbH;dr-oetker
+DZ Bank;DZ Bank AG;dz-bank
+Ebner Stolz;Ebner Stolz;ebner-stolz
+EISENMANN;Eisenmann AG;eisenmann
+EnBW;EnBW AG;enbw
+E.ON;E.ON;e-on
+ERGO;ERGO Versicherungsgruppe AG;ergo-versicherungsgruppe
+Ernst & Young;Ernst & Young;ernst-young
+FDM;FDM GROUP GmbH;fdm
+FERCHAU Engineering;Ferchau Engineering GmbH;ferchau-engineering
+Formel D Group;Formel D Group;formel-d-group
+Fraport;Fraport AG;fraport
+Fraunhofer Gesellschaft;Fraunhofer-Gesellschaft;fraunhofer-gesellschaft
+Fresenius;Fresenius;fresenius
+Gambit Consulting;Gambit Consulting GmbH;gambit-consulting
+GE Germany;GE Germany;ge-germany
+Generali;Generali;generali
+GETRAG;GETRAG;getrag
+Gothaer;Gothaer Finanzholding AG;gothaer
+Hannover Rück;Hannover Rück;hannover-rueck
+Hays;Hays AG;hays
+Henkel;Henkel AG & Co. KGaA;henkel-group
+Hermes;Hermes Gruppe;hermes-gruppe
+HILTI;Hilti Deutschland AG;hilti
+Hochtief;Hochtief AG;hochtief
+Horbach;HORBACH Wirtschaftsberatung GmbH ;horbach
+HSBC;HSBC;hsbc
+IBM;IBM Deutschland;ibm
+ICS;ICS AG;ics
+ifb;ifb AG;ifb
+inconso;inconso AG;inconso
+Infineon;Infineon Technologies AG;infineon
+ING-DiBa;ING-DiBa AG;ing-diba
+Interhyp;Interhyp AG;interhyp
+INTERSEROH;INTERSEROH Dienstleistungs GmbH;interseroh
+INVERTO;INVERTO AG;inverto
+ITK Engineering;ITK Engineering AG;itk-engineering
+JENOPTIK;JENOPTIK AG;jenoptik
+KfW Bankengruppe;KfW Bankengruppe;kfw-bankengruppe
+KPMG;KPMG;kpmg
+Krones;Krones AG;krones
+LANXESS;Lanxess AG;lanxess
+Lidl;Lidl;lidl
+Linde;Linde AG;linde
+Lufthansa Technik;Lufthansa Technik AG;lufthansa-technik
+MACH;MACH AG;mach
+MAN;MAN;man
+Merck;Merck KGaA;merck
+Metro;Metro AG;metro
+Microsoft;Microsoft Deutschland GmbH;microsoft
+mindsquare;mindsquare GmbH;mindsquare
+MLP;MLP AG;mlp
+Motorola;Motorola;motorola
+M Plan;M Plan GmbH;m-plan
+msg systems;msg systems AG;msg-systems
+Munich Re;Munich Re;munich-re
+Nestle;Nestle Deutschland AG;nestle-deutschland
+Nokia;Nokia;nokia
+Novartis;Novartis AG;novartis
+OBI;Obi GmbH & Co. Deutschland KG;obi
+Oliver Wyman;Oliver Wyman;oliver-wyman
+Otto Group;Otto Group;otto-group
+Peek & Cloppenburg;Peek & Cloppenburg;peekcloppenburg
+Philips;Philips;philips
+Porsche;Porsche AG;porsche
+Posche Consulting;Posche Consulting GmbH;porsche-consulting
+Postbank;Deutsche Postbank AG;postbank
+pwc;PricewaterhouseCoopers;pricewaterhousecoopers
+Procter & Gamble;Procter & Gamble;procter-gamble
+PUMA;PUMA SE;puma
+REWE;Rewe Group;rewe
+RheinEnergie;RheinEnergie AG;rheinenergie
+Rödl & Partner;Rödl & Partner GbR;rödl-partner
+Roland Berger;Roland Berger Strategy Consultants GmbH;roland-berger
+R+V Versicherung;R+V Versicherung AG;ruv-versicherung
+RWE;RWE AG;rwe
+Salzgitter;Salzgitter AG;salzgitter
+Sanofi;Sanofi;sanofi
+SAP;SAP AG;sap
+Sapient;Sapient GmbH;sapient
+Schaeffler;Schaeffler AG;schaeffler
+Siemens;Siemens AG;siemens
+Sixt;Sixt;sixt
+Software AG;Software AG;software
+steria;Steria Mummert Consulting GmbH;steria-mummert-consulting
+STRABAG;STRABAG AG;strabag
+Tchibo;Tchibo GmbH;tchibo
+Telemotive;Telemotive AG;telemotive
+BCG;The Boston Consulting Group;the-boston-consulting-group
+ThyssenKrupp;ThyssenKrupp AG;thyssenkrupp
+TUI;TUI AG;tui
+TÜV Rheinland;TÜV Rheinland;tüv-rheinland
+Unilever;Unilever ;unilever
+Vaillant;Vaillant GmbH;vaillant
+Vattenfall;Vattenfall GmbH;vattenfall
+Viego;Viego GmbH & Co. KG;viego
+Vodafone;Vodafone GmbH;vodafone
+Voith;Voith GmbH;voith
+Volkswagen;Volkswagen AG;volkswagen
+Wacker Chemie;Wacker Chemie AG;wacker-chemie
+YAVER;YAVER GmbH & Co. KG;yaver
+ZEISS;Carl Zeiss AG;zeiss

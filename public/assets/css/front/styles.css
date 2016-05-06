@@ -1,0 +1,392 @@
+.heading-underlined {
+  margin-top: 0;
+  padding: 10px;
+  border-bottom: 2px solid #43608F; }
+
+.heading-underlined--small {
+  margin-top: 0;
+  padding: 5px;
+  border-bottom: 2px solid #43608F; }
+
+.underlined {
+  border-bottom: 2px solid #43608F; }
+
+.list-unstyled {
+  list-style-type: none;
+  margin-left: 0; }
+
+.article {
+  margin-bottom: 15px;
+  position: relative; }
+
+.article__body {
+  text-align: justify;
+  line-height: 20px;
+  margin-bottom: 30px; }
+
+.article__link {
+  position: absolute;
+  bottom: 0;
+  right: 0; }
+
+.article img, #article img {
+  margin: 0 15px 10px 0;
+  float: left;
+  line-height: 22px; }
+
+/*Single Article*/
+#article {
+  padding-right: 15px; }
+  #article h3 {
+    display: inline-block;
+    font-size: 16px;
+    padding: 0 3px 2px;
+    border-bottom: 1px solid #43608F; }
+
+#article ul {
+  margin: 20px 10px;
+  text-align: justify;
+  padding: 10px;
+  background: #eeeeee; }
+  #article ul li {
+    padding-top: 10px;
+    margin-left: 20px; }
+
+#article a {
+  color: #88C736;
+  text-decoration: underline; }
+  #article a:hover {
+    text-decoration: none; }
+
+.article-preview {
+  overflow: hidden;
+  margin-bottom: 20px;
+  position: relative; }
+  .article-preview h4 {
+    margin-top: 0; }
+
+#more-articles, #article-featured {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+#more-articles__header {
+  width: 960px;
+  float: left;
+  padding: 30px;
+  margin: 10px 0 20px -10px;
+  font-weight: 200;
+  line-height: 2.1428571435;
+  color: inherit;
+  background-color: #eeeeee; }
+  #more-articles__header h1 {
+    font-size: 40px; }
+
+#company > ul {
+  width: 650px;
+  overflow: hidden; }
+  #company > ul li {
+    float: left;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 7px 15px 7px 0; }
+    #company > ul li.current {
+      font-weight: bold;
+      border-bottom: 3px solid #43608F; }
+
+#company .dyn-tabs {
+  display: none; }
+
+#organization-list table td {
+  vertical-align: middle;
+  padding: 0 4px; }
+
+#organization-list > ul {
+  width: 520px;
+  margin-top: 10px; }
+  #organization-list > ul li {
+    border-bottom: 1px solid #8e96a7;
+    margin-top: 5px;
+    margin-left: 10px;
+    padding: 5px; }
+
+#letters ul {
+  overflow: hidden;
+  margin-top: 20px; }
+  #letters ul li {
+    float: left;
+    border-right: 1px solid #8e96a7;
+    padding-right: 5px;
+    margin-right: 5px; }
+    #letters ul li:last-child {
+      border: none; }
+
+#event #information {
+  height: 120px;
+  border-bottom: 2px solid #43608F;
+  margin-bottom: 10px; }
+
+#event #profile p, #event #program p {
+  line-height: 22px;
+  text-align: justify; }
+
+#event #profile li, #event #program li {
+  line-height: 22px; }
+
+/* Tabs */
+#event > ul {
+  width: 650px;
+  overflow: hidden; }
+  #event > ul li {
+    float: left;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 7px 15px 7px 0; }
+    #event > ul li.current {
+      font-weight: bold;
+      border-bottom: 3px solid #43608F; }
+
+#event .dyn-tabs {
+  display: none; }
+
+/* Teilnehmer & Interviews */
+#event #participants, #event #interviews {
+  overflow: hidden;
+  width: 630px;
+  border: 1px solid #8e96a7;
+  margin-bottom: 10px; }
+
+#event #participants h2, #event #interviews h2 {
+  background: white; }
+
+#event #participants li, #event #interviews li {
+  float: left;
+  width: 130px;
+  height: 60px;
+  display: table;
+  border: 1px solid #8e96a7;
+  text-align: center;
+  margin: 0 12px 10px; }
+
+#event #participants li .image, #event #interviews li .image {
+  display: table-cell;
+  vertical-align: middle; }
+
+#event #participants li .text, #event #interviews li .text {
+  display: table-cell;
+  vertical-align: middle;
+  background: #f5f6f5; }
+
+#event #participants li a, #event #interviews li a {
+  text-decoration: none; }
+
+#event #participants p, #event #interviews p {
+  margin: 10px; }
+
+/* Missing Event */
+#missing-event {
+  width: 680px;
+  overflow: hidden;
+  border: 1px solid #43608F;
+  margin: 20px 0 30px;
+  background: #43608F;
+  color: white; }
+  #missing-event h3 {
+    padding: 0 20px 5px; }
+  #missing-event p {
+    width: 550px;
+    padding: 0 20px 5px;
+    font-weight: normal; }
+  #missing-event a {
+    color: #e7e7e7;
+    text-decoration: underline; }
+    #missing-event a:hover {
+      text-decoration: none; }
+
+#events {
+  width: 680px;
+  overflow: hidden;
+  border: 1px solid #8e96a7;
+  margin-left: 0; }
+
+#events > ul.eventslist li {
+  border-bottom: 1px solid #8e96a7;
+  margin-left: 30px; }
+
+#events table {
+  width: 100%;
+  border-collapse: collapse; }
+
+#events table td {
+  padding: 3px 0 4px;
+  vertical-align: middle; }
+
+#events .name {
+  font: 20px bold;
+  line-height: 40px;
+  vertical-align: middle; }
+
+#events .name a {
+  color: #88C736; }
+
+#events .date {
+  font-style: italic; }
+
+#events p {
+  margin: 10px; }
+
+#region-description, #city-description {
+  width: 680px;
+  line-height: 22px; }
+
+#region-description p, #city-description p {
+  text-align: justify; }
+
+#region-description a, #city-description a {
+  color: #88C736;
+  text-decoration: underline; }
+  #region-description a:hover, #city-description a:hover {
+    text-decoration: none; }
+
+/* Events Widget */
+#events-widget li {
+  padding: 5px 0 5px 5px;
+  border-bottom: 1px solid #8e96a7; }
+
+#events-widget li:last-child {
+  border-bottom: none; }
+
+#events-widget span.name a {
+  color: #88C736; }
+
+#events-widget span.date {
+  font-style: italic; }
+
+#events-widget span.location {
+  font-weight: bold; }
+
+#jobs {
+  width: 680px;
+  overflow: hidden;
+  border: 1px solid #8e96a7;
+  margin-left: 0; }
+  #jobs p {
+    margin: 10px; }
+  #jobs > ul li {
+    border-bottom: 1px solid #8e96a7;
+    margin-left: 30px; }
+
+#jobs .logo {
+  text-align: center; }
+
+#jobs .name {
+  font: 20px bold;
+  line-height: 40px;
+  vertical-align: middle; }
+  #jobs .name a {
+    color: #88C736; }
+
+#jobs .date {
+  font-style: italic; }
+
+#jobs table {
+  width: 100%;
+  border-collapse: collapse; }
+  #jobs table td {
+    padding: 3px 0 4px;
+    vertical-align: middle; }
+
+#organizer-details {
+  padding-right: 15px; }
+  #organizer-details #profile p {
+    line-height: 22px;
+    text-align: justify; }
+
+#organizer h5 {
+  border-width: 1px; }
+
+#companies, #organizers {
+  overflow: hidden; }
+
+#companies li, #organizers li {
+  float: left;
+  width: 98px;
+  height: 78px;
+  display: table;
+  text-align: center;
+  margin: 5px;
+  border: 1px solid #8e96a7; }
+
+#companies li .image, #organizers li .image {
+  display: table-cell;
+  vertical-align: middle; }
+
+#companies p, #organizers p {
+  float: right;
+  padding: 3px; }
+
+#companies a:hover, #organizers a:hover {
+  text-decoration: none; }
+
+#companies a.green:hover, #organizers a.green:hover {
+  text-decoration: underline; }
+
+#cloud {
+  position: relative;
+  height: 110px; }
+
+#cloud > a {
+  position: absolute;
+  font-size: 15px;
+  display: inline;
+  margin: 0;
+  padding: 1px 2px;
+  text-decoration: none;
+  line-height: 1em;
+  cursor: pointer;
+  white-space: nowrap;
+  background: #f5f6f5; }
+  #cloud > a.emphasized {
+    font-size: 18px; }
+  #cloud > a:hover, #cloud > a.active {
+    background: #E2E2E2;
+    font-weight: bold; }
+
+#search-results {
+  width: 680px; }
+
+#search h3 {
+  margin-top: 0; }
+
+#regions ul, #job-type-search ul {
+  padding: 2px; }
+  #regions ul li, #job-type-search ul li {
+    padding: 2px; }
+
+#job-type-search ul li {
+  padding: 1px 4px;
+  width: 105px;
+  float: left; }
+  #job-type-search ul li.active {
+    font-weight: bold;
+    text-decoration: underline; }
+
+.pager .disabled {
+  display: none; }
+
+.pager li a {
+  /*background: #88C736;*/
+  background-color: #a0cd66;
+  border-color: #93C059;
+  color: white;
+  font-weight: normal;
+  font-size: 17px;
+  display: inline-block;
+  padding: 3px 14px;
+  text-decoration: none;
+  width: 60px; }
+  .pager li a:hover {
+    background: #93C059;
+    border-color: #87B44D; }
+
+/*# sourceMappingURL=styles.css.map */
