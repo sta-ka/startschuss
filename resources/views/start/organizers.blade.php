@@ -1,8 +1,8 @@
 @extends('layouts.default')
 
-<?php $title = Request::segment(2) != '' ? Request::segment(2) : null ;?>
+<?php $title = Request::segment(2) != '' ? Str::upper(Request::segment(2)) : 'Übersicht' ;?>
 
-@section('title', 'Veranstalterdatenbank ' . Str::upper($title))
+@section('title', 'Veranstalterdatenbank - ' . $title)
 
 @section('metadata')
 	<meta name='description' content='Die Veranstalterdatenbank von startschuss-karriere.de enthält alle Veranstalter von Karriere- und Jobmessen mit Kontaktdaten und Messeterminen.' />
