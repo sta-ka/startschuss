@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('title', 'Der Karriere- und Jobmesse-Ratgeber')
+@section('title', $article->title . ' | Karriere-Ratgeber')
 
 @section('metadata')
 	<meta name='description' content='{{ $article->meta_description }}' />
