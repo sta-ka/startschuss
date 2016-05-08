@@ -10,7 +10,7 @@
 @section('content')
 	<div>
 		<div class="span8 alpha" id="article">
-			<h2 class="heading-underlined--small">{{ $article->title }}</h2>
+			<h1 class="heading-underlined--small">{{ $article->title }}</h1>
             <div class="article__body">{!! $article->body !!}</div>
 		</div>
 		<div class="span4 omega">
@@ -21,5 +21,4 @@
 			{!! HTML::link('karriereratgeber', 'Zur Artikelübersicht', ['class' => 'btn btn-primary btn-block']) !!}
 		</div>
 	</div>
-
 @stop

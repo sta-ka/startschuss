@@ -31,13 +31,13 @@
 				<div class="span12 alpha omega" id="more-articles">
 				@foreach($row as $article)
                     <?php
-                        $class = '';
-
-                        if ($article === reset($row))
+                        if ($article === reset($row)) {
                             $class = 'alpha';
-
-                        if ($article === end($row))
+                        } else if ($article === end($row)) {
                             $class = 'omega';
+                        } else {
+                            $class = '';
+                        }
                     ?>
 
 					<div class="article span4 {{ $class }}">

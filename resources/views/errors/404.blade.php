@@ -20,9 +20,9 @@
 	<div class="span7">
 		<h3>Seite nicht gefunden</h3>
 
-		<p>Die gesuchte Seite konnte nicht gefunden werden. Überprüfen Sie die URL oder versuchen es erneut.</p>
+		<p>Die gesuchte Seite konnte nicht gefunden werden. Überprüfen Sie die URL oder versuchen Sie es erneut.</p>
 
-		@if($link)
+		@if(isset($link))
 			{!! HTML::link($link . '/dashboard', 'Zu meinem Konto', ['class' => 'green']) !!}
 		@else
 			{!! HTML::link('home', 'Zurück zur Startseite', ['class' => 'green']) !!}

@@ -7,93 +7,6 @@
 	<meta name='keywords' content='{{ $company->keywords }}' />
 @stop
 
-@section('scripts')
-	<script type="text/javascript">
-		function tabs(pages)
-		{
-			[].forEach.call(pages, function(item) {
-				item.classList.add('dyn-tabs'); // add class to all tabs
-			}, false);
-
-			pages[0].style.display = 'block'; // display first page
-
-			// create ul element and insert it before the first page
-			var ul = document.createElement('ul');
-            ul.className = 'list-unstyled';
-			var tabNavigation = document.querySelector('#company').insertBefore(ul, pages[0]);
-			
-			[].forEach.call(pages, function(page){
-
-					var listElement = document.createElement('li');
-                    listElement.innerHTML = page.getAttribute('data-title');
-
-					tabNavigation.appendChild(listElement);
-
-				}, false);
-			
-			var items = tabNavigation.getElementsByTagName('li');
-			items[0].classList.add('current');
-
-			[].forEach.call(items, function(item) {
-
-				item.addEventListener('click', function() {
-
-					[].forEach.call( items, function(item) {
-						item.classList.remove('current');
-
-						var index = getIndex(item);
-						
-						pages[index].style.display = 'none';
-
-					}, false);
-
-					var index = getIndex(item); // get index of node
-
-					item.classList.add('current');
-					fadeIn(pages[index]);
-
-				}, false);
-			});
-		}
-
-		function fadeIn(element) {
-
-			var op = 0;  // initial opacity
-
-			// display element, but set opacity to 0
-			element.style.display = 'block';
-			element.style.opacity = op;
-
-			var timer = setInterval(function () {
-
-				if (op >= 0.9) {
-					clearInterval(timer);
-					element.style.display = 'block';
-				}
-
-				element.style.opacity = op;
-				element.style.filter = 'alpha(opacity=' + op * 100 + ')';
-				op += 0.1;
-
-			}, 70);
-		}
-
-		function getIndex(node) {
-			
-			var i = 0;
-
-			while (node = node.previousSibling) {
-				if (node.nodeType === 1) { ++i }
-			}
-			return i;
-		}
-
-		document.addEventListener('DOMContentLoaded', function() {
-			tabs(document.querySelectorAll('div.tabs'));
-		});
-	</script>	
-@stop
-
 @section('content')
 	<div class="span9 alpha">
 		<div id="company">
@@ -168,17 +81,16 @@
 				{!! HTML::link($company->website, $company->full_name, ['class' => 'green', 'target' => '_blank']) !!}
 			@else
 				-
-				<br>
-				<br>
+				<br><br>
 			@endif
 
 			@if($company->facebook || $company->twitter)
 				<h5>Social Media</h5>
 				@if($company->facebook)
-					{!! HTML::imageLink($company->facebook,'assets/img/icons/facebook.png', $company->name, ['target' => '_blank']) !!}
+					{!! HTML::imageLink($company->facebook, 'assets/img/icons/facebook.png', $company->name, ['target' => '_blank']) !!}
 				@endif
 				@if($company->twitter)
-					{!! HTML::imageLink($company->twitter,'assets/img/icons/twitter.png', $company->name, ['target' => '_blank']) !!}
+					{!! HTML::imageLink($company->twitter, 'assets/img/icons/twitter.png', $company->name, ['target' => '_blank']) !!}
 				@endif
 				<br>
 				<br>
@@ -186,4 +98,91 @@
 		</div>
 
 	</div>		
+@stop
+
+@section('scripts')
+    <script type="text/javascript">
+        function tabs(pages)
+        {
+            [].forEach.call(pages, function(item) {
+                item.classList.add('dyn-tabs'); // add class to all tabs
+            }, false);
+
+            pages[0].style.display = 'block'; // display first page
+
+            // create ul element and insert it before the first page
+            var ul = document.createElement('ul');
+            ul.className = 'list-unstyled';
+            var tabNavigation = document.querySelector('#company').insertBefore(ul, pages[0]);
+
+            [].forEach.call(pages, function(page){
+
+                var listElement = document.createElement('li');
+                listElement.innerHTML = page.getAttribute('data-title');
+
+                tabNavigation.appendChild(listElement);
+
+            }, false);
+
+            var items = tabNavigation.getElementsByTagName('li');
+            items[0].classList.add('current');
+
+            [].forEach.call(items, function(item) {
+
+                item.addEventListener('click', function() {
+
+                    [].forEach.call( items, function(item) {
+                        item.classList.remove('current');
+
+                        var index = getIndex(item);
+
+                        pages[index].style.display = 'none';
+
+                    }, false);
+
+                    var index = getIndex(item); // get index of node
+
+                    item.classList.add('current');
+                    fadeIn(pages[index]);
+
+                }, false);
+            });
+        }
+
+        function fadeIn(element) {
+
+            var op = 0;  // initial opacity
+
+            // display element, but set opacity to 0
+            element.style.display = 'block';
+            element.style.opacity = op;
+
+            var timer = setInterval(function () {
+
+                if (op >= 0.9) {
+                    clearInterval(timer);
+                    element.style.display = 'block';
+                }
+
+                element.style.opacity = op;
+                element.style.filter = 'alpha(opacity=' + op * 100 + ')';
+                op += 0.1;
+
+            }, 70);
+        }
+
+        function getIndex(node) {
+
+            var i = 0;
+
+            while (node = node.previousSibling) {
+                if (node.nodeType === 1) { ++i }
+            }
+            return i;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            tabs(document.querySelectorAll('div.tabs'));
+        });
+    </script>
 @stop

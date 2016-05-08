@@ -7,94 +7,6 @@
 	<meta name='keywords' content='{{ $event->keywords }}' />
 @stop
 
-@section('scripts')
-	<script type="text/javascript">
-		function tabs(pages)
-		{
-			[].forEach.call(pages, function(item) {
-				item.classList.add('dyn-tabs'); // add class to all tabs
-			}, false);
-
-			pages[0].style.display = 'block'; // display first page
-
-			// create ul element and insert it before the first page
-			var ul = document.createElement('ul');
-            ul.className = 'list-unstyled';
-			var tabNavigation = document.querySelector('#event').insertBefore(ul, pages[0]);
-
-            // create li element for each page
-			[].forEach.call(pages, function(page){
-
-					var listElement = document.createElement('li');
-					listElement.innerHTML = page.getAttribute('data-title');
-
-					tabNavigation.appendChild(listElement);
-
-				}, false);
-			
-			var items = tabNavigation.getElementsByTagName('li');
-			items[0].classList.add('current');
-
-			[].forEach.call(items, function(item) {
-
-				item.addEventListener('click', function() {
-
-					[].forEach.call( items, function(item) {
-						item.classList.remove('current');
-
-						var index = getIndex(item);
-						
-						pages[index].style.display = 'none';
-
-					}, false);
-
-					var index = getIndex(item); // get index of node
-
-					item.classList.add('current');
-					fadeIn(pages[index]);
-
-				}, false);
-			});
-		}
-
-		function fadeIn(element) {
-
-			var op = 0;  // initial opacity
-
-			// display element, but set opacity to 0
-			element.style.display = 'block';
-			element.style.opacity = op;
-
-			var timer = setInterval(function () {
-
-				if (op >= 0.9) {
-					clearInterval(timer);
-					element.style.display = 'block';
-				}
-
-				element.style.opacity = op;
-				element.style.filter = 'alpha(opacity=' + op * 100 + ')';
-				op += 0.1;
-
-			}, 70);
-		}
-
-		function getIndex(node) {
-			
-			var i = 0;
-
-			while (node = node.previousSibling) {
-				if (node.nodeType === 1) { ++i }
-			}
-			return i;
-		}
-
-		document.addEventListener('DOMContentLoaded', function() {
-			tabs(document.querySelectorAll('div.tabs'));
-		});
-	</script>	
-@stop
-
 @section('content')
 	<div class="span9 alpha">
 		<div id="event" itemscope itemtype="http://schema.org/Event">
@@ -276,23 +188,24 @@
 				<h3 class="heading-underlined--small">Weitere Jobmessen</h3>
 				<ul class="list-unstyled">
 					@foreach($events as $e)
-						@if($event->slug != $e->slug)
-							<li>
-								<table>
-									<tr>
-										<td>
-											<span class="name">{!! HTML::link('jobmesse/'.$e->slug, Str::limit($e->name, 24), ['title' => $e->name ]) !!}</span>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<span class="date">{{ Date::monthDate($e->start_date, $e->end_date, false) }}</span> in
-											<span class="location">{{ $e->location }}</span>
-										</td>
-									</tr>
-								</table>
-							</li>
-						@endif
+
+                        @continue($event->slug == $e->slug)
+
+                        <li>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <span class="name">{!! HTML::link('jobmesse/'.$e->slug, Str::limit($e->name, 24), ['title' => $e->name ]) !!}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="date">{{ Date::monthDate($e->start_date, $e->end_date, false) }}</span> in
+                                        <span class="location">{{ $e->location }}</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
 					@endforeach
 				</ul>	
 			</div>
@@ -301,4 +214,92 @@
             </div>
 		@endif
 	</div>		
+@stop
+
+@section('scripts')
+    <script type="text/javascript">
+        function tabs(pages)
+        {
+            [].forEach.call(pages, function(item) {
+                item.classList.add('dyn-tabs'); // add class to all tabs
+            }, false);
+
+            pages[0].style.display = 'block'; // display first page
+
+            // create ul element and insert it before the first page
+            var ul = document.createElement('ul');
+            ul.className = 'list-unstyled';
+            var tabNavigation = document.querySelector('#event').insertBefore(ul, pages[0]);
+
+            // create li element for each page
+            [].forEach.call(pages, function(page){
+
+                var listElement = document.createElement('li');
+                listElement.innerHTML = page.getAttribute('data-title');
+
+                tabNavigation.appendChild(listElement);
+
+            }, false);
+
+            var items = tabNavigation.getElementsByTagName('li');
+            items[0].classList.add('current');
+
+            [].forEach.call(items, function(item) {
+
+                item.addEventListener('click', function() {
+
+                    [].forEach.call( items, function(item) {
+                        item.classList.remove('current');
+
+                        var index = getIndex(item);
+
+                        pages[index].style.display = 'none';
+
+                    }, false);
+
+                    var index = getIndex(item); // get index of node
+
+                    item.classList.add('current');
+                    fadeIn(pages[index]);
+
+                }, false);
+            });
+        }
+
+        function fadeIn(element) {
+
+            var op = 0;  // initial opacity
+
+            // display element, but set opacity to 0
+            element.style.display = 'block';
+            element.style.opacity = op;
+
+            var timer = setInterval(function () {
+
+                if (op >= 0.9) {
+                    clearInterval(timer);
+                    element.style.display = 'block';
+                }
+
+                element.style.opacity = op;
+                element.style.filter = 'alpha(opacity=' + op * 100 + ')';
+                op += 0.1;
+
+            }, 70);
+        }
+
+        function getIndex(node) {
+
+            var i = 0;
+
+            while (node = node.previousSibling) {
+                if (node.nodeType === 1) { ++i }
+            }
+            return i;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            tabs(document.querySelectorAll('div.tabs'));
+        });
+    </script>
 @stop

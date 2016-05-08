@@ -11,7 +11,7 @@
 	?>
 
 	<ul class="nav navbar-nav navbar-right">
-		@if(isset($frontend))
+		@if(isset($frontend) && isset($link))
 			<li>{!! HTML::link($link . '/dashboard', 'Mein Konto') !!}</li>
 			<li class="divider-vertical"></li>
 		@endif
