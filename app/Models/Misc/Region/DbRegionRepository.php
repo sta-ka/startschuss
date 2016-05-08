@@ -70,7 +70,7 @@ class DbRegionRepository implements RegionRepository {
 					->visible()
 					->upcoming()
 					->orderBy('start_date')
-					->simplePaginate($limit);
+					->paginate($limit);
 	}
 
 }
