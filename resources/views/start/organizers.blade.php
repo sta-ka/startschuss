@@ -15,6 +15,10 @@
 
 @section('content')
 	<div class="span8 alpha">
+	    <div>
+            <h1 class="heading-underlined--small">Veranstalter von Job- und Karrieremessen</h1>
+            <p>Die Veranstalterdatenbank von startschuss-karriere.de enthält alle Veranstalter von Job- und Karrieremessen im deutschsprachigen Raum. Zu jedem Veranstalter können Sie auf der Detailseite zusätzliche Informationen zum Veranstalter und zu den nächsten Terminen.</p>
+        </div>
 		<div id="letters">
 			<ul class="list-unstyled">
 				<li>
@@ -38,7 +42,7 @@
 		<br>
 		<div id="organization-list">
             <ul class="list-unstyled">
-                @if(count($organizers) > 0)
+                @if($organizers->total() > 0)
 				    @each('start.partials.organizer', $organizers, 'organizer')
 			    @else
 					<li>Keinen Veranstalter gefunden.</li>

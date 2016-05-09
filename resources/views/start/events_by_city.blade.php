@@ -14,7 +14,7 @@
 		<br>
 		<div id="events">
 			<h1 class="heading-underlined">Karriere- und Jobmessen in {{ $city->name }}</h1>
-			@if(count($events) > 0)
+			@if($events->total() > 0)
 				<ul class="eventslist list-unstyled">
                     @each('start.partials.event', $events, 'event')
 				</ul>

@@ -12,7 +12,7 @@
 	<div class="span9 alpha">
         @include('start.partials.searchresults_events')
 
-        @if(count($events) > 0)
+        @if($events->total() > 0)
             <div id="events">
                 <h1 class="heading-underlined">Karriere- und Jobmessen</h1>
 

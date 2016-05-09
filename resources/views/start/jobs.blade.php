@@ -36,7 +36,7 @@
 			</div>		
 		@endif
 			
-		@if(count($jobs) > 0) 
+		@if($jobs->total() > 0)
 			<div id="jobs">
 				<h1 class="heading-underlined">Jobs, Praktika und mehr</h1>
 				<ul class="list-unstyled">

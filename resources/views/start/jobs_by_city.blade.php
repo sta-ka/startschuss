@@ -19,7 +19,7 @@
                 </div>
             </div>
         @endif
-        @if(count($jobs) > 0)
+        @if(c$jobs->total() > 0)
             <div id="jobs">
                 <h1>Stellen in {{ $city->name }}</h1>
                 <ul class="list-unstyled">
