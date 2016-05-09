@@ -71,18 +71,18 @@ class NotificationService {
             return false;
         }
 
-        $output  = '<div class="alert-' . $message['type'] . '">'."\r\n";
+        $output  = '<div class="alert-' . $message['type'] . '">';
 
         $text    = \Lang::get('notification.' . $message['message']);
         $output .= $this->wrap($text, $this->message_delimiter);
 
-        $output .= '</div>'."\r\n";
+        $output .= '</div>';
 
         return $this->wrap($output, $this->wrapper);
 	}
 
     /**
-     * Wrap text with a delimter.
+     * Wrap text with a delimiter.
      *
      * @param string    $text
      * @param array     $delimiter
