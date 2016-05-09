@@ -61,11 +61,11 @@ function renderPaginationMetaData($resource) {
     $metaTag = '';
 
     if ($resource->currentPage() > 1 && $resource->lastPage() > 1) {
-        $metaTag .= '<link rel="prev" href="' . \URL::current() . '?page' . ($resource->currentPage() - 1) . '">';
+        $metaTag .= '<link rel="prev" href="' . \URL::current() . '?page=' . ($resource->currentPage() - 1) . '">';
     }
 
     if ($resource->hasMorePages()) {
-        $metaTag .= '<link rel="next" href="' . \URL::current() . '?page' . ($resource->currentPage() + 1) . '">';
+        $metaTag .= '<link rel="next" href="' . \URL::current() . '?page=' . ($resource->currentPage() + 1) . '">';
     }
 
     return $metaTag;
