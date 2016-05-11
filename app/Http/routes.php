@@ -12,6 +12,11 @@ Route::group(['namespace' => 'Frontend'], function()
 	Route::get('home', ['as' => 'home' , 'uses' => 'EventsController@index']);
 
 	Route::get('jobmessekalender', ['as' => 'messekalender' , 'uses' => 'EventsController@messekalender']);
+	Route::get('jobmessen/{year}', ['uses' => 'EventsController@messearchiv'])
+		->where('year', '2016');
+	Route::get('jobmessen/{year}/{month}', ['as' => 'messearchiv' , 'uses' => 'EventsController@messearchiv'])
+		->where('year', '2016')
+		->where('month', '[a-z_äöüß]+');
 	Route::get('jobmessen/{region}', ['as' => 'messen' , 'uses' => 'EventsController@messen'])
 		->where('region', '[a-z_äöüß-]+');
 	Route::get('jobmessen/in/{city}', ['as' => 'messenIn' , 'uses' => 'EventsController@messenIn'])

@@ -230,6 +230,26 @@ class DateService {
         return sprintf('%02d.%02d.%04d', $day, $month, $year);
 	}
 
+	/**
+	 * Convert german month name to month number (Januar => 1).
+     *
+     * @param $month
+     *
+     * @return integer
+     *
+     * @throws \Exception
+     */
+	public function convertMonth($month)
+	{
+        $month = \Str::ucfirst($month);
+
+        if( ! isset(array_flip($this->months_fullname)[$month])) {
+            throw new \Exception();
+        }
+
+        return array_flip($this->months_fullname)[$month];
+	}
+
 
     /**
      * Get short/long version of month names.
@@ -238,7 +258,7 @@ class DateService {
      *
      * @return array
      */
-    private function getMonthNames($long)
+    public function getMonthNames($long = true)
 	{
 		if ($long === true) {
 			return $this->months_fullname;

@@ -145,6 +145,26 @@ class EventsController extends Controller {
 	}
 
 	/**
+	 * 'Events in ' page - Display all events of one year.
+     *
+     * @param integer $year
+     * @param string $month
+     *
+     * @return \Illuminate\View\View
+	 */
+	public function messearchiv($year, $month = 'januar')
+	{
+        try {
+            $events  = $this->eventRepo->getEventsByDate($year, \Date::convertMonth(($month)));
+
+            return view('start.events_by_date', compact('events', 'month'));
+        } catch (\Exception $e) {
+			notify('error', 'invalid_data', false);
+            return redirect()->route('messekalender');
+        }
+	}
+
+	/**
 	 * Display form to submit new event.
      *
      * @return \Illuminate\View\View

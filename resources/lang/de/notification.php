@@ -153,7 +153,8 @@ return [
 	'organizer_not_found'				=> 'Der gesuchte Veranstalter konnte nicht gefunden werden.',
 	'region_not_found'					=> 'Die gesuchte Region konnte nicht gefunden werden.',
 	'city_not_found'					=> 'Die gesuchte Stadt konnte nicht gefunden werden.',
-	'company_not_found'					=> 'Das gesuchte Unternehmen konnte nicht gefunden werden.'
+	'company_not_found'					=> 'Das gesuchte Unternehmen konnte nicht gefunden werden.',
+	'invalid_data'  					=> 'Seite konnte nicht gefunden werden.'
 
 ];
 

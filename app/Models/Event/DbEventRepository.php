@@ -200,6 +200,24 @@ class DbEventRepository implements EventRepository {
 	}
 
 	/**
+	 * Get all events by year and month.
+     *
+     * @param int $year
+     * @param int $month
+     *
+     * @return \Illuminate\Database\Eloquent\Collection
+	 */
+	public function getEventsByDate($year, $month)
+	{
+		return Events::with('organizer', 'region')
+					->whereYear('start_date', '=', $year)
+					->whereMonth('start_date', '=', $month)
+					->visible()
+					->orderBy('start_date')
+                    ->get();
+	}
+
+	/**
 	 * Get visible, upcoming events with the same name/slug
      *
      * @return \Illuminate\Database\Eloquent\Collection
