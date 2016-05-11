@@ -35,9 +35,11 @@
 	</div>
 
 	<div class="span3 omega">
-		@include('start.partials.searchbox_events')
 
+		@include('start.partials.searchbox_events')
 		@include('start.partials.regions')
+        @include('start.partials.events_archive')
+
 	</div>
 
 @stop
