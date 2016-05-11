@@ -124,6 +124,14 @@
     #letters ul li:last-child {
       border: none; }
 
+#monthslist {
+  -webkit-column-count: 2;
+     -moz-column-count: 2;
+          column-count: 2;
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px; }
+
 #event #information {
   height: 120px;
   border-bottom: 2px solid #43608F;
@@ -267,6 +275,18 @@
 
 #events-widget span.location {
   font-weight: bold; }
+
+#events-archive {
+  background: #43608F;
+  color: white;
+  padding: 10px; }
+  #events-archive h3 {
+    margin-top: 10px; }
+  #events-archive a {
+    color: white;
+    text-decoration: underline; }
+  #events-archive a:hover {
+    text-decoration: none; }
 
 #jobs {
   width: 680px;
