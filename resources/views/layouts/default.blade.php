@@ -23,7 +23,7 @@
 				<div class="navbar navbar-default">
 					<div class="navbar container_12">
 						<ul class="nav navbar-nav navbar-left">
-							<li {{ set_active('*home') }}>
+							<li {{ URL::full() == URL::route('home') ? 'class = active' : '' }}>
 								{!! HTML::linkRoute('home', 'Home') !!}
 							</li>
 							<li {{ set_active(['*jobmesse/*', '*jobmessekalender*', '*jobmessen/*']) }}>

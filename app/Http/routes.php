@@ -7,9 +7,7 @@
 */
 Route::group(['namespace' => 'Frontend'], function()
 {
-	Route::get('/', function(){ return redirect('home'); });
-
-	Route::get('home', ['as' => 'home' , 'uses' => 'EventsController@index']);
+	Route::get('/', ['as' => 'home' , 'uses' => 'EventsController@index']);
 
 	Route::get('jobmessekalender', ['as' => 'messekalender' , 'uses' => 'EventsController@messekalender']);
 	Route::get('jobmessen/{year}', ['uses' => 'EventsController@messearchiv'])
