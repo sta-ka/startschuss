@@ -1,4 +1,4 @@
-<div id="regions">
+<div id="months">
     <h3 class="heading-underlined--small">Messen im Jahr {{ Request::segment(2) }}</h3>
     <ul id="monthslist" class="list-unstyled">
         <?php $months = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'] ;?>
