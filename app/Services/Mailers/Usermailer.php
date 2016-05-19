@@ -32,7 +32,7 @@ class UserMailer extends Mailer {
      */
 	public function resetPasswordMail($data)
 	{
-		$this->subject  = 'Passwort zurücksetzen | '. $this->domain;;
+		$this->subject  = 'Passwort zurücksetzen | '. $this->domain;
 		$this->view     = 'emails.user.reset_password_mail';
 		$this->data     = $data;
 
@@ -48,12 +48,11 @@ class UserMailer extends Mailer {
      */
 	public function contactUser($data)
 	{
-		$this->subject  = 'Nachricht von ' . $this->domain;;
+		$this->subject  = $this->domain . ' | Nachricht';
 		$this->view     = 'emails.user.contact_user';
 
 		$this->data = [
 			'subject' 	=> $data['subject'],
-			'username' 	=> $this->to,
 			'body'		=> $data['body']
 		];
 
@@ -69,7 +68,7 @@ class UserMailer extends Mailer {
      */
 	public function sendActivationCode($data)
 	{
-		$this->subject  = 'Kontoaktivierung | ' . $this->domain;;
+		$this->subject  = 'Kontoaktivierung | ' . $this->domain;
 		$this->view     = 'emails.user.send_activation_code';
 
 		$this->data = $data;

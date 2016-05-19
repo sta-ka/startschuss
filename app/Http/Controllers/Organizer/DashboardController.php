@@ -7,8 +7,7 @@ use App\Http\Controllers\Controller;
  *
  * @package App\Http\Controllers\Organizer
  */
-class DashboardController extends Controller
-{
+class DashboardController extends Controller {
 
     /**
      * @return \Illuminate\View\View

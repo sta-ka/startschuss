@@ -26,8 +26,7 @@ use URL;
  *
  * @package App\Http\Controllers\Organizer
  */
-class ProfileController extends Controller
-{
+class ProfileController extends Controller {
 
     /**
      * @var Events

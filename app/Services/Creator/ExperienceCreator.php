@@ -16,7 +16,6 @@ class ExperienceCreator extends Creator {
     public function __construct(ApplicantRepository $applicantRepo, ExperienceRepository $experienceRepo)
 	{
 		$this->applicantRepo = $applicantRepo;
-
 		$this->experienceRepo = $experienceRepo;
 	}
 

@@ -68,7 +68,7 @@ class UsersController extends Controller {
 			} elseif ($user->inGroup(Sentry::findGroupByName('applicant'))) {
 				return redirect('applicant/dashboard');
 			} else {
-				return redirect('logout');
+				return redirect('');
 			}
 		} catch (UserException\WrongPasswordException $e) {
 			$message = 'Falsches Passwort';
@@ -286,7 +286,7 @@ class UsersController extends Controller {
 		Sentry::logout();
 
 		notify('success', 'logout');
-		return redirect('home');
+		return redirect('');
 	}
 
 	/**

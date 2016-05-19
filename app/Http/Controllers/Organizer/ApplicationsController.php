@@ -18,8 +18,8 @@ use Sentry;
  *
  * @package App\Http\Controllers\Organizer
  */
-class ApplicationsController extends Controller
-{
+class ApplicationsController extends Controller {
+
     /**
      * @var Applications
      */

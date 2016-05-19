@@ -11,8 +11,7 @@ use App\Services\Creator\JobCreator;
  *
  * @package App\Http\Controllers\Company
  */
-class JobsController extends Controller
-{
+class JobsController extends Controller {
 
     /**
      * @var Jobs

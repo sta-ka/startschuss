@@ -216,7 +216,7 @@ class UsersController extends Controller {
         } elseif ($user->inGroup(Sentry::findGroupByName('applicant'))) {
             return redirect('applicant/dashboard');
         } else {
-            return redirect('logout');
+            return redirect('');
         }
     }
 
