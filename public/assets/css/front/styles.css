@@ -124,6 +124,9 @@
     #letters ul li:last-child {
       border: none; }
 
+#months {
+  margin-top: 15px; }
+
 #monthslist {
   -webkit-column-count: 2;
      -moz-column-count: 2;
@@ -279,14 +282,15 @@
 #events-archive {
   background: #43608F;
   color: white;
+  margin-top: 25px;
   padding: 10px; }
   #events-archive h3 {
-    margin-top: 10px; }
+    margin-top: 5px; }
   #events-archive a {
     color: white;
-    text-decoration: underline; }
-  #events-archive a:hover {
     text-decoration: none; }
+  #events-archive a:hover {
+    text-decoration: underline; }
 
 #jobs {
   width: 680px;
