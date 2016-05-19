@@ -6,11 +6,10 @@ class GroupsTableSeeder extends Seeder {
 
 	public function run()
 	{
-		// create groups
-		Sentry::createGroup(array('name' => 'admin'));
-		Sentry::createGroup(array('name' => 'organizer'));
-		Sentry::createGroup(array('name' => 'company'));
-		Sentry::createGroup(array('name' => 'applicant'));
+		Sentry::createGroup(['name' => 'admin']);
+		Sentry::createGroup(['name' => 'organizer']);
+		Sentry::createGroup(['name' => 'company']);
+		Sentry::createGroup(['name' => 'applicant']);
 
 	}
 }

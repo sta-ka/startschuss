@@ -16,13 +16,13 @@ class CitiesTableSeeder extends Seeder {
 		{
 			list($name, $slug, $description, $meta_description, $keywords) = explode(';', trim($city));
 
-			$data = array(
+			$data = [
 				'name'				=> trim($name, '"'),
 				'slug'				=> trim($slug, '"'),
 				'description' 		=> trim($description, '"'),
 			 	'meta_description' 	=> trim($meta_description, '"'),
 			 	'keywords' 			=> trim($keywords, '"')
-			);
+			];
 			
 			\App\Models\Misc\City\City::create($data);
 		}

@@ -17,13 +17,13 @@ class CompaniesTableSeeder extends Seeder {
 		{
 			list($name, $full_name, $slug) = explode(';', trim($company));
 
-			$data = array(
+			$data = [
 				'name'			=> $name,
 				'full_name'		=> $full_name,
 				'slug'			=> $slug,
 				'created_at'	=> new DateTime,
 				'updated_at'	=> new DateTime
-			);
+            ];
 			
 			DB::table('companies')->insert($data);
 		}

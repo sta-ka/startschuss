@@ -6,15 +6,15 @@ class AudiencesTableSeeder extends Seeder {
 
 	public function run()
 	{
-		DB::table('audiences')->insert(array(
-			array('name' => 'Alle'),                             
-			array('name' => 'Wirtschaft'),                             
-			array('name' => 'Recht'),                             
-			array('name' => 'Naturwissenschaften'),                             
-			array('name' => 'Geisteswissenschaften'),                             
-			array('name' => 'Informatik'),                             
-			array('name' => 'Technik')                          
-			));
+		DB::table('audiences')->insert([
+			['name' => 'Alle'],
+			['name' => 'Wirtschaft'],
+			['name' => 'Recht'],
+			['name' => 'Naturwissenschaften'],
+			['name' => 'Geisteswissenschaften'],
+			['name' => 'Informatik'],
+			['name' => 'Technik']
+			]);
 
 	}
 }

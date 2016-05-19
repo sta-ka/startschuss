@@ -8,7 +8,7 @@ class JobsTableSeeder extends Seeder {
 	{
 		foreach(range(1, 20) as $i)
 		{
-			$data = array(
+			$data = [
 				'company_id'		=> $i,
 				'title'				=> 'Bester Job '.$i,
 				'slug'				=> 'bester-job-'.$i,
@@ -16,12 +16,12 @@ class JobsTableSeeder extends Seeder {
 				'type' 				=> 'Vollzeit',
 			 	'active'	 		=> 1,
 			 	'approved'	 		=> 1
-			);
+			];
 
             \App\Models\Company\Job\Job::create($data);
 		}
 
-		$data = array(
+		$data = [
 			'company_id'		=> 21,
 			'title'				=> 'Bester Job 21',
 			'slug'				=> 'bester-job-21',
@@ -29,11 +29,11 @@ class JobsTableSeeder extends Seeder {
 			'type' 				=> 'Vollzeit',
 			'active'	 		=> 1,
 			'approved'	 		=> 1
-		);
+		];
 			
 		\App\Models\Company\Job\Job::create($data);
 
-		$data = array(
+		$data = [
 			'company_id'		=> 22,
 			'title'				=> 'Bester Job 22',
 			'slug'				=> 'bester-job-22',
@@ -41,7 +41,7 @@ class JobsTableSeeder extends Seeder {
 			'type' 				=> 'Teilzeit',
 			'active'	 		=> 1,
 			'approved'	 		=> 1
-		);
+		];
 			
 		\App\Models\Company\Job\Job::create($data);
 

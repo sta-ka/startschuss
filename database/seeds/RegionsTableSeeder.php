@@ -18,14 +18,14 @@ class RegionsTableSeeder extends Seeder
 		{
 			list($name, $slug, $prefix, $description, $meta_description, $keywords) = explode(';', trim($region));
 
-			$data = array(
+			$data = [
 				'name'				=> $name,
 				'slug'				=> $slug,
 				'prefix'			=> $prefix,
 				'description' 		=> $description,
 			 	'meta_description' 	=> $meta_description,
 			 	'keywords' 			=> $keywords
-			);
+			];
 
             \App\Models\Misc\Region\Region::create($data);
 		}
