@@ -1,9 +1,6 @@
-@extends('emails.layouts.default')
+@extends('emails.layouts.transactional')
 
-@section('content')
-	<h2>Konto aktivieren</h2>
-
-	<div>
-		{!! HTML::link('konto-aktivieren/'.$activation_code, 'Konto aktivieren') !!}
-	</div>
-@stop
+@section('heading', 'Aktivieren Sie Ihr Konto')
+@section('content', 'Nur noch ein Schritt um Ihr Konto auf startschuss-karriere.de zu aktivieren.')
+@section('link', URL::to('konto-aktivieren/' . $activation_code))
+@section('button', 'Konto aktivieren')

@@ -1,6 +1,6 @@
 @extends('emails.layouts.default')
 
-@section('content')
+@section('main_content')
 	<h2>Nachricht über das Kontaktformular</h2>
 
 	<div>

@@ -1,6 +1,6 @@
 @extends('emails.layouts.default')
 
-@section('content')
+@section('main_content')
 	<h2>Neue Jobmesse</h2>
 
 	<div>
