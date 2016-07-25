@@ -35,7 +35,7 @@
         @include('start.partials.missing_event')
     </div>
 
-    <div class="col-md-3">
+    <div class="col-xs-12 col-sm-12 col-md-3">
 
         @include('start.partials.searchbox_events')
         @include('start.partials.regions')

@@ -81,7 +81,7 @@
 			@endif
 		</div>
 	</div>
-	<div id="organizer" class="col-md-4">
+	<div id="organizer" class="col-xs-12 col-sm-12 col-md-4">
 		@if($organizer->logo)
 			<div class="col-xs-6 col-sm-4 col-md-12">
 				{!! HTML::image('uploads/logos/big/'. $organizer->logo, $organizer->name) !!}
@@ -105,8 +105,8 @@
                 -
                 <br>
             @endif
+            <br>
         </div>
-		<br>
         <div class="col-xs-6 col-sm-4 col-md-12">
             <h5 class="heading-underlined--small">Webseite des Veranstalters</h5>
             @if($organizer->website)
@@ -114,9 +114,9 @@
             @else
                 -
             @endif
+            <br>
+            <br>
         </div>
-		<br>
-		<br>
 
         @if($organizer->facebook || $organizer->twitter)
             <div class="col-xs-6 col-sm-4 col-md-12">
