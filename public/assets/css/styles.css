@@ -5132,8 +5132,9 @@ figure {
 
 #footer {
   background: #f5f6f5;
-  height: 120px;
+  min-height: 120px;
   font-size: 12px;
+  overflow: hidden;
   border-top: 3px solid #43608F;
   border-bottom: 3px solid #43608F; }
   #footer h5 {
@@ -5146,7 +5147,7 @@ figure {
   list-style: none;
   padding-top: 6px;
   padding-left: 0;
-  width: 200px; }
+  max-width: 200px; }
   #footer ul li {
     float: left;
     padding-bottom: 2px;

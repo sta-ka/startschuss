@@ -198,7 +198,7 @@
 
 /* Missing Event */
 #missing-event {
-  width: 680px;
+  max-width: 680px;
   overflow: hidden;
   border: 1px solid #43608F;
   margin: 20px 0 30px;
@@ -207,7 +207,7 @@
   #missing-event h3 {
     padding: 0 20px 5px; }
   #missing-event p {
-    width: 550px;
+    max-width: 550px;
     padding: 0 20px 5px;
     font-weight: normal; }
   #missing-event a {
