@@ -33,7 +33,7 @@
                     <strong>Veranstalter: </strong>{!! HTML::linkRoute('veranstalter', $event->organizer->name, [$event->organizer->slug]) !!}
                 </span>
             </td>
-            <td style="width: 120px;" itemprop="location" itemscope itemtype="http://schema.org/Place">
+            <td class="hidden-xs" style="width: 120px;" itemprop="location" itemscope itemtype="http://schema.org/Place">
                 <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
                     <span  itemprop="addressLocality" content="{{ $event->location }}">
                         {{ $event->location }}<br>

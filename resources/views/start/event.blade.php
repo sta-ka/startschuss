@@ -8,13 +8,13 @@
 @stop
 
 @section('content')
-	<div class="span9 alpha">
+	<div class="col-xs-12 col-sm-9 col-md-9">
 		<div id="event" itemscope itemtype="http://schema.org/Event">
 			<h1 itemprop="name" class="heading-underlined">{{ $event->name }}</h1>
 			<meta itemprop="description" content="Jobmesse">
 
 			<div id="information">
-				<div class="span3 alpha">
+				<div class="col-xs-4 col-sm-4 col-md-4">
 					<strong>Datum:</strong><br>
 					@if($event->start_date == $event->end_date)
 						<span itemprop="startDate" content="{{ Date::format($event->start_date, 'ISO')}}">
@@ -41,7 +41,7 @@
 						@endif
 					@endif
 				</div>
-				<div class="span3" itemprop="location" itemscope itemtype="http://schema.org/Place">
+				<div class="col-xs-4 col-sm-4 col-md-4" itemprop="location" itemscope itemtype="http://schema.org/Place">
 					<strong>Veranstaltungort:</strong><br>
 					<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 						<span  itemprop="addressLocality"content="{{ $event->location }}">
@@ -61,7 +61,7 @@
 						@endif
 					@endif
 				</div>
-				<div class="span3 omega">
+				<div class="col-xs-4 col-sm-4 col-md-4 omega">
 					@if($event->admission)
 						<strong>Eintritt:</strong><br>
 						{{ $event->admission }}<br><br>
@@ -152,36 +152,42 @@
 		</div>	
 	</div>
 
-	<div class="span3 omega">
-		<div id="organizer">
-			<p>Organisiert von 
-				<strong>{!! HTML::linkRoute('veranstalter', $event->organizer->name, [$event->organizer->slug]) !!}</strong>
-			</p>
-			@if($event->organizer->logo)
-				{!! HTML::imageLink('veranstalter/'. $event->organizer->slug, 'uploads/logos/big/'. $event->organizer->logo, $event->organizer->name) !!}
-				<br>
-			@endif
-			<br>
-			<h5 class="heading-underlined--small">Webseite der Veranstaltung</h5>
-			@if($event->website)
-				{!! HTML::link($event->website, $event->name, ['class' => 'green', 'target' => '_blank']) !!}
-			@else
-				-
-				<br>
-				<br>
-			@endif
+	<div class="col-xs-12 col-sm-3 col-md-3">
+		<div id="organizer" class="row">
+            <div class="col-xs-4 col-sm-12">
+                <p>Organisiert von
+                    <strong>{!! HTML::linkRoute('veranstalter', $event->organizer->name, [$event->organizer->slug]) !!}</strong>
+                </p>
+                @if($event->organizer->logo)
+                    {!! HTML::imageLink('veranstalter/'. $event->organizer->slug, 'uploads/logos/big/'. $event->organizer->logo, $event->organizer->name) !!}
+                    <br>
+                @endif
+                <br>
+            </div>
+            <div class="col-xs-4 col-sm-12">
+                <h5 class="heading-underlined--small">Webseite der Veranstaltung</h5>
+                @if($event->website)
+                    {!! HTML::link($event->website, $event->name, ['class' => 'green', 'target' => '_blank']) !!}
+                @else
+                    -
+                    <br>
+                    <br>
+                @endif
+            </div>
 
-			@if($event->facebook || $event->twitter)
-				<h5 class="heading-underlined--small">Social Media</h5>
-				@if($event->facebook)
-					{!! HTML::imageLink($event->facebook,'assets/img/icons/facebook.png', $event->name, ['target' => '_blank']) !!}
-				@endif
-				@if($event->twitter)
-					{!! HTML::imageLink($event->twitter,'assets/img/icons/twitter.png', $event->name, ['target' => '_blank']) !!}
-				@endif
-				<br>
-				<br>
-			@endif
+            <div class="col-xs-4 col-sm-12">
+                @if($event->facebook || $event->twitter)
+                    <h5 class="heading-underlined--small">Social Media</h5>
+                    @if($event->facebook)
+                        {!! HTML::imageLink($event->facebook,'assets/img/icons/facebook.png', $event->name, ['target' => '_blank']) !!}
+                    @endif
+                    @if($event->twitter)
+                        {!! HTML::imageLink($event->twitter,'assets/img/icons/twitter.png', $event->name, ['target' => '_blank']) !!}
+                    @endif
+                    <br>
+                    <br>
+                @endif
+            </div>
 		</div>
 		@if(count($events) > 1)
 			<div id="events-widget">
