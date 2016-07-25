@@ -10,7 +10,7 @@
 		</div>
 		{!! Form::close() !!}
 	</div>
-	<div id="cloud">
+	<div id="cloud" class="visible-md-block visible-lg-block">
 		<a {{ set_active('*/in/frankfurt*') }} href="{{ url('jobmessen/in/frankfurt') }}" style="left: 146px; top: 29px;">frankfurt</a>
 		<a {{ set_active('*/in/leipzig*') }} href="{{ url('jobmessen/in/leipzig') }}" style="left: 26px; top: 11px;">leipzig</a>
 		<a {{ set_active('*/in/stuttgart*') }} href="{{ url('jobmessen/in/stuttgart') }}" style="left: 138px; top: 66px;">stuttgart</a>

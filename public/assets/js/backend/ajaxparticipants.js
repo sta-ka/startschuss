@@ -24,7 +24,7 @@ $(document).ready(function() {
 		e.preventDefault();
 
 		var form = $(this),
-			btn = $(this).find('input'),
+			btn = $(this).find('input[type="submit"]'),
 			url = $(this).attr('action');
 
         $.post(url, function(data) {

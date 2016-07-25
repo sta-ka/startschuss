@@ -29,8 +29,8 @@
 			</div>
 
 			<div class="pull-right">
-				{!! HTML::link('applicant/profile/edit-education/'.$education->id, 'Bearbeiten', ['class' => 'btn btn-success btn-xs']) !!}
-				{!! HTML::link('applicant/profile/delete-education/'.$education->id, 'Löschen', ['class' => 'btn btn-danger btn-xs']) !!}
+				{!! HTML::link('applicant/profile/edit-education/'. $education->id, 'Bearbeiten', ['class' => 'btn btn-success btn-xs']) !!}
+				{!! HTML::link('applicant/profile/delete-education/'. $education->id, 'Löschen', ['class' => 'btn btn-danger btn-xs']) !!}
 				<br>
 				<br>
 			</div>

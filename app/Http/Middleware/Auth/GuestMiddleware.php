@@ -15,7 +15,7 @@ class GuestMiddleware {
     {
         if (\Sentry::check()) {
             notify('error', 'already_logged_in', false);
-            return \Redirect::to('home');
+            return \Redirect::route('home');
         }
         return $next($request);
     }

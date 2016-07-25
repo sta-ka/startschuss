@@ -9,8 +9,10 @@ class NotificationTest extends TestCase {
     /**
      * Setup the test environment.
      */
-    public function __construct()
+    public function setUp()
     {
+        parent::setUp();
+
         $this->notification =  new NotificationService();
     }
 

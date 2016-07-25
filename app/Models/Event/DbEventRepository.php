@@ -22,7 +22,7 @@ class DbEventRepository implements EventRepository {
      *
      * @param bool $trashed
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getAll($trashed = false)
 	{
@@ -40,7 +40,7 @@ class DbEventRepository implements EventRepository {
 	 * Only get latest event if multiple exist with same name
 	 * excluding soft-deleted events.
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getAllEvents()
 	{
@@ -57,7 +57,7 @@ class DbEventRepository implements EventRepository {
      *
      * @param int $limit
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getAllVisibleEvents($limit = 10)
 	{
@@ -75,7 +75,7 @@ class DbEventRepository implements EventRepository {
      *
      * @param int|bool $user_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getRequestedEvents($user_id = false)
 	{
@@ -92,7 +92,7 @@ class DbEventRepository implements EventRepository {
 	 * Get all upcoming and visible events  which offer interviews at their event
 	 * and are already linked to companies.
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getEventsWithInterviews()
 	{
@@ -110,7 +110,7 @@ class DbEventRepository implements EventRepository {
      *
      * @param int $event_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function findById($event_id)
 	{
@@ -124,7 +124,7 @@ class DbEventRepository implements EventRepository {
      *
      * @param string $slug
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function findBySlug($slug)
 	{
@@ -141,7 +141,7 @@ class DbEventRepository implements EventRepository {
      * @param int $event_id
      * @param int $company_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function findParticipant($event_id, $company_id)
 	{
@@ -157,7 +157,7 @@ class DbEventRepository implements EventRepository {
      *
      * @param int $limit
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getPaginatedEvents($limit)
 	{
@@ -173,7 +173,7 @@ class DbEventRepository implements EventRepository {
      *
      * @param int $event_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getParticipatingCompanies($event_id)
 	{
@@ -187,7 +187,7 @@ class DbEventRepository implements EventRepository {
      *
      * @param string $term
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getResults($term)
 	{
@@ -205,7 +205,7 @@ class DbEventRepository implements EventRepository {
      * @param int $year
      * @param int $month
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getEventsByDate($year, $month)
 	{
@@ -220,7 +220,7 @@ class DbEventRepository implements EventRepository {
 	/**
 	 * Get visible, upcoming events with the same name/slug
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getDuplicateEvents()
 	{
@@ -237,7 +237,7 @@ class DbEventRepository implements EventRepository {
      *
      * @param int $event_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getApplications($event_id)
 	{
@@ -249,7 +249,7 @@ class DbEventRepository implements EventRepository {
 	/**
 	 * Get last modified event in database
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getLastModifiedEvent()
 	{
@@ -262,7 +262,7 @@ class DbEventRepository implements EventRepository {
      *
      * @param int $organizer_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getLastModifiedEventByOrganizer($organizer_id)
 	{
@@ -276,7 +276,7 @@ class DbEventRepository implements EventRepository {
      *
      * @param int $region_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */	
 	public function getLastModifiedEventByRegion($region_id)
 	{
@@ -290,7 +290,7 @@ class DbEventRepository implements EventRepository {
      *
      * @param string $city
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getLastModifiedEventByCity($city)
 	{

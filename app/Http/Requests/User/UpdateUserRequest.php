@@ -19,4 +19,25 @@ class UpdateUserRequest extends Request {
 		];
 	}
 
+
+    /**
+     * Persist data.
+     *
+     * @param object    $userRepo
+     * @param int       $user_id
+     *
+     * @return bool|int
+     */
+    public function persist($userRepo, $user_id)
+    {
+        $user = $userRepo->findById($user_id);
+
+        $data = [
+            'username'	=> $this->request->get('username'),
+            'email'		=> $this->request->get('email')
+        ];
+
+        return $user->update($data);
+    }
+
 }

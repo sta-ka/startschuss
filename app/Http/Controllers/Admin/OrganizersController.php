@@ -1,15 +1,15 @@
 <?php namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Organizer\OrganizerRepository as Organizers;
-use App\Services\Creator\OrganizerCreator;
 
-use App\Http\Requests\Organizer\CreateOrganizerRequest;
-use App\Http\Requests\Organizer\UpdateContactsRequest;
-use App\Http\Requests\Organizer\UpdateGeneralDataRequest;
+use App\Models\Organizer\OrganizerRepository as Organizers;
+
+use App\Http\Requests\Organizer\UploadLogoRequest;
 use App\Http\Requests\Organizer\UpdateProfileRequest;
 use App\Http\Requests\Organizer\UpdateSeoDataRequest;
-use App\Http\Requests\Organizer\UploadLogoRequest;
+use App\Http\Requests\Organizer\UpdateContactsRequest;
+use App\Http\Requests\Organizer\CreateOrganizerRequest;
+use App\Http\Requests\Organizer\UpdateGeneralDataRequest;
 
 /**
  * Class OrganizersController
@@ -78,9 +78,7 @@ class OrganizersController extends Controller {
 	 */
 	public function create(CreateOrganizerRequest $request)
 	{
-		$success = (new OrganizerCreator($this->organizerRepo))
-					->createOrganizer($request->all());
-
+		$success = $request->persist($this->organizerRepo);
 		notify($success, 'organizer_created');
 
 		return redirect('admin/organizers/show');
@@ -111,8 +109,7 @@ class OrganizersController extends Controller {
 	 */
 	public function updateGeneralData(UpdateGeneralDataRequest $request, $organizer_id)
 	{
-		(new OrganizerCreator($this->organizerRepo))
-        	->editGeneralData($request->all(), $organizer_id);
+        $request->persist($this->organizerRepo, $organizer_id);
 
 		return redirect('admin/organizers/'. $organizer_id .'/show');
 	}
@@ -141,8 +138,7 @@ class OrganizersController extends Controller {
 	 */
 	public function updateProfile(UpdateProfileRequest $request, $organizer_id)
 	{
-		(new OrganizerCreator($this->organizerRepo))
-        	->editProfile($request->all(), $organizer_id);
+        $request->persist($this->organizerRepo, $organizer_id);
 
 		return redirect('admin/organizers/'. $organizer_id .'/show');
 	}
@@ -171,8 +167,7 @@ class OrganizersController extends Controller {
 	 */
 	public function updateContacts(UpdateContactsRequest $request, $organizer_id)
 	{
-		(new OrganizerCreator($this->organizerRepo))
-        	->editContacts($request->all(), $organizer_id);
+        $request->persist($this->organizerRepo, $organizer_id);
 
 		return redirect('admin/organizers/'. $organizer_id .'/show');
 
@@ -202,8 +197,7 @@ class OrganizersController extends Controller {
 	 */
 	public function updateSeoData(UpdateSeoDataRequest $request, $organizer_id)
 	{
-		(new OrganizerCreator($this->organizerRepo))
-        	->editSeoData($request->all(), $organizer_id);
+        $request->persist($this->organizerRepo, $organizer_id);
 
 		return redirect('admin/organizers/'. $organizer_id .'/show');
 
@@ -233,8 +227,7 @@ class OrganizersController extends Controller {
 	 */
 	public function updateLogo(UploadLogoRequest $request, $organizer_id)
 	{
-		(new OrganizerCreator($this->organizerRepo))
-			->processLogo($organizer_id);
+        $request->persist($this->organizerRepo, $organizer_id);
 
 		return redirect('admin/organizers/edit-logo/'. $organizer_id);
 

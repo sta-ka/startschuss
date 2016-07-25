@@ -9,7 +9,7 @@
 	<div class="span8">
 		@include('partials/validation_errors')
 
-		{!! Form::model($education, ['url' => 'applicant/profile/update-education/'.$education->id]) !!}
+		{!! Form::model($education, ['url' => 'applicant/profile/update-education/'. $education->id]) !!}
 			<div class="span6 alpha">
 				<div class="span3 alpha form-group">
 					{!! Form::label('university', 'Hochschule') !!}

@@ -11,7 +11,7 @@
 	<div class="span6">
 		@include('partials/validation_errors')
 
-		{!! Form::model($organizer, ['url' => 'admin/organizers/'.$organizer->id.'/update-general-data']) !!}
+		{!! Form::model($organizer, ['url' => 'admin/organizers/'. $organizer->id .'/update-general-data']) !!}
 			<div class="span4 alpha">
 				<div class="form-group">
 					{!! Form::label('name', 'Name')!!}

@@ -19,7 +19,7 @@ class DbJobRepository implements JobRepository {
      *
      * @param int|bool $limit
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getAll($limit = false)
 	{
@@ -35,7 +35,7 @@ class DbJobRepository implements JobRepository {
 	/**
 	 * Get all jobs
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getActive()
 	{
@@ -50,7 +50,7 @@ class DbJobRepository implements JobRepository {
      *
      * @param string $term
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getResults($term)
 	{
@@ -75,7 +75,7 @@ class DbJobRepository implements JobRepository {
      * @param int $job_id
      * @param bool $trashed
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function findById($job_id, $trashed = true)
 	{
@@ -93,7 +93,7 @@ class DbJobRepository implements JobRepository {
      *
      * @param string $slug
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function findBySlug($slug)
 	{

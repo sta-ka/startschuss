@@ -45,8 +45,8 @@
 				@foreach($events as $event)
 					@foreach($event->revisionHistory as $history)
 						<tr>
-							<td title="Geändert durch">{!! HTML::link('admin/users/'.$history->user_id.'/show', $user_list[$history->user_id]) !!}</td>
-							<td>{!! HTML::link('admin/events/'.$history->user_id.'/show', $event->name) !!} - {{ $history->fieldName() }}</td>
+							<td title="Geändert durch">{!! HTML::link('admin/users/'. $history->user_id .'/show', $user_list[$history->user_id]) !!}</td>
+							<td>{!! HTML::link('admin/events/'. $history->user_id .'/show', $event->name) !!} - {{ $history->fieldName() }}</td>
 							<td>{{ Str::limit($history->oldValue(), 180) }}</td>
 							<td>{{ Str::limit($history->newValue(), 180) }}</td>
 							<td>{{ Date::format($history->created_at, 'datetime') }}</td>

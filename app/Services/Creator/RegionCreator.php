@@ -35,6 +35,5 @@ class RegionCreator extends Creator {
 		];
 
 		return $region->update($data);
-
 	}
 }

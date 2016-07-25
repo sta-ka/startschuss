@@ -21,8 +21,8 @@
 						<td>{{ $region->id }}</td>
 						<td>{{ $region->name }}</td>
 						<td>
-							{!! HTML::imageLink('admin/regions/'.$region->id.'/edit', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
-							{!! HTML::imageLink('jobmessen/'.$region->slug, 'assets/img/icons/show.png', 'Anzeigen', ['target' => '_blank', 'title' => 'Anzeigen']) !!}
+							{!! HTML::imageLink('admin/regions/'. $region->id .'/edit', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
+							{!! HTML::imageLink('jobmessen/'. $region->slug, 'assets/img/icons/show.png', 'Anzeigen', ['target' => '_blank', 'title' => 'Anzeigen']) !!}
 						</td>
 					</tr>
 				@endforeach

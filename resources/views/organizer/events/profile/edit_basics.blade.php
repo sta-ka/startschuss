@@ -12,7 +12,7 @@
 	<div class="span8">
 		@include('partials/validation_errors')
 
-		{!! Form::model($event, ['url' => 'organizer/profile/'.$event->id.'/update-basics']) !!}
+		{!! Form::model($event, ['url' => 'organizer/profile/'. $event->id .'/update-basics']) !!}
 			<div class="span6 alpha">
 				<div class="span3 alpha">
 					<div class="form-group">

@@ -11,7 +11,7 @@
 	<div class="span9 omega">
 		@include('partials/validation_errors')
 
-		{!! Form::model($event, ['url' => 'organizer/profile/'.$event->id.'/update-program']) !!}
+		{!! Form::model($event, ['url' => 'organizer/profile/'. $event->id .'/update-program']) !!}
 			<div class="span7 alpha">
 				<div class="form-group">
 					{!! Form::label('program', 'Programm') !!}

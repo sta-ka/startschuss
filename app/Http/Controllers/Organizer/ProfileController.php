@@ -2,18 +2,17 @@
 
 use App\Http\Controllers\Controller;
 
-use App\Models\Company\CompanyRepository as Companies;
+use App\Models\User\UserRepository as Users;
 use App\Models\Event\EventRepository as Events;
 use App\Models\Misc\Region\RegionRepository as Regions;
-use App\Models\User\UserRepository as Users;
-use App\Services\Creator\EventCreator;
+use App\Models\Company\CompanyRepository as Companies;
 
+use App\Http\Requests\Event\UploadLogoRequest;
 use App\Http\Requests\Event\RequestEventRequest;
-use App\Http\Requests\Event\UpdateContactsRequest;
 use App\Http\Requests\Event\UpdateProfileRequest;
 use App\Http\Requests\Event\UpdateProgramRequest;
+use App\Http\Requests\Event\UpdateContactsRequest;
 use App\Http\Requests\Event\UpdateApplicationDeadlineRequest;
-use App\Http\Requests\Event\UploadLogoRequest;
 
 use Input;
 use HTML;
@@ -103,9 +102,7 @@ class ProfileController extends Controller {
      */
     public function create(RequestEventRequest $request, $event_id)
     {
-        $success = (new EventCreator($this->eventRepo))
-                        ->requestEvent($request->all(), $event_id);
-
+        $success = $request->persist($this->eventRepo, $event_id);
         notify($success, 'event_created');
 
         return redirect('organizer/profile');
@@ -149,8 +146,7 @@ class ProfileController extends Controller {
      */
     public function updateBasics(UpdateProfileRequest $request, $event_id)
     {
-        (new EventCreator($this->eventRepo))
-            ->editProfile($request->all(), $event_id);
+        $request->persist($this->eventRepo, $event_id);
 
         return redirect('organizer/profile/' . $event_id . '/show');
     }
@@ -179,8 +175,7 @@ class ProfileController extends Controller {
      */
     public function updateProgram(UpdateProgramRequest $request, $event_id)
     {
-        (new EventCreator($this->eventRepo))
-            ->editProgram($request->all(), $event_id);
+        $request->persist($this->eventRepo, $event_id);
 
         return redirect('organizer/profile/' . $event_id . '/show');
     }
@@ -209,8 +204,7 @@ class ProfileController extends Controller {
      */
     public function updateContacts(UpdateContactsRequest $request, $event_id)
     {
-        (new EventCreator($this->eventRepo))
-            ->editContacts($request->all(), $event_id);
+        $request->persist($this->eventRepo, $event_id);
 
         return redirect('organizer/profile/' . $event_id . '/show');
     }
@@ -239,8 +233,7 @@ class ProfileController extends Controller {
      */
     public function updateLogo(UploadLogoRequest $request, $event_id)
     {
-        (new EventCreator($this->eventRepo))
-            ->processLogo($event_id);
+        $request->persist($this->eventRepo, $event_id);
 
         return redirect('organizer/profile/' . $event_id . '/edit-logo');
     }
@@ -281,8 +274,7 @@ class ProfileController extends Controller {
      */
     public function updateApplicationDeadline(UpdateApplicationDeadlineRequest $request, $event_id)
     {
-        (new EventCreator($this->eventRepo))
-            ->editApplicationDeadline($request->all(), $event_id);
+        $request->persist($this->eventRepo, $event_id);
 
         return redirect('organizer/profile/' . $event_id . '/manage-interviews');
     }

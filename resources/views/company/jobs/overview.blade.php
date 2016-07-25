@@ -36,7 +36,7 @@
 							<td>{{ Date::format($job->expire_at, 'date') }}</td>
 							<td>{{ $job->created_by }}</td>
 							<td>
-								{!! HTML::imageLink('company/jobs/'.$job->id.'/show', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
+								{!! HTML::imageLink('company/jobs/'. $job->id .'/show', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
 							</td>
 						</tr>
 					@endforeach

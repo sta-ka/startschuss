@@ -17,4 +17,22 @@ class CreateOrganizerRequest extends Request {
 		];
 	}
 
+    /**
+     * Persist data.
+     *
+     * @param object    $organizerRepo
+     *
+     * @return bool|int
+     */
+    public function persist($organizerRepo)
+    {
+        $data = [
+            'name'		=> $this->request->get('name'),
+            'slug'		=> $this->request->get('slug')
+        ];
+
+        return $organizerRepo->create($data);
+    }
+
+
 }

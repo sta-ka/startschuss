@@ -10,7 +10,7 @@
 		@include('partials/validation_errors')
 
 		@if($applicant->photo)
-			{!! HTML::image('uploads/photos/small/'.$applicant->photo, $applicant->name) !!}
+			{!! HTML::image('uploads/photos/small/'. $applicant->photo, $applicant->name) !!}
 			<br><br>
 			{!! HTML::link('applicant/profile/delete-photo', 'Foto löschen', ['class' => 'btn btn-danger btn-sm']) !!}
 		@else

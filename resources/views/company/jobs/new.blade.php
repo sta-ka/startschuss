@@ -9,7 +9,7 @@
 	<div class="span8">
 		@include('partials/validation_errors')
 
-		{!! Form::open(['url' => 'company/jobs/create/'.$company->id]) !!}
+		{!! Form::open(['url' => 'company/jobs/create/'. $company->id]) !!}
 			<div class="span6 alpha">
 				<div class="form-group">
 					{!! Form::label('title', 'Titel/Kurzinfo') !!}

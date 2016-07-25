@@ -21,7 +21,7 @@ class ArticleCreator extends Creator {
      *
      * @return static
      */
-    public function createArticle($input)
+    public function create($input)
 	{
 		$data = [
 			'title'				=> $input['title'],

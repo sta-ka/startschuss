@@ -18,4 +18,24 @@ class UpdateSeoDataRequest extends Request {
 		];
 	}
 
+    /**
+     * Persist data.
+     *
+     * @param object   $jobRepo
+     * @param int      $job_id
+     *
+     * @return bool|int
+     */
+    public function persist($jobRepo, $job_id)
+    {
+        $job = $jobRepo->findById($job_id);
+
+        $data = [
+            'slug'				=> $this->request->get('slug'),
+            'meta_description'	=> $this->request->get('meta_description'),
+            'keywords'			=> $this->request->get('keywords')
+        ];
+
+        return $job->update($data);
+    }
 }

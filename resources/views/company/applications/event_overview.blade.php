@@ -53,7 +53,7 @@
 						<tr>
 							<td>
 								{{ $application->user->username }}
-								{!! HTML::imageLink('company/applications/applicant/'.$application->event->id.'/'.$application->id, 'assets/img/icons/show.png', 'Anzeigen', ['title' => 'Anzeigen']) !!}
+								{!! HTML::imageLink('company/applications/applicant/'. $application->event->id .'/'. $application->id, 'assets/img/icons/show.png', 'Anzeigen', ['title' => 'Anzeigen']) !!}
 							</td>
 							<td>{{ $application->created_at }}</td>
 							<td>
@@ -66,7 +66,7 @@
 								@endif	
 							</td>
 							<td>
-								{!! HTML::imageLink('company/applications/show/'.$application->event->id.'/'.$application->id, 'assets/img/icons/show.png', 'Anzeigen', ['title' => 'Anzeigen']) !!}
+								{!! HTML::imageLink('company/applications/show/'. $application->event->id .'/'. $application->id, 'assets/img/icons/show.png', 'Anzeigen', ['title' => 'Anzeigen']) !!}
 							</td>
 						</tr>
 					@endforeach

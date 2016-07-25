@@ -60,6 +60,22 @@ class FrontendTest extends TestCase
     }
 
     /**
+     * Test user login with validation errors.
+     *
+     * @return void
+     */
+    public function testUserLoginValidation()
+    {
+        $this->visit('login')
+             ->type('max', 'username')
+             ->type('', 'password')
+             ->press('Login');
+
+        // expected validation error
+        $this->see('<strong>Passwort</strong> muss ausgefüllt sein.');
+    }
+
+    /**
      * Test validation for contact form.
      *
      * @return void
@@ -75,5 +91,12 @@ class FrontendTest extends TestCase
         // expected validation error
         $this->see('<strong>Name</strong> muss ausgefüllt sein.')
              ->see('<strong>E-Mail</strong> ist keine gültige E-Mail-Adresse.');
+    }
+
+    public function testSearch()
+    {
+        $event = factory(App\Models\Event\Events::class)->make();
+
+        dd($event);
     }
 }

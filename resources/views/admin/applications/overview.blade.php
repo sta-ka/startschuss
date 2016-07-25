@@ -39,9 +39,9 @@
 					<td>{{ $application->event->name }}</td>
 					<td>{{ $application->created_at }}</td>
 					<td>
-						{!! HTML::imageLink('admin/applications/'.$application->id.'/show', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
+						{!! HTML::imageLink('admin/applications/'. $application->id .'/show', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
 						@if(! $application->deleted_at) 
-							{!! HTML::imageLink('admin/applications/'.$application->id.'/delete', 'assets/img/icons/erase.png', 'Löschen', ['title' => 'Löschen']) !!}
+							{!! HTML::imageLink('admin/applications/'. $application->id .'/delete', 'assets/img/icons/erase.png', 'Löschen', ['title' => 'Löschen']) !!}
 						@endif
 					</td>
 				</tr>

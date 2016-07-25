@@ -16,7 +16,7 @@ interface EducationRepository {
      *
      * @param int $education_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function findById($education_id);
 
@@ -25,7 +25,7 @@ interface EducationRepository {
      *
      * @param int $applicant_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function findAllById($applicant_id);
 

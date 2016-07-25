@@ -11,7 +11,7 @@
 	<div class="span6">
 		@include('partials/validation_errors')
 
-		{!! Form::model($event, ['url' => 'admin/events/'.$event->id.'/update-profile']) !!}
+		{!! Form::model($event, ['url' => 'admin/events/'. $event->id .'/update-profile']) !!}
 			<div class="span6 alpha">
 				<div class="span3 alpha">
 					<div class="form-group">

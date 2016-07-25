@@ -18,12 +18,12 @@ class AuthMiddleware {
 
         if (! \Sentry::check()) {
             notify('error', 'access_denied', false);
-            return \Redirect::to('home');
+            return \Redirect::route('home');
         }
 
         if ($role && ! $user->inGroup(\Sentry::findGroupByName($role))) {
             notify('error', 'access_denied', false);
-            return \Redirect::to('home');
+            return \Redirect::route('home');
         }
 
 		return $next($request);

@@ -49,7 +49,7 @@
 
 							</td>
 							<td>
-								{!! HTML::imageLink('applicant/applications/'.$application->id.'/show', 'assets/img/icons/show.png', 'Anzeigen', ['title' => 'Anzeigen']) !!}
+								{!! HTML::imageLink('applicant/applications/'. $application->id .'/show', 'assets/img/icons/show.png', 'Anzeigen', ['title' => 'Anzeigen']) !!}
 							</td>
 						</tr>
 					@endforeach

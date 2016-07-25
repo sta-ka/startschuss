@@ -14,7 +14,7 @@
             <table cellpadding="0" cellspacing="0" bgcolor="#ffffff" width="600" align="center">
                 <tr>
                     <td>
-                        <table cellpadding="10" cellspacing="0" align="center">
+                        <table cellpadding="0" cellspacing="0" align="center">
 
                             @include('emails.partials.logo')
 

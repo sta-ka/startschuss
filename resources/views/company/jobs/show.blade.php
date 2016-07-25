@@ -10,7 +10,7 @@
 	</div>
 	<div class="span8">
 		<ul>
-			<li>{!! HTML::link('company/jobs/'.$job->id.'/show', $job->title) !!}</li>
+			<li>{!! HTML::link('company/jobs/'. $job->id .'/show', $job->title) !!}</li>
 		</ul>
 	</div>
 	<div class="span2 omega">

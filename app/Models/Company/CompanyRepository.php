@@ -18,7 +18,7 @@ interface CompanyRepository {
      *
      * @param bool $trashed
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function getAll($trashed = false);
 
@@ -27,7 +27,7 @@ interface CompanyRepository {
      *
      * @param int $company_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function findById($company_id);
 
@@ -37,7 +37,7 @@ interface CompanyRepository {
      *
      * @param string $slug
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function findBySlug($slug);
 
@@ -47,7 +47,7 @@ interface CompanyRepository {
      *
      * @param int $event_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function getCompanies($event_id);
 
@@ -57,7 +57,7 @@ interface CompanyRepository {
      * @param int $user_id
      * @param int $event_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function getCompaniesGivingInterviews($user_id, $event_id);
 
@@ -66,7 +66,7 @@ interface CompanyRepository {
      *
      * @param int $company_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function getUsers($company_id);
 
@@ -76,7 +76,7 @@ interface CompanyRepository {
      * @param int $company_id
      * @param int $user_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
 	public function addLinkage($company_id, $user_id);
 
@@ -86,7 +86,7 @@ interface CompanyRepository {
      * @param int $company_id
      * @param int $user_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
 	public function deleteLinkage($company_id, $user_id);
 

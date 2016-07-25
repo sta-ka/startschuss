@@ -16,7 +16,7 @@ interface ExperienceRepository {
      *
      * @param int $experience_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function findById($experience_id);
 
@@ -25,7 +25,7 @@ interface ExperienceRepository {
      *
      * @param int $applicant_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function findAllById($applicant_id);
 }

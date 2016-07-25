@@ -10,10 +10,10 @@ use App\Services\Creator\UserCreator;
 use App\Services\Mailers\UserMailer;
 
 use App\Http\Requests\User\LoginRequest;
-use App\Http\Requests\User\RegisterRequest;
-use App\Http\Requests\User\ForgottenPasswordRequest;
-use App\Http\Requests\User\NewPasswordRequest;
 use App\Http\Requests\User\ContactRequest;
+use App\Http\Requests\User\RegisterRequest;
+use App\Http\Requests\User\NewPasswordRequest;
+use App\Http\Requests\User\ForgottenPasswordRequest;
 
 use Input;
 use Sentry;
@@ -116,14 +116,14 @@ class UsersController extends Controller {
 	{
 //		notify('error', 'registration_disabled', false);
 //
-//		return redirect('home');
+//		return redirect('/');
 
 		$success = (new UserCreator($userRepo))
         			->register($request->all());
 
         notify($success, 'registration');
 
-        return redirect('home');
+        return redirect('/');
 	}
 
 

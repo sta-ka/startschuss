@@ -6,7 +6,7 @@ interface UserRepository {
      * Get all user with info about their revisionHistory, user group
      * and their throttle status
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function getAll();
 
@@ -27,7 +27,7 @@ interface UserRepository {
      *
      * @param int $id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function findById($id);
 
@@ -36,7 +36,7 @@ interface UserRepository {
      *
      * @param int $id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function getCompany($id);
 
@@ -45,7 +45,7 @@ interface UserRepository {
      *
      * @param int $user_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function getJobs($user_id);
 
@@ -56,7 +56,7 @@ interface UserRepository {
      * @param int $user_id
      * @param int $job_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function getJob($user_id, $job_id);
 
@@ -67,7 +67,7 @@ interface UserRepository {
      * @param int $user_id
      * @param bool $upcoming
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function getEvents($user_id, $upcoming = true);
 
@@ -77,7 +77,7 @@ interface UserRepository {
      * @param int $user_id
      * @param string $user_group
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function getEventsHostingInterviews($user_id, $user_group);
 
@@ -87,7 +87,7 @@ interface UserRepository {
      * @param int $user_id
      * @param int $event_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function getApplicationsForCompany($user_id, $event_id);
 
@@ -96,14 +96,14 @@ interface UserRepository {
      *
      * @param int $user_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function getLogins($user_id);
 
     /**
      * Get all login attempts
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function getLoginAttempts();
 
@@ -115,7 +115,7 @@ interface UserRepository {
      * @param int $user_id
      * @param bool $all
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function checkEventOwnership($event_id, $user_id, $all);
 

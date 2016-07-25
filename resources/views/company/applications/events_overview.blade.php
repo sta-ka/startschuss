@@ -18,7 +18,7 @@
 						<tr>
 							<td>{{ $event->name }}</td>
 							<td style="width:80px">
-								{!! HTML::imageLink('company/applications/event/'.$event->id, 'assets/img/icons/show.png', 'Anzeigen', ['title' => 'Anzeigen']) !!}
+								{!! HTML::imageLink('company/applications/event/'. $event->id, 'assets/img/icons/show.png', 'Anzeigen', ['title' => 'Anzeigen']) !!}
 							</td>
 						</tr>
 					@endforeach

@@ -3,7 +3,6 @@
 use App\Http\Controllers\Controller;
 
 use App\Models\Misc\Article\ArticleRepository as Articles;
-use App\Services\Creator\ArticleCreator;
 
 use App\Http\Requests\Article\NewArticleRequest;
 use App\Http\Requests\Article\UpdateDataRequest;
@@ -61,9 +60,7 @@ class ArticlesController extends Controller {
 	 */
 	public function create(NewArticleRequest $request)
 	{
-		$success = (new ArticleCreator($this->articleRepo))
-					->createArticle($request->all());
-
+        $success = $request->persist($this->articleRepo);
 		notify($success, 'article_created');
 
 		return redirect('admin/articles');
@@ -93,10 +90,9 @@ class ArticlesController extends Controller {
 	 */
 	public function update(UpdateDataRequest $request, $article_id)
 	{
-		(new ArticleCreator($this->articleRepo))
-			->edit($request->all(), $article_id);
+        $request->persist($this->articleRepo, $article_id);
 
-		return redirect('admin/articles/'.$article_id.'/edit');
+		return redirect('admin/articles/'. $article_id .'/edit');
 	}
 
 	/**

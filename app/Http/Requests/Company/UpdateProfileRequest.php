@@ -16,4 +16,23 @@ class UpdateProfileRequest extends Request {
 		];
 	}
 
+    /**
+     * Persist data.
+     *
+     * @param object $companyRepo
+     * @param int    $company_id
+     *
+     * @return static
+     */
+    public function persist($companyRepo, $company_id)
+    {
+        $company = $companyRepo->findById($company_id);
+
+        $data = [
+            'profile' => \Purifier::clean($this->request->get('profile'))
+        ];
+
+        return $company->update($data);
+    }
+
 }

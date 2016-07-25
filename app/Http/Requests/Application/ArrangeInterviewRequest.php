@@ -30,4 +30,22 @@ class ArrangeInterviewRequest extends Request {
 		return $rules;
 	}
 
+    /**
+     * Persist data.
+     *
+     * @param object    $applicationRepo
+     * @param int       $application_id
+     *
+     * @return bool|int
+     */
+    public function persist($applicationRepo, $application_id)
+    {
+        $application = $applicationRepo->findById($application_id);
+
+        $timestamp = \Date::germanToSql($this->request->get('date')) . ' ' . $this->request->get('hour') . ':' . $this->request->get('minute') . ':00';
+        $data = ['time_of_interview' => $timestamp];
+
+        // adds a time to the interview for the application
+        return $application->update($data);
+    }
 }

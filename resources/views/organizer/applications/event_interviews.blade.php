@@ -28,7 +28,7 @@
 	<div>
 		<ol class="breadcrumb">
 			<li>{!! HTML::link('organizer/applications', 'Übersicht') !!}</li>
-			<li>{!! HTML::link('organizer/applications/event/'.$event->id, 'Bewerbungen - ' . $event->name) !!}</li>
+			<li>{!! HTML::link('organizer/applications/event/'. $event->id, 'Bewerbungen - ' . $event->name) !!}</li>
 			<li class="active">Einzelgespräche - Übersicht</li>
 		</ol>
 	</div>
@@ -49,7 +49,7 @@
 						<td>{{ isset($application->time_of_interview) ? Date::format($application->time_of_interview, 'datetime_short'). ' Uhr' : '-' }}</td>
 						<td>{{ $application->user->username }}</td>
 						<td>
-							{!! HTML::imageLink('organizer/applications/show/'.$event->id.'/'.$application->id, 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
+							{!! HTML::imageLink('organizer/applications/show/'. $event->id .'/'. $application->id, 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
 						</td>
 					</tr>
 				@endif

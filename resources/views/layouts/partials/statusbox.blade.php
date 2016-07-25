@@ -13,7 +13,7 @@
 	<ul class="nav navbar-nav navbar-right">
 		@if(isset($frontend) && isset($link))
 			<li>{!! HTML::link($link . '/dashboard', 'Mein Konto') !!}</li>
-			<li class="divider-vertical"></li>
+			<li class="divider-vertical hidden-xs"></li>
 		@endif
 
 		<li>{!! HTML::linkRoute('logout', 'Logout') !!}</li>
@@ -23,7 +23,7 @@
 		<li {{ set_active('login*') }}>
 			{!! HTML::link('login', 'Login') !!}
 		</li>
-		<li class="divider-vertical"></li>
+		<li class="divider-vertical hidden-xs"></li>
 		<li {{ set_active('registrieren*') }}>
 			{!! HTML::link('registrieren', 'Registrieren') !!}
 		</li>							

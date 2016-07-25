@@ -42,7 +42,7 @@
 								<tr>
 									<td rowspan="2" width="100px" height="50px" class="logo">
 										@if($job->logo)
-											{!! HTML::image('uploads/logos/medium/'.$job->logo, $company->full_name) !!}
+											{!! HTML::image('uploads/logos/medium/'. $job->logo, $company->full_name) !!}
 										@endif
 									</td>
 									<td colspan="3" width="400px">
@@ -73,7 +73,7 @@
 	<div class="span3 omega">
 		<div id="organizer">
 			@if($company->logo)
-				{!! HTML::imageLink('veranstalter/'.$company->slug, 'uploads/logos/big/'.$company->logo, $company->full_name) !!}
+				{!! HTML::imageLink('veranstalter/'. $company->slug, 'uploads/logos/big/'. $company->logo, $company->full_name) !!}
 				<br><br>
 			@endif
 			<h5>Unternehmenswebseite</h5>

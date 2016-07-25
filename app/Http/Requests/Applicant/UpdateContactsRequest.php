@@ -17,4 +17,23 @@ class UpdateContactsRequest extends Request {
 		];
 	}
 
+    /**
+     * Persist data.
+     *
+     * @param object   $applicantRepo
+     *
+     * @return bool|int
+     */
+    public function persist($applicantRepo)
+    {
+        $applicant = $applicantRepo->findByUserId(\Sentry::getUser()->getId());
+
+        $data = [
+            'email'	=> $this->request->get('email'),
+            'phone'	=> $this->request->get('phone')
+        ];
+
+        return  $applicant->update($data);
+    }
+
 }

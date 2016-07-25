@@ -5,7 +5,7 @@ class DbUserRepository implements UserRepository {
 	/**
 	 * Get all user with additional info.
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getAll()
 	{
@@ -47,7 +47,7 @@ class DbUserRepository implements UserRepository {
      *
      * @param int $id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function findById($id)
 	{
@@ -61,7 +61,7 @@ class DbUserRepository implements UserRepository {
      *
      * @param int $id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getCompany($id)
 	{
@@ -76,7 +76,7 @@ class DbUserRepository implements UserRepository {
      *
      * @param int $user_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getJobs($user_id)
 	{
@@ -94,7 +94,7 @@ class DbUserRepository implements UserRepository {
      * @param int $user_id
      * @param int $job_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getJob($user_id, $job_id)
 	{
@@ -113,7 +113,7 @@ class DbUserRepository implements UserRepository {
      * @param int $user_id
      * @param bool $upcoming
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getEvents($user_id, $upcoming = true)
 	{
@@ -131,7 +131,7 @@ class DbUserRepository implements UserRepository {
      * @param int $user_id
      * @param string $user_group
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getEventsHostingInterviews($user_id, $user_group)
 	{
@@ -158,7 +158,7 @@ class DbUserRepository implements UserRepository {
      * @param int $user_id
      * @param int $event_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getApplicationsForCompany($user_id, $event_id)
 	{
@@ -175,7 +175,7 @@ class DbUserRepository implements UserRepository {
      *
      * @param int $user_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getLogins($user_id)
 	{
@@ -190,7 +190,7 @@ class DbUserRepository implements UserRepository {
 	/**
 	 * Get all login attempts.
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getLoginAttempts()
 	{
@@ -208,7 +208,7 @@ class DbUserRepository implements UserRepository {
      * @param int $user_id
      * @param bool $all
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function checkEventOwnership($event_id, $user_id, $all)
 	{

@@ -60,7 +60,7 @@
 					<td>{{ $event->id }}</td>
 					<td>
 						@if(isset($event->user->username))
-							{!! HTML::link('admin/users/'.$event->user->id.'/show', $event->user->username) !!}
+							{!! HTML::link('admin/users/'. $event->user->id .'/show', $event->user->username) !!}
 						@else
 							-
 						@endif
@@ -79,11 +79,11 @@
 						@endif
 					</td>
 					<td>
-						{!! HTML::imageLink('admin/events/'.$event->id.'/show', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
-						{!! HTML::imageLink('admin/events/new/'.$event->id, 'assets/img/icons/plus.png', 'Neue Veranstaltung', ['title' => 'Neue Veranstaltung']) !!}
+						{!! HTML::imageLink('admin/events/'. $event->id .'/show', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
+						{!! HTML::imageLink('admin/events/new/'. $event->id, 'assets/img/icons/plus.png', 'Neue Veranstaltung', ['title' => 'Neue Veranstaltung']) !!}
 							
 						@if( ! $event->deleted_at)
-							{!! HTML::imageLink('admin/events/'.$event->id.'/delete', 'assets/img/icons/erase.png', 'Löschen', ['title' => 'Löschen']) !!}
+							{!! HTML::imageLink('admin/events/'. $event->id .'/delete', 'assets/img/icons/erase.png', 'Löschen', ['title' => 'Löschen']) !!}
 						@endif
 					</td>
 				</tr>

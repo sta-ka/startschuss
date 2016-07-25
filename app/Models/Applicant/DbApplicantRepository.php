@@ -17,7 +17,7 @@ class DbApplicantRepository implements ApplicantRepository {
 	/**
 	 * Get all applicants.
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getAll()
 	{
@@ -30,7 +30,7 @@ class DbApplicantRepository implements ApplicantRepository {
      *
      * @param int $applicant_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function findById($applicant_id)
 	{
@@ -42,7 +42,7 @@ class DbApplicantRepository implements ApplicantRepository {
      *
      * @param int $user_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function findByUserId($user_id)
 	{

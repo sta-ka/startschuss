@@ -10,7 +10,7 @@ class DbApplicationRepository implements ApplicationRepository {
      *
      * @param int|bool $user_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getAll($user_id = false)
 	{
@@ -29,7 +29,7 @@ class DbApplicationRepository implements ApplicationRepository {
      *
      * @param int $application_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function findById($application_id)
 	{

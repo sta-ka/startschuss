@@ -21,4 +21,26 @@ class UpdateGeneralDataRequest extends Request {
 		];
 	}
 
+    /**
+     * Persist data.
+     *
+     * @param object $companyRepo
+     * @param int $company_id
+     *
+     * @return static
+     */
+    public function persist($companyRepo, $company_id)
+    {
+        $company = $companyRepo->findById($company_id);
+
+        $data = [
+            'name'      => $this->request->get('name'),
+            'full_name' => $this->request->get('full_name'),
+            'featured'  => $this->request->get('featured', false),
+            'premium'   => $this->request->get('premium', false)
+        ];
+
+        return $company->update($data);
+    }
+
 }

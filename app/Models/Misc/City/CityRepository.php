@@ -12,7 +12,7 @@ interface CityRepository {
      *
      * @param string $slug
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function findBySlug($slug);
 
@@ -21,6 +21,6 @@ interface CityRepository {
      *
      * @param int $id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function findById($id);}

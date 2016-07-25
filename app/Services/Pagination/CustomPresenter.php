@@ -1,24 +1,12 @@
 <?php namespace App\Services\Pagination;
 
 use Illuminate\Support\HtmlString;
-use Illuminate\Contracts\Pagination\Paginator as PaginatorContract;
 use Illuminate\Pagination\BootstrapThreePresenter;
 use Illuminate\Pagination\UrlWindowPresenterTrait;
 
 class CustomPresenter extends BootstrapThreePresenter
 {
     use UrlWindowPresenterTrait;
-
-    /**
-     * Create a custom presenter.
-     *
-     * @param  \Illuminate\Contracts\Pagination\Paginator  $paginator
-     * @return void
-     */
-    public function __construct(PaginatorContract $paginator)
-    {
-        $this->paginator = $paginator;
-    }
 
     /**
      * Determine if the underlying paginator being presented has pages to show.

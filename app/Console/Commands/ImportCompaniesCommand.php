@@ -24,7 +24,7 @@ class ImportCompaniesCommand extends Command {
 	 */
 	public function handle()
 	{
-		$this->info('You are about to import new companies to the database.');
+		$this->info('You are about to import new companies to the database.' . "\n");
 
         $filename = $this->ask('Give the name of the file.');
 

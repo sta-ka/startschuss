@@ -41,13 +41,17 @@
     display: inline-block;
     font-size: 16px;
     padding: 0 3px 2px;
-    border-bottom: 1px solid #43608F; }
+    border-bottom: 2px solid #43608F; }
 
 #article ul {
-  margin: 20px 10px;
+  margin: 20px;
   text-align: justify;
-  padding: 10px;
+  padding: 0 10px;
   background: #eeeeee; }
+  #article ul h3 {
+    border: none;
+    font-weight: bold;
+    color: #43608F; }
   #article ul li {
     padding-top: 10px;
     margin-left: 20px; }
@@ -65,16 +69,11 @@
   .article-preview h4 {
     margin-top: 0; }
 
-#more-articles, #article-featured {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex; }
-
 #more-articles__header {
   width: 960px;
   float: left;
   padding: 30px;
-  margin: 10px 0 20px -10px;
+  margin: 10px 0 20px;
   font-weight: 200;
   line-height: 2.1428571435;
   color: inherit;
@@ -218,10 +217,10 @@
       text-decoration: none; }
 
 #events {
-  width: 680px;
   overflow: hidden;
   border: 1px solid #8e96a7;
-  margin-left: 0; }
+  margin-left: 0;
+  margin-bottom: 15px; }
 
 #events > ul.eventslist li {
   border-bottom: 1px solid #8e96a7;
@@ -250,7 +249,6 @@
   margin: 10px; }
 
 #region-description, #city-description {
-  width: 680px;
   line-height: 22px; }
 
 #region-description p, #city-description p {
@@ -280,6 +278,7 @@
   font-weight: bold; }
 
 #events-archive {
+  width: 210px;
   background: #43608F;
   color: white;
   margin-top: 25px;
@@ -337,7 +336,7 @@
 
 #companies li, #organizers li {
   float: left;
-  width: 98px;
+  width: 94px;
   height: 78px;
   display: table;
   text-align: center;
@@ -385,6 +384,9 @@
 #search h3 {
   margin-top: 0; }
 
+#search .input-group {
+  max-width: 210px; }
+
 #regions ul, #job-type-search ul {
   padding: 2px; }
   #regions ul li, #job-type-search ul li {
@@ -397,6 +399,15 @@
   #job-type-search ul li.active {
     font-weight: bold;
     text-decoration: underline; }
+
+@media (max-width: 991px) {
+  #regions ul {
+    -webkit-column-count: 3;
+       -moz-column-count: 3;
+            column-count: 3;
+    -webkit-column-gap: 10px;
+       -moz-column-gap: 10px;
+            column-gap: 10px; } }
 
 .pager .disabled {
   display: none; }

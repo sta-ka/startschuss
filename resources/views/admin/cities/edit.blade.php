@@ -9,7 +9,7 @@
 	<div class="span7">
 		@include('partials/validation_errors')
 
-		{!! Form::model($city, ['url' => 'admin/cities/'.$city->id.'/update']) !!}
+		{!! Form::model($city, ['url' => 'admin/cities/'. $city->id .'/update']) !!}
 			<div class="span4 alpha">
 				<div class="form-group">
 					{!! Form::label('name', 'Name') !!}

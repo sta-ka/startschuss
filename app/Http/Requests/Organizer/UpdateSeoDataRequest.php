@@ -20,4 +20,24 @@ class UpdateSeoDataRequest extends Request {
 		];
 	}
 
+    /**
+     * Persist data.
+     *
+     * @param object   $organizerRepo
+     * @param int      $organizer_id
+     *
+     * @return bool|int
+     */
+    public function persist($organizerRepo, $organizer_id)
+    {
+        $organizer = $organizerRepo->findById($organizer_id);
+
+        $data = [
+            'slug' 				=> $this->request->get('slug'),
+            'meta_description' 	=> $this->request->get('meta_description'),
+            'keywords' 			=> $this->request->get('keywords')
+        ];
+
+        return $organizer->update($data);
+    }
 }

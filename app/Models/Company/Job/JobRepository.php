@@ -16,14 +16,14 @@ interface JobRepository {
      *
      * @param int|bool $limit
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function getAll($limit = false);
 
     /**
      * Get all jobs
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function getActive();
 
@@ -32,7 +32,7 @@ interface JobRepository {
      *
      * @param string $term
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function getResults($term);
 
@@ -42,7 +42,7 @@ interface JobRepository {
      * @param int $job_id
      * @param bool $trashed
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function findById($job_id, $trashed = true);
 
@@ -51,7 +51,7 @@ interface JobRepository {
      *
      * @param string $slug
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function findBySlug($slug);
 

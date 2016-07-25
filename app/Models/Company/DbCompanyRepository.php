@@ -20,7 +20,7 @@ class DbCompanyRepository implements CompanyRepository {
      *
      * @param bool $trashed
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getAll($trashed = false)
 	{
@@ -38,7 +38,7 @@ class DbCompanyRepository implements CompanyRepository {
      *
      * @param int $company_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function findById($company_id)
 	{
@@ -53,7 +53,7 @@ class DbCompanyRepository implements CompanyRepository {
      *
      * @param string $slug
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function findBySlug($slug)
 	{
@@ -67,12 +67,11 @@ class DbCompanyRepository implements CompanyRepository {
      *
      * @param int $event_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getCompanies($event_id)
 	{
-		return Company::with(['participants' => function($query) use($event_id)
-					{
+		return Company::with(['participants' => function($query) use($event_id) {
 						$query->where('event_id', $event_id);
 					}])->get();
 	}
@@ -83,7 +82,7 @@ class DbCompanyRepository implements CompanyRepository {
      * @param int $user_id
      * @param int $event_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getCompaniesGivingInterviews($user_id, $event_id)
 	{
@@ -102,7 +101,7 @@ class DbCompanyRepository implements CompanyRepository {
      *
      * @param int $company_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getUsers($company_id)
 	{
@@ -117,7 +116,7 @@ class DbCompanyRepository implements CompanyRepository {
      * @param int $company_id
      * @param int $user_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function addLinkage($company_id, $user_id)
 	{
@@ -138,7 +137,7 @@ class DbCompanyRepository implements CompanyRepository {
      * @param int $company_id
      * @param int $user_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function deleteLinkage($company_id, $user_id)
 	{

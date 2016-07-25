@@ -3,19 +3,25 @@
 @section('title', 'Nachricht senden')
 
 @section('content')
-	@include('admin.users.profile.partials.breadcrumb')
+    <div>
+        <ol class="breadcrumb">
+            <li>{!! HTML::link('admin/users', 'Übersicht') !!}</li>
+            <li class="active">{{ 'Neue Mail schreiben' }}</li>
+        </ol>
+    </div>
 
 	<div class="span3 alpha">
-		@include('admin.users.profile.partials.nav_bar')
-	</div>
+        &nbsp
+    </div>
+
 	<div class="span7">
 		@include('partials/validation_errors')
 
-		{!! Form::open(['url' => 'admin/users/'. $user->id .'/send-mail']) !!}
+		{!! Form::open(['url' => 'admin/users/send-mail']) !!}
 			<div class="span3 alpha">
 				<div class="form-group">
 					{!! Form::label('recipient', 'Empfänger')!!}
-					{!! Form::text('recipient', $user->email, ['class' => 'form-control input-sm', 'disabled' => 'disabled']) !!}
+					{!! Form::text('recipient', Input::old('recipient'), ['class' => 'form-control input-sm']) !!}
 				</div>
 				<div class="form-group">
 					{!! Form::label('subject', 'Betreff')!!}

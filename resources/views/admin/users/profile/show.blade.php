@@ -14,45 +14,45 @@
 
 				@if($user->deleted_at)
 					<p>Nutzer ist <strong>gelöscht</strong>.</p>
-					{!! HTML::link('admin/users/'.$user->id.'/restore', 'Wiederherstellen', ['class' => 'btn btn-success btn-sm']) !!}
-					{!! HTML::link('admin/users/'.$user->id.'/delete', 'Endgültig löschen', ['class' => 'btn btn-danger btn-sm']) !!}
+					{!! HTML::link('admin/users/'. $user->id .'/restore', 'Wiederherstellen', ['class' => 'btn btn-success btn-sm']) !!}
+					{!! HTML::link('admin/users/'. $user->id .'/delete', 'Endgültig löschen', ['class' => 'btn btn-danger btn-sm']) !!}
 					<br><br>
 				@endif
 
 				@if($user->throttle)
 					@if($user->throttle->banned)
 						<p>Der Nutzer ist <strong>gesperrt</strong>.</p>
-						{!! HTML::link('admin/users/'.$user->id.'/change-status', 'Sperrung aufheben', ['class' => 'btn btn-success btn-sm']) !!}
+						{!! HTML::link('admin/users/'. $user->id .'/change-status', 'Sperrung aufheben', ['class' => 'btn btn-success btn-sm']) !!}
 					@elseif($user->throttle->suspended)
 						<p>Der Nutzer ist <strong>vorübergehend gesperrt</strong>.</p>
-						{!! HTML::link('admin/users/'.$user->id.'/unsuspend', 'Sperrung aufheben', ['class' => 'btn btn-success btn-sm']) !!}
+						{!! HTML::link('admin/users/'. $user->id .'/unsuspend', 'Sperrung aufheben', ['class' => 'btn btn-success btn-sm']) !!}
 					@else
 						@if( ! $user->activated)
 							<p>Das Nutzerkonto wurde noch <strong>nicht aktiviert</strong>.</p>
-							{!! HTML::link('admin/users/'.$user->id.'/send-activation-code', 'Aktivierungscode senden', ['class' => 'btn btn-warning btn-sm']) !!}
-							{!! HTML::link('admin/users/'.$user->id.'/activate-user', 'Nutzer manuell aktivieren', ['class' => 'btn btn-success btn-sm']) !!}
+							{!! HTML::link('admin/users/'. $user->id .'/send-activation-code', 'Aktivierungscode senden', ['class' => 'btn btn-warning btn-sm']) !!}
+							{!! HTML::link('admin/users/'. $user->id .'/activate-user', 'Nutzer manuell aktivieren', ['class' => 'btn btn-success btn-sm']) !!}
 						@else
 							<p>Das Nutzerkonto <strong>ist aktiviert</strong>.</p>
-							{!! HTML::link('admin/users/'.$user->id.'/deactivate-user', 'Nutzer manuell deaktieren', ['class' => 'btn btn-warning btn-sm']) !!}
+							{!! HTML::link('admin/users/'. $user->id .'/deactivate-user', 'Nutzer manuell deaktieren', ['class' => 'btn btn-warning btn-sm']) !!}
 						@endif
 
 						<br><br>
 						<p>Der Nutzer ist <strong>nicht gesperrt</strong>.</p>
-						{!! HTML::link('admin/users/'.$user->id.'/change-status', 'Nutzer speeren', ['class' => 'btn btn-danger btn-sm']) !!}
+						{!! HTML::link('admin/users/'. $user->id .'/change-status', 'Nutzer speeren', ['class' => 'btn btn-danger btn-sm']) !!}
 					@endif
 				@else
 					@if( ! $user->activated)
 						<p>Das Nutzerkonto wurde noch <strong>nicht aktiviert</strong>.</p>
-						{!! HTML::link('admin/users/'.$user->id.'/send-activation-code', 'Aktivierungscode senden', ['class' => 'btn btn-warning btn-sm']) !!}
-						{!! HTML::link('admin/users/'.$user->id.'/activate-user', 'Nutzer manuell aktivieren', ['class' => 'btn btn-success btn-sm']) !!}
+						{!! HTML::link('admin/users/'. $user->id .'/send-activation-code', 'Aktivierungscode senden', ['class' => 'btn btn-warning btn-sm']) !!}
+						{!! HTML::link('admin/users/'. $user->id .'/activate-user', 'Nutzer manuell aktivieren', ['class' => 'btn btn-success btn-sm']) !!}
 					@else
 						<p>Das Nutzerkonto <strong>ist aktiviert</strong>.</p>
-						{!! HTML::link('admin/users/'.$user->id.'/deactivate-user', 'Nutzer manuell deaktieren', ['class' => 'btn btn-warning btn-sm']) !!}
+						{!! HTML::link('admin/users/'. $user->id .'/deactivate-user', 'Nutzer manuell deaktieren', ['class' => 'btn btn-warning btn-sm']) !!}
 					@endif
 
 					<br><br>
 					<p>Der Nutzer ist <strong>nicht gesperrt</strong>.</p>
-					{!! HTML::link('admin/users/'.$user->id.'/change-status', 'Nutzer speeren', ['class' => 'btn btn-danger btn-sm']) !!}
+					{!! HTML::link('admin/users/'. $user->id .'/change-status', 'Nutzer speeren', ['class' => 'btn btn-danger btn-sm']) !!}
 				@endif
                 <br><br>
                 <p><strong>Erstellt: </strong>{{ $user->created_at }} Uhr</p>
@@ -81,8 +81,8 @@
 									{{ Date::monthDate($event->start_date, $event->end_date, false) .' '. Date::format($event->end_date, 'year') }}
 								</td>
 								<td>
-									{!! HTML::imageLink('jobmesse/'.$event->slug, 'assets/img/icons/show.png', 'Anzeigen', ['target' => '_blank', 'title' => 'Anzeigen']) !!}
-									{!! HTML::imageLink('admin/events/'.$event->id.'show', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
+									{!! HTML::imageLink('jobmesse/'. $event->slug, 'assets/img/icons/show.png', 'Anzeigen', ['target' => '_blank', 'title' => 'Anzeigen']) !!}
+									{!! HTML::imageLink('admin/events/'. $event->id .'/show', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
 								</td>
 							</tr>
 						@endforeach
@@ -109,7 +109,7 @@
 									{{ Date::monthDate($event->start_date, $event->end_date, false) .' '. Date::format($event->end_date, 'year') }}
 								</td>
 								<td>
-									{!! HTML::imageLink('admin/events/'.$event->id.'/show', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
+									{!! HTML::imageLink('admin/events/'. $event->id .'/show', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
 								</td>
 							</tr>
 						@endforeach
@@ -129,7 +129,7 @@
 						<tr>
 							<td>{{ $company->name }}</td>
 							<td>
-								{!! HTML::imageLink('admin/companies/show/'.$company->id, 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
+								{!! HTML::imageLink('admin/companies/show/'. $company->id, 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
 							</td>
 						</tr>
 					</tbody>

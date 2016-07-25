@@ -18,4 +18,24 @@ class UpdateContactsRequest extends Request {
 		];
 	}
 
+    /**
+     * Persist data.
+     *
+     * @param object    $eventRepo
+     * @param int       $event_id
+     *
+     * @return bool|int
+     */
+    public function persist($eventRepo, $event_id)
+    {
+        $event = $eventRepo->findById($event_id);
+
+        $data = [
+            'website' 	=> $this->request->get('website'),
+            'facebook' 	=> $this->request->get('facebook'),
+            'twitter' 	=> $this->request->get('twitter')
+        ];
+
+        return $event->update($data);
+    }
 }

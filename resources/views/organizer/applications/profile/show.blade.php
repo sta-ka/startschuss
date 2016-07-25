@@ -6,7 +6,7 @@
 	<div>
 		<ol class="breadcrumb">
 			<li>{!! HTML::link('organizer/applications', 'Übersicht') !!}</li>
-			<li>{!! HTML::link('organizer/applications/event/'.$application->event->id, 'Bewerbungen - '. $application->event->name) !!}</li>
+			<li>{!! HTML::link('organizer/applications/event/'. $application->event->id, 'Bewerbungen - '. $application->event->name) !!}</li>
 			<li class="active">Bewerbungen - Einzelansicht</li>
 		</ol>
 	</div>
@@ -26,16 +26,16 @@
 						<p><strong>Termin:</strong> {{ Date::format($application->time_of_interview, 'datetime_short') }} Uhr</p>
 						@if($event->interviews_locked == false)
 							<br>
-							{!! Form::open(['url' => 'organizer/applications/rearrange-interview/'.$application->event->id.'/'.$application->id]) !!}
+							{!! Form::open(['url' => 'organizer/applications/rearrange-interview/'. $application->event->id .'/'. $application->id]) !!}
 									{!! Form::submit('Termin ändern', ['class' => 'btn btn-primary btn-sm']) !!}
 							{!! Form::close() !!}
-							{!! Form::open(['url' => 'organizer/applications/delete-interview/'.$application->event->id.'/'.$application->id]) !!}
+							{!! Form::open(['url' => 'organizer/applications/delete-interview/' .$application->event->id .'/'. $application->id]) !!}
 									{!! Form::submit('Termin löschen', ['class' => 'btn btn-danger btn-sm']) !!}
 							{!! Form::close() !!}
 						@endif
 					@else
 						<p>Hier können Sie jetzt den Termin für das Einzelgespräch festlegen.</p>
-						{!! Form::open(['url' => 'organizer/applications/arrange-interview/'.$application->event->id.'/'.$application->id]) !!}
+						{!! Form::open(['url' => 'organizer/applications/arrange-interview/'. $application->event->id .'/'. $application->id]) !!}
 							<div class="span2 alpha">
 								<div class="form-group">
 									{!! Form::label('date', 'Datum')!!}
@@ -69,8 +69,8 @@
 				@else
 					<p>Hier können Sie die Bewerbung einsehen und bearbeiten.</p>
 					<br>
-					{!! HTML::link('organizer/applications/disapprove-application/'.$application->event->id.'/'.$application->id, 'Bewerbung ablehnen', ['class' => 'btn btn-danger btn-sm']) !!}
-					{!! HTML::link('organizer/applications/approve-application/'.$application->event->id.'/'.$application->id, 'Bewerbung akzeptieren', ['class' => 'btn btn-success btn-sm']) !!}
+					{!! HTML::link('organizer/applications/disapprove-application/'. $application->event->id .'/'. $application->id, 'Bewerbung ablehnen', ['class' => 'btn btn-danger btn-sm']) !!}
+					{!! HTML::link('organizer/applications/approve-application/'. $application->event->id .'/'. $application->id, 'Bewerbung akzeptieren', ['class' => 'btn btn-success btn-sm']) !!}
 				@endif
 			</div>
 		</div>
@@ -78,7 +78,7 @@
 			<h3>Bewerbung</h3>
 			<p><strong>Bewerber:</strong> 
 				{{ $application->applicant->name }}
-				{!! HTML::imageLink('organizer/applications/applicant/'.$application->event->id.'/'.$application->id, 'assets/img/icons/show.png', 'Anzeigen', ['title' => 'Anzeigen']) !!}
+				{!! HTML::imageLink('organizer/applications/applicant/'. $application->event->id .'/'. $application->id, 'assets/img/icons/show.png', 'Anzeigen', ['title' => 'Anzeigen']) !!}
 			</p>
 			<hr>
 			<p><strong>Anschreiben</strong></p>

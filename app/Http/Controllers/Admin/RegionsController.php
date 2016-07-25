@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Controller;
 use App\Models\Misc\Region\RegionRepository as Regions;
-use App\Services\Creator\RegionCreator;
 
 use App\Http\Requests\Region\UpdateDataRequest;
 
@@ -64,8 +63,7 @@ class RegionsController extends Controller {
 	 */
 	public function update(UpdateDataRequest $request, $region_id)
 	{
-		(new RegionCreator($this->regionRepo))
-			->updateData($request->all(), $region_id);
+        $request->persist($this->regionRepo, $region_id);
 
 		return redirect('admin/regions/'. $region_id .'/edit');
 	}

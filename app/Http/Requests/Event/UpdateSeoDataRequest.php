@@ -17,4 +17,26 @@ class UpdateSeoDataRequest extends Request {
 		];
 	}
 
+    /**
+     * Persist data.
+     *
+     * @param object    $eventRepo
+     * @param int       $event_id
+     *
+     * @return bool|int
+     */
+    public function persist($eventRepo, $event_id)
+    {
+        $event = $eventRepo->findById($event_id);
+
+        $data = [
+            'slug'				=> $this->request->get('slug'),
+            'meta_description'	=> $this->request->get('meta_description'),
+            'keywords'			=> $this->request->get('keywords')
+        ];
+
+        return $event->update($data);
+    }
+
+
 }

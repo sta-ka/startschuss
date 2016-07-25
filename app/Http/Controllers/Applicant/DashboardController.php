@@ -1,8 +1,9 @@
 <?php namespace App\Http\Controllers\Applicant;
 
 use App\Http\Controllers\Controller;
-use App\Models\Applicant\Application\ApplicationRepository;
-use App\Models\Misc\Region\RegionRepository;
+
+use App\Models\Misc\Region\RegionRepository as Regions;
+use App\Models\Applicant\Application\ApplicationRepository as Applications;
 
 /**
  * Class DashboardController
@@ -12,12 +13,12 @@ use App\Models\Misc\Region\RegionRepository;
 class DashboardController extends Controller {
 
     /**
-     * @param RegionRepository $region
-     * @param ApplicationRepository $application
+     * @param Regions $region
+     * @param Applications $application
      *
      * @return \Illuminate\View\View
      */
-	public function index(RegionRepository $region, ApplicationRepository $application)
+	public function index(Regions $region, Applications $application)
 	{
         $region_id = settings('region');
 

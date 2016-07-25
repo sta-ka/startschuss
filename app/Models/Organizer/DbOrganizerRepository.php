@@ -19,7 +19,7 @@ class DbOrganizerRepository implements OrganizerRepository {
      *
      * @param bool $trashed
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getAll($trashed = false)
 	{
@@ -37,7 +37,7 @@ class DbOrganizerRepository implements OrganizerRepository {
      *
      * @param int $organizer_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function findById($organizer_id)
 	{
@@ -50,7 +50,7 @@ class DbOrganizerRepository implements OrganizerRepository {
      *
      * @param string $slug
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */	
 	public function findBySlug($slug)
 	{
@@ -76,7 +76,7 @@ class DbOrganizerRepository implements OrganizerRepository {
      *
      * @param int $limit
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getPaginatedOrganizers($limit)
 	{
@@ -87,7 +87,7 @@ class DbOrganizerRepository implements OrganizerRepository {
 	/**
 	 * Randomly get 4 featured organizers.
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getFeaturedOrganizers()
 	{
@@ -102,7 +102,7 @@ class DbOrganizerRepository implements OrganizerRepository {
      *
      * @param string $str
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getByLetter($str)
 	{
@@ -116,7 +116,7 @@ class DbOrganizerRepository implements OrganizerRepository {
      *
      * @param int $organizer_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getEventsForOrganizer($organizer_id)
 	{
@@ -133,7 +133,7 @@ class DbOrganizerRepository implements OrganizerRepository {
 	/**
 	 * Get last modified organizer in database.
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getLastModifiedOrganizer()
 	{

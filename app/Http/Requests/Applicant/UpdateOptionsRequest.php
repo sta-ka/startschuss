@@ -25,4 +25,13 @@ class UpdateOptionsRequest extends Request {
         return $rules;
 	}
 
+    /**
+     * Persist data.
+     *
+     * @param object   $applicantRepo
+     *
+     * @return bool|int
+     */
+    public function persist($applicantRepo)
+    {}
 }

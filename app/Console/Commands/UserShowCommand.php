@@ -41,12 +41,8 @@ class UserShowCommand extends Command {
 	{
         $this->info('Show users based on group:');
 
-        echo "\n";
-
         $group_name = $this->choice('Choose the group id:', $this->groups);
 		$users = $this->getUsersInGroup($group_name);
-
-        echo "\n";
 
 		if (count($users) == 0) {
             $this->error('No users found.');

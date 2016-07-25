@@ -57,7 +57,7 @@ class UserCreator extends Creator {
      *
      * @return Object $user
      */
-    public function createUser($input)
+    public function create($input)
 	{
 		$credentials = [
 			'username'		=> $input['username'],

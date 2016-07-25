@@ -4,7 +4,6 @@ use App\Models\Company\Job\JobRepository as Jobs;
 use App\Models\User\UserRepository as Users;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Job\CreateJobRequest;
-use App\Services\Creator\JobCreator;
 
 /**
  * Class JobsController
@@ -100,9 +99,7 @@ class JobsController extends Controller {
      */
     public function create(CreateJobRequest $request, $company_id, Jobs $jobRepo)
     {
-        $success = (new JobCreator($jobRepo))
-                        ->createJob($request->all(), $company_id);
-
+        $success = $request->persist($jobRepo, $company_id);
         notify($success, 'job_created');
 
         return redirect('company/jobs');

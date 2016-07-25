@@ -7,15 +7,11 @@
 @stop
 
 @section('content')
-	<div class="span2 alpha">
-		&nbsp;
-	</div>
-	<div class="span7">
-		<div class="span6 alpha">
+	<div class="col-xs-7 col-sm-6 col-md-6 col-sm-offset-1 col-md-offset-2">
 			@include('partials/validation_errors')
 
 			{!! Form::open(['url' => 'registrieren']) !!}
-				<div class="span3 alpha">
+				<div class="">
                     <br>
 					<div class="form-group">
 						<div class="input-group input-group-sm">
@@ -30,27 +26,23 @@
 						</div>
 					</div>
 				</div>
-				<br><br>
-				<div class="span6 alpha">
-					<div class="span3 alpha form-group">
-						<div class="input-group input-group-sm">
-							<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-							{!! Form::password('password', ['class' => 'form-control input-sm', 'placeholder' => 'Passwort']) !!}
-						</div>
-					</div>
-					<div class="span3 omega form-group">
-						<div class="input-group input-group-sm">
-							<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-							{!! Form::password('password_confirmation', ['class' => 'form-control input-sm', 'placeholder' => 'Passwort bestätigen']) !!}
-						</div>
-					</div>
-					{!! Form::submit('Registrieren', ['class' => 'btn btn-primary btn-sm']) !!}
-				</div>
-			</div>
+                <div class="form-group">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                        {!! Form::password('password', ['class' => 'form-control input-sm', 'placeholder' => 'Passwort']) !!}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                        {!! Form::password('password_confirmation', ['class' => 'form-control input-sm', 'placeholder' => 'Passwort bestätigen']) !!}
+                    </div>
+                </div>
+                {!! Form::submit('Registrieren', ['class' => 'btn btn-primary btn-sm']) !!}
 		{!! Form::close() !!}
 	</div>
 
-	<div class="span3 omega">
+	<div class="col-xs-5 col-sm-5 col-md-4">
 		<h3 class="heading-underlined--small">Sie sind Veranstalter?</h3>
 		<p>
 			Möchten Sie sich auf startschuss-karriere.de präsentieren?

@@ -12,6 +12,7 @@ class SendMailRequest extends Request {
 	public function rules()
 	{
 		return [
+			'recipient' => 'required|email',
 			'subject'   => 'required|min:10',
 			'body'	    => 'required|min:12'
 		];

@@ -47,11 +47,11 @@
 							@endif
 						</td>
 						<td>
-							{!! HTML::imageLink('admin/organizers/'.$organizer->id.'/show', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
+							{!! HTML::imageLink('admin/organizers/'. $organizer->id .'/show', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
 							
-						@if( ! $organizer->deleted_at)
-							{!! HTML::imageLink('veranstalter/'.$organizer->slug, 'assets/img/icons/show.png', 'Anzeigen', ['target' => '_blank', 'title' => 'Anzeigen']) !!}
-							{!! HTML::imageLink('admin/organizers/'.$organizer->id.'/delete', 'assets/img/icons/erase.png', 'Löschen', ['title' => 'Löschen']) !!}
+						@if(! $organizer->deleted_at)
+							{!! HTML::imageLink('veranstalter/'. $organizer->slug, 'assets/img/icons/show.png', 'Anzeigen', ['target' => '_blank', 'title' => 'Anzeigen']) !!}
+							{!! HTML::imageLink('admin/organizers/'. $organizer->id .'/delete', 'assets/img/icons/erase.png', 'Löschen', ['title' => 'Löschen']) !!}
 						@endif
 						</td>
 					</tr>

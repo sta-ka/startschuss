@@ -1,6 +1,6 @@
-<?php namespace App\Services\Creator;
+<?php namespace App\Http\Requests;
 
-abstract class Creator {
+trait HandleImage {
 
     /**
      * Upload image.

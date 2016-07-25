@@ -11,7 +11,7 @@
 	<div class="span6">
 		@include('partials/validation_errors')
 
-		{!! Form::model($job, ['url' => 'admin/jobs/'.$job->id.'/update-settings']) !!}
+		{!! Form::model($job, ['url' => 'admin/jobs/'. $job->id .'/update-settings']) !!}
 			<div class="span3 alpha">
 				<div class="checkbox">
 					<label>

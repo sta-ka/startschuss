@@ -17,4 +17,19 @@ class UpdatePasswordRequest extends Request {
 		];
 	}
 
+    /**
+     * Persist data.
+     *
+     * @return bool|int
+     */
+    public function persist()
+    {
+        $user = \Sentry::getUser();
+
+        if ($user->checkPassword($this->request->get('oldpassword'))) {
+            return $user->update(['password' => $this->request->get('newpassword')]);
+        }
+
+        return false;
+    }
 }

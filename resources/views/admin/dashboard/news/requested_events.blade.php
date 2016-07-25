@@ -22,7 +22,7 @@
 						<td>{{ $event->name }}</td>
 						<td>{{ $event->requestedBy->username }}</td>
 						<td>
-							{!! HTML::imageLink('admin/events/'.$event->id.'/show', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
+							{!! HTML::imageLink('admin/events/'. $event->id .'/show', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
 						</td>
 					</tr>
 				@endforeach

@@ -46,7 +46,7 @@
 							<tr>
 								<td rowspan="2" width="100px" height="50px" class="logo">
 									@if($job->company->logo)
-										{!! HTML::image('uploads/logos/medium/'.$job->company->logo, $job->company->full_name) !!}
+										{!! HTML::image('uploads/logos/medium/'. $job->company->logo, $job->company->full_name) !!}
 									@endif
 								</td>
 								<td colspan="3" width="400px">

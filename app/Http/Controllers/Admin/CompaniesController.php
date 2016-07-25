@@ -3,15 +3,13 @@
 use App\Http\Controllers\Controller;
 
 use App\Models\Company\CompanyRepository as Companies;
-use App\Services\Creator\CompanyCreator;
-
 use App\Models\User\UserRepository as Users;
 
+use App\Http\Requests\Company\UploadLogoRequest;
 use App\Http\Requests\Company\CreateCompanyRequest;
-use App\Http\Requests\Company\UpdateGeneralDataRequest;
 use App\Http\Requests\Company\UpdateProfileRequest;
 use App\Http\Requests\Company\UpdateContactsRequest;
-use App\Http\Requests\Company\UploadLogoRequest;
+use App\Http\Requests\Company\UpdateGeneralDataRequest;
 
 use Input;
 use Sentry;
@@ -92,9 +90,7 @@ class CompaniesController extends Controller {
 	 */
 	public function create(CreateCompanyRequest $request)
 	{
-		$success = (new CompanyCreator($this->companyRepo))
-					->createCompany($request->all());
-
+		$success = $request->persist($this->companyRepo);
 		notify($success, 'company_created');
 
 		return redirect('admin/companies');
@@ -162,8 +158,7 @@ class CompaniesController extends Controller {
 	 */
 	public function updateGeneralData(UpdateGeneralDataRequest $request, $company_id)
 	{
-		(new CompanyCreator($this->companyRepo))
-        	->editGeneralData($request->all(), $company_id);
+		$request->persist($this->companyRepo, $company_id);
 
 		return redirect('admin/companies/'. $company_id .'/show');
 	}
@@ -192,8 +187,7 @@ class CompaniesController extends Controller {
 	 */
 	public function updateProfile(UpdateProfileRequest $request, $company_id)
 	{
-		(new CompanyCreator($this->companyRepo))
-        		->editProfile($request->all(), $company_id);
+        $request->persist($this->companyRepo, $company_id);
 
 		return redirect('admin/companies/'. $company_id .'/show');
 	}
@@ -222,8 +216,7 @@ class CompaniesController extends Controller {
 	 */
 	public function updateContacts(UpdateContactsRequest $request, $company_id)
 	{
-		(new CompanyCreator($this->companyRepo))
-        	->editContacts($request->all(), $company_id);
+        $request->persist($this->companyRepo, $company_id);
 
 		return redirect('admin/companies/'. $company_id .'/show');
 	}
@@ -252,8 +245,7 @@ class CompaniesController extends Controller {
 	 */
 	public function updateLogo(UploadLogoRequest $request, $company_id)
 	{
-		(new CompanyCreator($this->companyRepo))
-			->processLogo($company_id);
+        $request->persist($this->companyRepo, $company_id);
 
 		return redirect('admin/companies/'. $company_id .'/edit-logo');
 	}
@@ -336,7 +328,7 @@ class CompaniesController extends Controller {
     /**
      * Delete logo from database and in filesystem
      *
-     * @param $company
+     * @param \Illuminate\Database\Eloquent\Model $company
      */
     private function deleteLogoFile($company)
     {

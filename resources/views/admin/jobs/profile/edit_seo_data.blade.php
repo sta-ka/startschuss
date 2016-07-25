@@ -11,7 +11,7 @@
 	<div class="span6">
 		@include('partials/validation_errors')
 
-		{!! Form::model($job, ['url' => 'admin/jobs/'.$job->id.'/update-seo-data']) !!}
+		{!! Form::model($job, ['url' => 'admin/jobs/'. $job->id .'/update-seo-data']) !!}
 			<div class="span4 alpha">
 				<div class="form-group">
 					{!! Form::label('slug', 'URL') !!}
