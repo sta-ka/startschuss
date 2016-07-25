@@ -120,6 +120,8 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth:admin'], function()
 	Route::get('admin/users/{id}/activate-user', 			'UsersController@activateUser');
 	Route::get('admin/users/{id}/deactivate-user', 			'UsersController@deactivateUser');
 	Route::get('admin/users/{id}/force-login', 				'UsersController@forceLogin');
+	Route::get('admin/users/send-mail', 			        'UsersController@composeNewMail');
+	Route::post('admin/users/send-mail', 			        'UsersController@sendNewMail');
 	Route::get('admin/users/{id}/send-mail', 			    'UsersController@composeMail');
 	Route::post('admin/users/{id}/send-mail', 				'UsersController@sendMail');
 	Route::get('admin/users/{id}/send-activation-code', 	'UsersController@sendActivationCode');

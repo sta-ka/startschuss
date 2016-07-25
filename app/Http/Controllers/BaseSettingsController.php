@@ -1,7 +1,6 @@
 <?php namespace App\Http\Controllers;
 
 use App\Models\User\UserRepository as Users;
-use App\Services\Creator\UserCreator;
 
 use App\Http\Requests\User\UpdatePasswordRequest;
 use App\Http\Requests\User\UpdateEmailRequest;
@@ -79,8 +78,7 @@ class BaseSettingsController extends Controller {
      */
     public function updatePassword(UpdatePasswordRequest $request)
     {
-        $success = (new UserCreator($this->userRepo))
-                        ->changePassword($request->all());
+        $success = $request->persist();
 
         $user = \Sentry::getUser();
 
@@ -120,8 +118,7 @@ class BaseSettingsController extends Controller {
      */
     public function updateEmail(UpdateEmailRequest $request)
     {
-        $success = (new UserCreator($this->userRepo))
-                        ->changeEmail($request->all());
+        $success = $request->persist();
 
         if ($success == false) {
             notify('error', 'email_update');

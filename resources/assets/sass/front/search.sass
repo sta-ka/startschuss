@@ -27,6 +27,9 @@
 #search h3
   margin-top: 0
 
+#search .input-group
+  max-width: 210px
+
 #regions ul, #job-type-search ul
   padding: 2px
 
@@ -41,3 +44,8 @@
   &.active
     font-weight: bold
     text-decoration: underline
+
+@media (max-width: 991px)
+  #regions ul
+    column-count: 3
+    column-gap: 10px

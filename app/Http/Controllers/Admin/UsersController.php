@@ -2,12 +2,11 @@
 
 use App\Http\Controllers\Controller;
 use App\Models\User\UserRepository as Users;
-use App\Services\Creator\UserCreator;
 use App\Services\Mailers\UserMailer;
 
+use App\Http\Requests\User\SendMailRequest;
 use App\Http\Requests\User\CreateUserRequest;
 use App\Http\Requests\User\UpdateUserRequest;
-use App\Http\Requests\User\SendMailRequest;
 
 use DateTime;
 use Sentry;
@@ -55,9 +54,9 @@ class UsersController extends Controller {
 	 */
 	public function show($user_id)
 	{
-		$data['user'] = $this->userRepo->findById($user_id);
+		$data['user']        = $this->userRepo->findById($user_id);
 		$data['company'] 	 = $this->userRepo->getCompany($user_id); // get company linked to user
-		$data['events'] 	 = $this->userRepo->getEvents($user_id); // get upcomingevents linked to user
+		$data['events'] 	 = $this->userRepo->getEvents($user_id); // get upcoming events linked to user
 		$data['past_events'] = $this->userRepo->getEvents($user_id, false); // get past events linked to user
 
 		return view('admin.users.profile.show', $data);
@@ -82,8 +81,7 @@ class UsersController extends Controller {
 	 */
 	public function createUser(CreateUserRequest $request)
 	{
-		(new UserCreator($this->userRepo))
-			->createUser($request->all());
+        $request->persist();
 
 		return redirect('admin/users');
 	}
@@ -134,9 +132,7 @@ class UsersController extends Controller {
      */
     public function updateUser(UpdateUserRequest $request, $user_id)
     {
-		$success = (new UserCreator($this->userRepo))
-        		->edit($request->all(), $user_id);
-
+        $success = $request->persist($this->userRepo, $user_id);
         notify($success, 'profile_update');
 
         return redirect('admin/users');
@@ -234,23 +230,48 @@ class UsersController extends Controller {
 		return view('admin.users.profile.mail', $data);
 	}
 
-	/**
-	 * Process sending mail.
+    /**
+     * Process sending mail.
      *
      * @param SendMailRequest $request
-      * @param int $user_id
+     * @param int $user_id
      *
      * @return \Illuminate\Http\RedirectResponse
-	 */
-	public function sendMail(SendMailRequest $request, $user_id)
-	{
+     */
+    public function sendMail(SendMailRequest $request, $user_id)
+    {
         $user = $this->userRepo->findById($user_id);
 
         (new UserMailer($user))->contactUser($request->all())
-                               ->deliver();
+            ->deliver();
 
         return redirect('admin/users');
-	}
+    }
+
+    /**
+     * Send mail to new user.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function composeNewMail()
+    {
+        return view('admin.users.mail');
+    }
+
+    /**
+     * Process sending mail.
+     *
+     * @param SendMailRequest $request
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function sendNewMail(SendMailRequest $request)
+    {
+        (new UserMailer())->contactNewUser($request->all())
+            ->deliver();
+
+        return redirect('admin/users');
+    }
 
 	/**
 	 * Send mail with activation code to user.

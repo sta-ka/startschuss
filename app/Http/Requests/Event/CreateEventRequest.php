@@ -23,4 +23,26 @@ class CreateEventRequest extends Request {
 		];
 	}
 
+    /**
+     * Persist data.
+     *
+     * @param object    $eventRepo
+     *
+     * @return bool|int
+     */
+    public function persist($eventRepo)
+    {
+        $data = [
+            'name'			=> $this->request->get('name'),
+            'location'		=> $this->request->get('location'),
+            'start_date'	=> $this->request->get('start_date'),
+            'end_date'		=> empty($this->request->get('end_date')) ? $this->request->get('start_date') : $this->request->get('end_date'),
+            'profile'		=> \Purifier::clean($this->request->get('profile')),
+            'slug'			=> $this->request->get('slug'),
+            'region_id'		=> $this->request->get('region_id'),
+            'organizer_id'	=> $this->request->get('organizer_id')
+        ];
+
+        return $eventRepo->create($data);
+    }
 }

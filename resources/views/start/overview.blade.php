@@ -8,7 +8,7 @@
 @stop
 
 @section('content')
-	<div class="span9 alpha">
+	<div class="col-xs-12 col-sm-12 col-md-9">
 		<div id="events">
 			<h1 class="heading-underlined">Karriere- und Jobmessen</h1>
 			<ul class="eventslist list-unstyled">
@@ -24,7 +24,7 @@
 		</div>
 	</div>
 
-	<div class="span3 omega">
+	<div class="col-md-3">
         @include('start.partials.searchbox_events')
         <div id="organizers">
 
@@ -34,7 +34,7 @@
 				<li>
 					<div class="image">
 						@if($organizer->logo)
-							{!! HTML::imageLink('veranstalter/'.$organizer->slug, 'uploads/logos/medium/'.$organizer->logo, $organizer->name) !!}
+							{!! HTML::imageLink('veranstalter/'. $organizer->slug, 'uploads/logos/medium/'.$organizer->logo, $organizer->name) !!}
 						@else
 							{!! HTML::linkRoute('veranstalter', $organizer->name, [$organizer->slug]) !!}
 						@endif

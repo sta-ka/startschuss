@@ -25,8 +25,8 @@
 							{{ $city->name }}
 						</td>
 						<td>
-							{!! HTML::imageLink('admin/cities/'.$city->id.'/edit', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
-							{!! HTML::imageLink('jobmessen/in/'.$city->slug, 'assets/img/icons/show.png', 'Anzeigen', ['target' => '_blank', 'title' => 'Anzeigen']) !!}
+							{!! HTML::imageLink('admin/cities/'. $city->id .'/edit', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
+							{!! HTML::imageLink('jobmessen/in/'. $city->slug, 'assets/img/icons/show.png', 'Anzeigen', ['target' => '_blank', 'title' => 'Anzeigen']) !!}
 						</td>
 					</tr>
 				@endforeach

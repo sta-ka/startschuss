@@ -20,4 +20,24 @@ class UpdateGeneralDataRequest extends Request {
 		];
 	}
 
+    /**
+     * Persist data.
+     *
+     * @param object   $organizerRepo
+     * @param int      $organizer_id
+     *
+     * @return bool|int
+     */
+    public function persist($organizerRepo, $organizer_id)
+    {
+        $organizer = $organizerRepo->findById($organizer_id);
+
+        $data = [
+            'name'		=> $this->request->get('name'),
+            'featured'	=> $this->request->get('featured', false),
+            'premium'	=> $this->request->get('premium', false)
+        ];
+
+        return $organizer->update($data);
+    }
 }

@@ -45,7 +45,7 @@
 	<div class="span8">
 		@include('partials/validation_errors')
 
-		{!! Form::open(['url' => 'organizer/profile/create/'.$event->id ]) !!}
+		{!! Form::open(['url' => 'organizer/profile/create/'. $event->id ]) !!}
 			<div class="span3 alpha">
 				<div class="form-group">
 					{!! Form::label('name', 'Name')!!}

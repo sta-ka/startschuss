@@ -30,10 +30,10 @@
 							@endif
 						</td>
 						<td>
-							{!! HTML::imageLink('admin/articles/'.$article->id.'/edit', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
-							{!! HTML::imageLink('admin/articles/'.$article->id.'/delete', 'assets/img/icons/erase.png', 'Löschen', ['title' => 'Löschen']) !!}
+							{!! HTML::imageLink('admin/articles/'. $article->id .'/edit', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
+							{!! HTML::imageLink('admin/articles/'. $article->id .'/delete', 'assets/img/icons/erase.png', 'Löschen', ['title' => 'Löschen']) !!}
 							@if($article->active) 
-								{!! HTML::imageLink('karriereratgeber/'.$article->slug, 'assets/img/icons/show.png', 'Anzeigen', ['target' => '_blank', 'title' => 'Anzeigen']) !!}
+								{!! HTML::imageLink('karriereratgeber/'. $article->slug, 'assets/img/icons/show.png', 'Anzeigen', ['target' => '_blank', 'title' => 'Anzeigen']) !!}
 							@endif
 						</td>
 					</tr>

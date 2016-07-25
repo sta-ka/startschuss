@@ -9,7 +9,7 @@
 	<div class="span7">
 		@include('partials/validation_errors')
 
-		{!! Form::model($region, ['url' => 'admin/regions/'.$region->id.'/update']) !!}
+		{!! Form::model($region, ['url' => 'admin/regions/'. $region->id .'/update']) !!}
 			<div class="span4 alpha">
 				<div class="form-group">
 					{!! Form::label('name', 'Name') !!}

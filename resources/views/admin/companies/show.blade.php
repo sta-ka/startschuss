@@ -57,9 +57,9 @@
 							@endif
 						</td>
 						<td>
-							{!! HTML::imageLink('admin/companies/'.$company->id.'/show', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
+							{!! HTML::imageLink('admin/companies/'. $company->id .'/show', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
 							@if( ! $company->deleted_at)
-								{!! HTML::imageLink('admin/companies/'.$company->id.'/delete', 'assets/img/icons/erase.png', 'Löschen', ['title' => 'Löschen']) !!}
+								{!! HTML::imageLink('admin/companies/'. $company->id .'/delete', 'assets/img/icons/erase.png', 'Löschen', ['title' => 'Löschen']) !!}
 							@endif
 						</td>
 					</tr>

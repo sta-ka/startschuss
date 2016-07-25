@@ -5,7 +5,7 @@ interface RegionRepository {
 	/**
 	 * Get all regions.
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getAll();
 
@@ -24,7 +24,7 @@ interface RegionRepository {
      *
      * @param int $region_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function findById($region_id);
 
@@ -33,7 +33,7 @@ interface RegionRepository {
      *
      * @param string $slug
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function findBySlug($slug);
 
@@ -43,7 +43,7 @@ interface RegionRepository {
      * @param int $region_id
      * @param int $limit
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getEventsInRegion($region_id, $limit);
 

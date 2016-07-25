@@ -1,12 +1,12 @@
 <?php namespace App\Http\Controllers\Frontend;
 
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Routing\Controller;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
-use App\Models\Misc\Article\ArticleRepository as Articles;
+use App\Models\Company\Job\JobRepository as Jobs;
 use App\Models\Misc\City\CityRepository as Cities;
 use App\Models\Company\CompanyRepository as Companies;
-use App\Models\Company\Job\JobRepository as Jobs;
+use App\Models\Misc\Article\ArticleRepository as Articles;
 
 use Input;
 
@@ -56,6 +56,8 @@ class CareerController extends Controller {
      * @param Cities $cityRepo
      *
      * @return \Illuminate\View\View
+     *
+     * @throws ModelNotFoundException
      */
     public function jobsIn($slug, Cities $cityRepo)
 	{
@@ -69,7 +71,7 @@ class CareerController extends Controller {
             return view('start.jobs_by_city', $data);
         } catch (ModelNotFoundException $e) {
             notify('error', 'city_not_found', false);
-            return redirect()->route('messekalender');
+            abort(404);
         }
 	}
 
@@ -79,6 +81,8 @@ class CareerController extends Controller {
      * @param int $job_id
      *
      * @return \Illuminate\View\View
+     *
+     * @throws ModelNotFoundException
 	 */
 	public function job($job_id)
 	{
@@ -88,17 +92,19 @@ class CareerController extends Controller {
             return view('start.job', $data);
         } catch (ModelNotFoundException $e) {
             notify('error', 'job_not_found', false);
-            return redirect('jobs');
+            abort(404);
         }
 	}
 
 	/**
 	 * Displays a single company.
      *
-     * @param string $slug
+     * @param string    $slug
      * @param Companies $companyRepo
      *
      * @return \Illuminate\View\View
+     *
+     * @throws ModelNotFoundException
 	 */
 	public function unternehmen($slug, Companies $companyRepo)
 	{
@@ -108,7 +114,7 @@ class CareerController extends Controller {
             return view('start.company', $data);
         } catch (ModelNotFoundException $e) {
             notify('error', 'company_not_found', false);
-            return redirect('jobs');
+            abort(404);
         }
 	}
 
@@ -130,10 +136,12 @@ class CareerController extends Controller {
 	/**
 	 * Show single article.
      *
-     * @param string $slug
-     * @param Articles $articleRepo
+     * @param string    $slug
+     * @param Articles  $articleRepo
      *
      * @return \Illuminate\View\View
+     *
+     * @throws ModelNotFoundException
 	 */
 	public function artikel($slug, Articles $articleRepo)
 	{
@@ -144,7 +152,7 @@ class CareerController extends Controller {
             return view('start.article', $data);
         } catch (ModelNotFoundException $e) {
             notify('error', 'article_not_found', false);
-            return redirect('karriereratgeber');
+            abort(404);
         }
 	}
 }

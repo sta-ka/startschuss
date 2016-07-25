@@ -19,7 +19,7 @@
 						<tr>
 							<td>{{ $company->name }}</td>
 							<td>
-								{!! HTML::imageLink('company/profile/'.$company->id.'/show', 'assets/img/icons/show.png', 'Anzeigen', ['title' => 'Anzeigen']) !!}
+								{!! HTML::imageLink('company/profile/'. $company->id .'/show', 'assets/img/icons/show.png', 'Anzeigen', ['title' => 'Anzeigen']) !!}
 							</td>
 						</tr>
 					</tbody>

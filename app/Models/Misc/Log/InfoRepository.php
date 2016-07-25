@@ -7,7 +7,7 @@ interface InfoRepository {
      *
      * @param int $limit
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
 	public function getAll($limit);
 

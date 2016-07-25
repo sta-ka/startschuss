@@ -14,7 +14,7 @@ interface ArticleRepository {
     /**
      * Get all articles.
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function getAll();
 
@@ -23,7 +23,7 @@ interface ArticleRepository {
      *
      * @param int $limit
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function getFeatured($limit);
 
@@ -32,7 +32,7 @@ interface ArticleRepository {
      *
      * @param string $slug
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function getOthers($slug = '');
 
@@ -41,7 +41,7 @@ interface ArticleRepository {
      *
      * @param string $slug
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function findBySlug($slug);
 
@@ -50,14 +50,14 @@ interface ArticleRepository {
      *
      * @param int $id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function findById($id);
 
     /**
      * Get last modified article in database.
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function getLastModifiedArticle();
 

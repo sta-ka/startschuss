@@ -33,7 +33,7 @@
     <div class="span9 omega">
         @include('partials/validation_errors')
 
-        {!! Form::model($event, ['url' => 'organizer/profile/'.$event->id.'/update-application-deadline',  'class' => 'add-interview-tag']) !!}
+        {!! Form::model($event, ['url' => 'organizer/profile/'. $event->id .'/update-application-deadline',  'class' => 'add-interview-tag']) !!}
         <div class="span8 alpha">
             <div class="form-group">
                 {!! Form::label('application_deadline', 'Bewerbungsschluss')!!}
@@ -64,14 +64,14 @@
                         @if($company->pivot->interview)
                             -
                         @else
-                            {!! Form::open(['url' => 'organizer/profile/add-interview/'.$event->id.'/'.$company->id, 'class' => 'add-interview-tag']) !!}
+                            {!! Form::open(['url' => 'organizer/profile/add-interview/'. $event->id .'/'. $company->id, 'class' => 'add-interview-tag']) !!}
                             {!! Form::submit('Hinzufügen') !!}
                             {!! Form::close() !!}
                         @endif
                     </td>
                     <td>
                         @if($company->pivot->interview && ! $company->pivot->comment)
-                            {!! Form::open(['url' => 'organizer/profile/add-comment/'.$event->id.'/'.$company->id, 'class' => 'add-comment']) !!}
+                            {!! Form::open(['url' => 'organizer/profile/add-comment/'. $event->id .'/'. $company->id, 'class' => 'add-comment']) !!}
                             <div class="input-group">
                                 {!! Form::text('comment', null, ['class' => 'form-control input-sm']) !!}
 

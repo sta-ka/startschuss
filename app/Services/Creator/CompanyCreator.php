@@ -21,7 +21,7 @@ class CompanyCreator extends Creator {
      *
      * @return static
      */
-    public function createCompany($input)
+    public function create($input)
 	{
 		$data = [
 			'name'		=> $input['name'],

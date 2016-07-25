@@ -5,7 +5,7 @@ class DbCityRepository implements CityRepository {
 	/**
 	 * Get all cities.
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getAll()
 	{
@@ -17,7 +17,7 @@ class DbCityRepository implements CityRepository {
      *
      * @param string $slug
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function findBySlug($slug)
 	{
@@ -30,7 +30,7 @@ class DbCityRepository implements CityRepository {
      *
      * @param int $id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function findById($id)
 	{

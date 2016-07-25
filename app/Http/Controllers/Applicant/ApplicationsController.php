@@ -2,10 +2,9 @@
 
 use App\Http\Controllers\Controller;
 
-use App\Models\Applicant\Application\ApplicationRepository as Applications;
-use App\Models\Company\CompanyRepository as Companies;
 use App\Models\Event\EventRepository as Events;
-use App\Services\Creator\ApplicationCreator;
+use App\Models\Company\CompanyRepository as Companies;
+use App\Models\Applicant\Application\ApplicationRepository as Applications;
 
 use App\Http\Requests\Application\ApplyForInterviewRequest;
 
@@ -148,8 +147,7 @@ class ApplicationsController extends Controller {
 	 */
 	public function submitInterviewApplication(ApplyForInterviewRequest $request, $event_id, $company_id)
 	{
-		$success = (new ApplicationCreator($this->applicationRepo))
-					->submitApplication($request->all(), $event_id, $company_id);
+		$success = $request->persist($this->applicationRepo, $event_id, $company_id);
 
 		if (! $success) {
             notify('error', 'application_created');

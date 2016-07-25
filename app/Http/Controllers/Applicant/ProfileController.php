@@ -6,17 +6,14 @@ use App\Models\Applicant\ApplicantRepository as Applicants;
 use App\Models\Applicant\Education\EducationRepository as Education;
 use App\Models\Applicant\Experience\ExperienceRepository as Experience;
 
-use App\Services\Creator\ApplicantCreator;
-use App\Services\Creator\EducationCreator;
-use App\Services\Creator\ExperienceCreator;
 
-use App\Http\Requests\Applicant\UpdateBasicsRequest;
-use App\Http\Requests\Applicant\UpdateContactsRequest;
 use App\Http\Requests\Applicant\UploadPhotoRequest;
-use App\Http\Requests\Experience\AddExperienceRequest;
-use App\Http\Requests\Experience\UpdateExperienceRequest;
+use App\Http\Requests\Applicant\UpdateBasicsRequest;
 use App\Http\Requests\Education\AddEducationRequest;
+use App\Http\Requests\Experience\AddExperienceRequest;
+use App\Http\Requests\Applicant\UpdateContactsRequest;
 use App\Http\Requests\Education\UpdateEducationRequest;
+use App\Http\Requests\Experience\UpdateExperienceRequest;
 
 /**
  * Class ProfileController
@@ -119,9 +116,8 @@ class ProfileController extends Controller {
      * @return \Illuminate\Http\RedirectResponse
 	 */
 	public function updateBasics(UpdateBasicsRequest $request)
-	{
-		(new ApplicantCreator($this->applicantRepo))
-			->editBasics($request->all());
+    {
+        $request->persist($this->applicantRepo);
 
 		return redirect('applicant/profile/show');
 	}
@@ -157,9 +153,7 @@ class ProfileController extends Controller {
 	 */
 	public function createEducation(AddEducationRequest $request)
 	{
-		$success = (new EducationCreator($this->applicantRepo, $this->educationRepo))
-					->addEducation($request->all());
-
+        $success = $request->persist($this->applicantRepo, $this->educationRepo);
 		notify($success, 'profile_update');
 
 		return redirect('applicant/profile/show');
@@ -189,9 +183,7 @@ class ProfileController extends Controller {
 	 */
 	public function updateEducation(UpdateEducationRequest $request, $education_id)
 	{
-		$success = (new EducationCreator($this->applicantRepo, $this->educationRepo))
-					->editEducation($request->all(), $education_id);
-
+        $success = $request->persist($this->educationRepo, $education_id);;
 		notify($success, 'profile_update');
 
 		return redirect('applicant/profile/show');
@@ -243,9 +235,7 @@ class ProfileController extends Controller {
 	 */
 	public function createExperience(AddExperienceRequest $request)
 	{
-		$success = (new ExperienceCreator($this->applicantRepo, $this->experienceRepo))
-					->addExperience($request->all());
-
+        $success = $request->persist($this->applicantRepo, $this->experienceRepo);
 		notify($success, 'profile_update');
 
 		return redirect('applicant/profile/show');
@@ -275,9 +265,7 @@ class ProfileController extends Controller {
 	 */
 	public function updateExperience(UpdateExperienceRequest $request, $experience_id)
 	{
-		$success = (new ExperienceCreator($this->applicantRepo, $this->experienceRepo))
-					->editExperience($request->all(), $experience_id);
-
+        $success = $request->persist($this->experienceRepo, $experience_id);
 		notify($success, 'profile_update');
 
 		return redirect('applicant/profile/show');
@@ -321,8 +309,7 @@ class ProfileController extends Controller {
 	 */
 	public function updateContacts(UpdateContactsRequest $request)
 	{
-		(new ApplicantCreator($this->applicantRepo))
-			->editContacts($request->all());
+        $request->persist($this->applicantRepo);;
 
 		return redirect('applicant/profile/show');
 	}
@@ -348,8 +335,7 @@ class ProfileController extends Controller {
 	 */
 	public function updatePhoto(UploadPhotoRequest $request)
 	{
-		(new ApplicantCreator($this->applicantRepo))
-			->processPhoto();
+        $request->persist($this->applicantRepo);
 
 		return redirect('applicant/profile/edit-photo');
 	}

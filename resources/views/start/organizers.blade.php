@@ -14,7 +14,7 @@
 @stop
 
 @section('content')
-	<div class="span8 alpha">
+	<div class="col-xs-12 col-sm-12 col-md-8">
 	    <div>
             <h1 class="heading-underlined--small">Veranstalter von Job- und Karrieremessen</h1>
             <p>Die Veranstalterdatenbank von startschuss-karriere.de enthält alle Veranstalter von Job- und Karrieremessen im deutschsprachigen Raum. Zu jedem Veranstalter können Sie auf der Detailseite zusätzliche Informationen zum Veranstalter und zu den nächsten Terminen.</p>
@@ -54,7 +54,7 @@
 			
 	</div>
 
-	<div class="span4 omega">
+	<div class="col-xs-6 col-sm-4 col-md-4">
 		<h3 class="heading-underlined--small">Jobmesse eintragen</h3>
 		<p>
 			Sind Sie Veranstalter einer Karrieremesse und möchten sich auf startschuss-karriere.de präsentieren?<br />

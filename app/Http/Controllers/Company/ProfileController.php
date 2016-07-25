@@ -1,12 +1,14 @@
 <?php namespace App\Http\Controllers\Company;
 
-use App\Models\Company\CompanyRepository as Companies;
-use App\Models\User\UserRepository as Users;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Company\UpdateContactsRequest;
-use App\Http\Requests\Company\UpdateProfileRequest;
+
+use App\Models\User\UserRepository as Users;
+use App\Models\Company\CompanyRepository as Companies;
+
 use App\Http\Requests\Company\UploadLogoRequest;
-use App\Services\Creator\CompanyCreator;
+use App\Http\Requests\Company\UpdateProfileRequest;
+use App\Http\Requests\Company\UpdateContactsRequest;
+
 use Sentry;
 
 /**
@@ -91,8 +93,7 @@ class ProfileController extends Controller {
 	 */
 	public function updateBasics(UpdateProfileRequest $request, $company_id)
 	{
-		(new CompanyCreator($this->companyRepo))
-        	->editProfile($request->all(), $company_id);
+        $request->persist($this->companyRepo, $company_id);
 
 		return redirect('company/profile/'. $company_id .'/show');
 	}
@@ -121,8 +122,7 @@ class ProfileController extends Controller {
      */
     public function updateContacts(UpdateContactsRequest $request, $company_id)
 	{
-		(new CompanyCreator($this->companyRepo))
-        	->editContacts($request->all(), $company_id);
+        $request->persist($this->companyRepo, $company_id);
 
 		return redirect('company/profile/'. $company_id .'/show');
 	}
@@ -151,8 +151,7 @@ class ProfileController extends Controller {
 	 */
 	public function updateLogo(UploadLogoRequest $request, $company_id)
 	{
-		(new CompanyCreator($this->companyRepo))
-			->processLogo($company_id);
+        $request->persist($this->companyRepo, $company_id);
 
 		return redirect('company/profile/'. $company_id .'/edit-logo');
 	}
@@ -172,7 +171,7 @@ class ProfileController extends Controller {
 
         if (empty($filename)) {
 			notify('error', 'logo_deleted');
-            return redirect('company/profile/' . $company_id . '/edit-logo');
+            return redirect('company/profile/'. $company_id .'/edit-logo');
         }
 
 		// delete logo in the database

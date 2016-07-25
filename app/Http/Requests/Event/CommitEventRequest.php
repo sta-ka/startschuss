@@ -1,8 +1,7 @@
 <?php namespace App\Http\Requests\Event;
 
-use App\Http\Requests\Request;
-
 use Carbon\Carbon;
+use App\Http\Requests\Request;
 
 class CommitEventRequest extends Request {
 
@@ -24,5 +23,4 @@ class CommitEventRequest extends Request {
 			'organizer'		=> 'required'
 		];
 	}
-
 }

@@ -6,7 +6,7 @@
 	<div>
 		<ol class="breadcrumb">
 			<li>{!! HTML::link('organizer/applications', 'Übersicht') !!}</li>
-			<li>{!! HTML::link('organizer/applications/event/'.$event->id, 'Bewerbungen - '. $event->name) !!}</li>
+			<li>{!! HTML::link('organizer/applications/event/'. $event->id, 'Bewerbungen - '. $event->name) !!}</li>
 			<li class="active">Bewerber - {{ $applicant->name }}</li>
 		</ol>
 	</div>

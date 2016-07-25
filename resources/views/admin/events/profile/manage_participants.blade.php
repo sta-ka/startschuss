@@ -46,11 +46,11 @@
 						</td>
 						<td>
 							@if(count($company->participants))
-								{!! Form::open(['url' => 'admin/events/remove-company/'.$event->id.'/'.$company->id, 'class' => 'remove-participant']) !!}
+								{!! Form::open(['url' => 'admin/events/remove-company/'. $event->id .'/'. $company->id, 'class' => 'remove-participant']) !!}
 									{!! Form::submit('Als Teilnehmer löschen') !!}
 								{!! Form::close() !!}
 							@else
-								{!! Form::open(['url' => 'admin/events/add-company/'.$event->id.'/'.$company->id, 'class' => 'add-participant']) !!}
+								{!! Form::open(['url' => 'admin/events/add-company/'. $event->id .'/'. $company->id, 'class' => 'add-participant']) !!}
 									{!! Form::submit('Als Teilnehmer hinzufügen') !!}
 								{!! Form::close() !!}
 							@endif

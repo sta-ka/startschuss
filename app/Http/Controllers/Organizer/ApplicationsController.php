@@ -2,12 +2,10 @@
 
 use App\Http\Controllers\Controller;
 
+use App\Models\User\UserRepository as Users;
+use App\Models\Event\EventRepository as Events;
 use App\Models\Applicant\ApplicantRepository as Applicants;
 use App\Models\Applicant\Application\ApplicationRepository as Applications;
-use App\Models\Event\EventRepository as Events;
-use App\Models\User\UserRepository as Users;
-
-use App\Services\Creator\ApplicationCreator;
 
 use App\Http\Requests\Application\ArrangeInterviewRequest;
 
@@ -244,7 +242,7 @@ class ApplicationsController extends Controller {
      *
      * @param ArrangeInterviewRequest $request
      * @param int                     $event_id
-     * @param    int                  $application_id
+     * @param int                     $application_id
      *
      * @return \Illuminate\Http\RedirectResponse
      */
@@ -252,8 +250,7 @@ class ApplicationsController extends Controller {
     {
         $event = $this->eventRepo->findById($event_id);
 
-        $success = (new ApplicationCreator($this->applicationRepo))
-                    ->arrangeInterview($request->all(), $application_id);
+        $success = $request->persist($this->applicationRepo, $application_id);
 
         if ($success == false) {
             notify('error', 'interview_arranged');

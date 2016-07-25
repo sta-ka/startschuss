@@ -46,7 +46,7 @@
 							@if($company->participants->contains($event->id))
 								-
 							@else
-								{!! Form::open(['url' => 'organizer/profile/add-company/'.$event->id.'/'.$company->id, 'class' => 'add-participant']) !!}
+								{!! Form::open(['url' => 'organizer/profile/add-company/'. $event->id .'/'. $company->id, 'class' => 'add-participant']) !!}
 									{!! Form::submit('Als Teilnehmer hinzufügen') !!}
 								{!! Form::close() !!}
 							@endif

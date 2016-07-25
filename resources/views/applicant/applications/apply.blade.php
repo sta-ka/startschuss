@@ -30,7 +30,7 @@
 							<td>{{ $event->name }}</td>
 							<td>{{ Date::monthDate($event->start_date, $event->end_date, false) }}</td>
 							<td>{{ $event->location }}</td>
-							<td>{!! HTML::imageLink('applicant/applications/event/'.$event->id, 'assets/img/icons/show.png', 'Anzeigen', ['title' => 'Anzeigen']) !!}</td>
+							<td>{!! HTML::imageLink('applicant/applications/event/'. $event->id, 'assets/img/icons/show.png', 'Anzeigen', ['title' => 'Anzeigen']) !!}</td>
 						</tr>
 					@endforeach
 				</tbody>

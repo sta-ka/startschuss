@@ -14,14 +14,14 @@ interface StatisticRepository {
     /**
      * Get searches.
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
 	public function getSearches();
 
     /**
      * Get popular searches.
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function getPopularSearches();
 

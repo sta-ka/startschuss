@@ -18,4 +18,25 @@ class UpdateContactsRequest extends Request {
 		];
 	}
 
+    /**
+     * Persist data.
+     *
+     * @param object $companyRepo
+     * @param int    $company_id
+     *
+     * @return static
+     */
+    public function persist($companyRepo, $company_id)
+    {
+        $company = $companyRepo->findById($company_id);
+
+        $data = [
+            'website'  => $this->request->get('website'),
+            'facebook' => $this->request->get('facebook'),
+            'twitter'  => $this->request->get('twitter')
+        ];
+
+        return $company->update($data);
+    }
+
 }

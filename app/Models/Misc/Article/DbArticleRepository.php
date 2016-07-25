@@ -17,7 +17,7 @@ class DbArticleRepository implements ArticleRepository {
 	/**
 	 * Get all articles.
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getAll()
 	{
@@ -29,7 +29,7 @@ class DbArticleRepository implements ArticleRepository {
      *
      * @param $limit
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getFeatured($limit)
 	{
@@ -45,7 +45,7 @@ class DbArticleRepository implements ArticleRepository {
      *
      * @param string $slug
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getOthers($slug = '')
 	{
@@ -70,7 +70,7 @@ class DbArticleRepository implements ArticleRepository {
      *
      * @param string $slug
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function findBySlug($slug)
 	{
@@ -84,7 +84,7 @@ class DbArticleRepository implements ArticleRepository {
      *
      * @param int $id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function findById($id)
 	{
@@ -94,7 +94,7 @@ class DbArticleRepository implements ArticleRepository {
 	/**
 	 * Get last modified article in database.
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getLastModifiedArticle()
 	{

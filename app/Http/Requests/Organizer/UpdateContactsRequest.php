@@ -18,4 +18,24 @@ class UpdateContactsRequest extends Request {
 		];
 	}
 
+    /**
+     * Persist data.
+     *
+     * @param object   $organizerRepo
+     * @param int      $organizer_id
+     *
+     * @return bool|int
+     */
+    public function persist($organizerRepo, $organizer_id)
+    {
+        $organizer = $organizerRepo->findById($organizer_id);
+
+        $data = [
+            'website' 	=> $this->request->get('website'),
+            'facebook' 	=> $this->request->get('facebook'),
+            'twitter' 	=> $this->request->get('twitter')
+        ];
+
+        return $organizer->update($data);
+    }
 }

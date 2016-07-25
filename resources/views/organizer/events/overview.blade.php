@@ -33,10 +33,10 @@
 								@endif
 							</td>
 							<td>
-								{!! HTML::imageLink('organizer/profile/'.$event->id.'/show', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
-								{!! HTML::imageLink('organizer/profile/new/'.$event->id, 'assets/img/icons/plus.png', 'Neue Veranstaltung', ['title' => 'Neue Veranstaltung']) !!}
+								{!! HTML::imageLink('organizer/profile/'. $event->id .'/show', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
+								{!! HTML::imageLink('organizer/profile/new/'. $event->id , 'assets/img/icons/plus.png', 'Neue Veranstaltung', ['title' => 'Neue Veranstaltung']) !!}
 								@if($event->visible)
-									{!! HTML::imageLink('jobmesse/'.$event->slug, 'assets/img/icons/show.png', 'Anzeigen', ['target' => '_blank', 'title' => 'Anzeigen']) !!}
+									{!! HTML::imageLink('jobmesse/'. $event->slug, 'assets/img/icons/show.png', 'Anzeigen', ['target' => '_blank', 'title' => 'Anzeigen']) !!}
 								@endif
 							</td>
 						</tr>
@@ -67,7 +67,7 @@
 								{{ Date::monthDate($event->start_date, $event->end_date, false) .' '. Date::format($event->end_date, 'year') }}
 							</td>
 							<td>
-								{!! HTML::imageLink('organizer/profile/new/'.$event->id, 'assets/img/icons/plus.png', 'Neue Veranstaltung', ['title' => 'Neue Veranstaltung']) !!}
+								{!! HTML::imageLink('organizer/profile/new/'. $event->id, 'assets/img/icons/plus.png', 'Neue Veranstaltung', ['title' => 'Neue Veranstaltung']) !!}
 							</td>
 						</tr>
 					@endforeach

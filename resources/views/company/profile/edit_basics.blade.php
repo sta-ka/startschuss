@@ -11,7 +11,7 @@
 	<div class="span9 omega">
 		@include('partials/validation_errors')
 
-		{!! Form::model($company, ['url' => 'company/profile/'.$company->id.'/update-basics']) !!}
+		{!! Form::model($company, ['url' => 'company/profile/'. $company->id .'/update-basics']) !!}
 			<div class="span8 alpha">
 				<div class="form-group">
 					{!! Form::label('profile', 'Profil') !!}

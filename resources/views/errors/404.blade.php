@@ -25,7 +25,7 @@
 		@if(isset($link))
 			{!! HTML::link($link . '/dashboard', 'Zu meinem Konto', ['class' => 'green']) !!}
 		@else
-			{!! HTML::link('home', 'Zurück zur Startseite', ['class' => 'green']) !!}
+			{!! HTML::link('', 'Zurück zur Startseite', ['class' => 'green']) !!}
 		@endif
 
 		<br><br>

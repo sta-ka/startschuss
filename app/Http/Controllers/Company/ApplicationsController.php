@@ -1,10 +1,12 @@
 <?php namespace App\Http\Controllers\Company;
 
+use App\Http\Controllers\Controller;
+
+use App\Models\User\UserRepository as Users;
+use App\Models\Event\EventRepository as Events;
 use App\Models\Applicant\ApplicantRepository as Applicants;
 use App\Models\Applicant\Application\ApplicationRepository as Applications;
-use App\Models\Event\EventRepository as Events;
-use App\Models\User\UserRepository as Users;
-use App\Http\Controllers\Controller;
+
 use Sentry;
 
 /**

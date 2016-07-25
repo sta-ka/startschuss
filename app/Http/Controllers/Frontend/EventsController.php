@@ -1,14 +1,14 @@
 <?php namespace App\Http\Controllers\Frontend;
 
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Routing\Controller;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
-use App\Models\Misc\Article\ArticleRepository as Articles;
-use App\Models\Misc\City\CityRepository as Cities;
 use App\Models\Event\EventRepository as Events;
-use App\Models\Organizer\OrganizerRepository as Organizers;
-use App\Models\Misc\Region\RegionRepository as Regions;
+use App\Models\Misc\City\CityRepository as Cities;
 use App\Services\Mailers\EventMailer as EventMailer;
+use App\Models\Misc\Region\RegionRepository as Regions;
+use App\Models\Misc\Article\ArticleRepository as Articles;
+use App\Models\Organizer\OrganizerRepository as Organizers;
 
 use App\Http\Requests\Event\CommitEventRequest;
 
@@ -86,6 +86,8 @@ class EventsController extends Controller {
      * @param string $slug
      *
      * @return \Illuminate\View\View
+     *
+     * @throws ModelNotFoundException
 	 */
 	public function messe($slug)
 	{
@@ -97,7 +99,7 @@ class EventsController extends Controller {
             return view('start.event', $data);
         } catch (ModelNotFoundException $e) {
 			notify('error', 'event_not_found', false);
-            return redirect()->route('messekalender');
+            abort(404);
         }
 	}
 
@@ -107,6 +109,8 @@ class EventsController extends Controller {
      * @param string $slug
      *
      * @return \Illuminate\View\View
+     *
+     * @throws ModelNotFoundException
 	 */
 	public function messen($slug)
 	{
@@ -118,7 +122,7 @@ class EventsController extends Controller {
             return view('start.events_by_region', $data);
         } catch (ModelNotFoundException $e) {
 			notify('error', 'region_not_found', false);
-            return redirect()->route('messekalender');
+            abort(404);
         }
 	}
 
@@ -129,6 +133,8 @@ class EventsController extends Controller {
      * @param Cities $cityRepo
      *
      * @return \Illuminate\View\View
+     *
+     * @throws ModelNotFoundException
 	 */
 	public function messenIn($slug, Cities $cityRepo)
 	{
@@ -140,7 +146,7 @@ class EventsController extends Controller {
             return view('start.events_by_city', $data);
         } catch (ModelNotFoundException $e) {
 			notify('error', 'city_not_found', false);
-            return redirect()->route('messekalender');
+            abort(404);
         }
 	}
 
@@ -151,6 +157,8 @@ class EventsController extends Controller {
      * @param string $month
      *
      * @return \Illuminate\View\View
+     *
+     * @throws ModelNotFoundException
 	 */
 	public function messearchiv($year, $month = 'januar')
 	{
@@ -158,9 +166,9 @@ class EventsController extends Controller {
             $events  = $this->eventRepo->getEventsByDate($year, \Date::convertMonth(($month)));
 
             return view('start.events_by_date', compact('events', 'month'));
-        } catch (\Exception $e) {
+        } catch (ModelNotFoundException $e) {
 			notify('error', 'invalid_data', false);
-            return redirect()->route('messekalender');
+            abort(404);
         }
 	}
 

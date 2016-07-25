@@ -21,4 +21,32 @@ class UpdateProfileRequest extends Request {
 		];
 	}
 
+    /**
+     * Persist data.
+     *
+     * @param object    $eventRepo
+     * @param int       $event_id
+     *
+     * @return bool|int
+     */
+    public function persist($eventRepo, $event_id)
+    {
+        $event = $eventRepo->findById($event_id);
+
+        $data = [
+            'opening_hours1'		=> $this->request->get('opening_hours1'),
+            'opening_hours2'		=> $this->request->get('opening_hours2'),
+            'admission'				=> $this->request->get('admission'),
+            'specific_location1'	=> $this->request->get('specific_location1'),
+            'specific_location2'	=> $this->request->get('specific_location2'),
+            'specific_location3'	=> $this->request->get('specific_location3'),
+            'profile'				=> \Purifier::clean($this->request->get('profile'))
+        ];
+
+        if (\Input::has('audiences')) {
+            $data['audience'] = implode(', ', $this->request->get('audiences') ? $this->request->get('audiences') : []);
+        }
+
+        return $event->update($data);
+    }
 }

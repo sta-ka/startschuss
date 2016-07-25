@@ -60,6 +60,27 @@ class UserMailer extends Mailer {
 	}
 
     /**
+     * Prepare mail to contact a new user.
+     *
+     * @param $data
+     *
+     * @return $this
+     */
+	public function contactNewUser($data)
+	{
+        $this->to       = $data['recipient'];
+        $this->email    = $data['recipient'];
+		$this->subject  = $data['subject'] . ' | ' . $this->domain;
+		$this->view     = 'emails.user.contact_user';
+
+		$this->data = [
+			'body'		=> $data['body']
+		];
+
+		return $this;
+	}
+
+    /**
      * Prepare mail to send activation code to user.
      *
      * @param $data

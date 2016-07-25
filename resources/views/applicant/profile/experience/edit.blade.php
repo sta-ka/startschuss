@@ -9,7 +9,7 @@
 	<div class="span8">
 		@include('partials/validation_errors')
 
-		{!! Form::model($experience, ['url' => 'applicant/profile/update-experience/'.$experience->id]) !!}
+		{!! Form::model($experience, ['url' => 'applicant/profile/update-experience/'. $experience->id]) !!}
 			<div class="span6 alpha">
 				<div class="span3 alpha form-group">
 					{!! Form::label('company', 'Unternehmen') !!}

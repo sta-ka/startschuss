@@ -11,7 +11,7 @@
 	<div class="span6">
 		@include('partials/validation_errors')
 
-		{!! Form::open(['url' => 'admin/users/'.$user->id.'/update-user']) !!}
+		{!! Form::open(['url' => 'admin/users/'. $user->id .'/update-user']) !!}
 			<div class="span3 alpha">
 				<div class="form-group">
 					{!! Form::label('username', 'Login')!!}

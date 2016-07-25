@@ -6,7 +6,7 @@
 	<div>
 		<ol class="breadcrumb">
 			<li>{!! HTML::link('company/applications', 'Übersicht') !!}</li>
-			<li>{!! HTML::link('company/applications/event/'.$application->event->id, 'Bewerbungen - '. $application->event->name) !!}</li>
+			<li>{!! HTML::link('company/applications/event/'. $application->event->id, 'Bewerbungen - '. $application->event->name) !!}</li>
 			<li class="active">Bewerbungen - Einzelansicht</li>
 		</ol>
 	</div>
@@ -31,8 +31,8 @@
 				@else
 					<p>Hier können Sie die Bewerbung einsehen und bearbeiten.</p>
 					<br>
-					{!! HTML::link('company/applications/reject-application/'.$application->event->id.'/'.$application->id, 'Bewerbung ablehnen', ['class' => 'btn btn-danger btn-sm']) !!}
-					{!! HTML::link('company/applications/accept-application/'.$application->event->id.'/'.$application->id, 'Bewerbung akzeptieren', ['class' => 'btn btn-success btn-sm']) !!}
+					{!! HTML::link('company/applications/reject-application/'. $application->event->id .'/'. $application->id, 'Bewerbung ablehnen', ['class' => 'btn btn-danger btn-sm']) !!}
+					{!! HTML::link('company/applications/accept-application/'. $application->event->id .'/'. $application->id, 'Bewerbung akzeptieren', ['class' => 'btn btn-success btn-sm']) !!}
 				@endif
 			</div>
 		</div>

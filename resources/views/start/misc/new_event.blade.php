@@ -34,11 +34,10 @@
 
 		document.addEventListener('DOMContentLoaded', function() {
 			var startDateLabel = document.querySelector('label[for=start_date]');
-			var endDateField = document.querySelector('#end_date');
+			var endDateField   = document.querySelector('#end_date');
 			var multiDateField = document.querySelector('#multi-date');
 
-			if(multiDateField.checked == false)
-			{
+			if(multiDateField.checked == false) {
 				startDateLabel.innerHTML = 'Datum';
 				endDateField.parentNode.style.display = 'none';
 				endDateField.value = '';

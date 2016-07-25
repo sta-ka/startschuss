@@ -41,7 +41,7 @@
 			<h3>Bewerbungsphase abschließen</h3>
 			<p>Hier können sie die Bewerbungsphase abschließen.</p>
 
-			{!! Form::open(['url' => 'organizer/applications/close-applications/'.$event->id]) !!}
+			{!! Form::open(['url' => 'organizer/applications/close-applications/'. $event->id]) !!}
 				{!! Form::submit('Bewerbungsphase abschließen', ['class' => 'btn btn-primary btn-sm']) !!}
 			{!! Form::close() !!}
 			<br>
@@ -57,7 +57,7 @@
 			<h3>Terminvergabe abschließen</h3>
 			<p>Haben sie alle Bewerbungen bearbeitet, können Sie hier die Bearbeitung abschließen. Änderungen an den Terminen für Einzelgespräche können dann nicht mehr gemacht werden.</p>
 
-			{!! Form::open(['url' => 'organizer/applications/lock-interviews/'.$event->id]) !!}
+			{!! Form::open(['url' => 'organizer/applications/lock-interviews/'. $event->id]) !!}
 				<div class="pull-right">
 					{!! Form::submit('Terminvergabe abschließen', ['class' => 'btn btn-primary btn-sm']) !!}
 				</div>
@@ -86,7 +86,7 @@
 				<tr>
 					<td>
 						{{ $application->applicant->name }}
-						{!! HTML::imageLink('organizer/applications/applicant/'.$application->event->id.'/'.$application->id, 'assets/img/icons/show.png', 'Anzeigen', ['title' => 'Anzeigen']) !!}
+						{!! HTML::imageLink('organizer/applications/applicant/'. $application->event->id .'/'. $application->id, 'assets/img/icons/show.png', 'Anzeigen', ['title' => 'Anzeigen']) !!}
 					</td>
 					<td>{{ $application->created_at }}</td>
 					<td>{{ $application->company->name }}</td>
@@ -108,7 +108,7 @@
 						@endif	
 					</td>
 					<td>
-						{!! HTML::imageLink('organizer/applications/show/'.$application->event->id.'/'.$application->id, 'assets/img/icons/show.png', 'Anzeigen', ['title' => 'Anzeigen']) !!}
+						{!! HTML::imageLink('organizer/applications/show/'. $application->event->id .'/'. $application->id, 'assets/img/icons/show.png', 'Anzeigen', ['title' => 'Anzeigen']) !!}
 					</td>
 				</tr>
 			@endforeach

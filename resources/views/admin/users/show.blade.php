@@ -19,11 +19,17 @@
 
 @section('content')
 	<div>
-		{!! HTML::link('admin/users/new', 'Neuen Nutzer', ['class' => 'btn btn-success']) !!}
-		<br>
-		<br>
-	</div>
-	<div>
+        <div class="span8 alpha">
+            {!! HTML::link('admin/users/new', 'Neuen Nutzer', ['class' => 'btn btn-success']) !!}
+        </div>
+        <div class="span4 omega">
+            {!! HTML::link('admin/users/send-mail', 'Mail schreiben', ['class' => 'btn btn-info pull-right']) !!}
+	    </div>
+    </div>
+
+    <br><br><br>
+
+    <div>
 		<table id="datatable" class="table table-hover">
 			<thead>
 				<tr>
@@ -77,12 +83,12 @@
 							@endif
 						</td>
 						<td>
-							{!! HTML::imageLink('admin/users/'.$user->id.'/show', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
-							{!! HTML::imageLink('admin/users/'.$user->id.'/force-login', 'assets/img/icons/login_key.png', 'Login', ['title' => 'Login']) !!}
-							{!! HTML::imageLink('admin/users/'.$user->id.'/send-mail', 'assets/img/icons/message.png', 'Mail senden', ['title' => 'Mail senden']) !!}
+							{!! HTML::imageLink('admin/users/'. $user->id .'/show', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
+							{!! HTML::imageLink('admin/users/'. $user->id .'/force-login', 'assets/img/icons/login_key.png', 'Login', ['title' => 'Login']) !!}
+							{!! HTML::imageLink('admin/users/'. $user->id .'/send-mail', 'assets/img/icons/message.png', 'Mail senden', ['title' => 'Mail senden']) !!}
 							
 							@if( ! $user->deleted_at)
-								{!! HTML::imageLink('admin/users/'.$user->id.'/delete', 'assets/img/icons/erase.png', 'Löschen', ['title' => 'Löschen']) !!}
+								{!! HTML::imageLink('admin/users/'. $user->id .'/delete', 'assets/img/icons/erase.png', 'Löschen', ['title' => 'Löschen']) !!}
 							@endif
 						</td>
 					</tr>

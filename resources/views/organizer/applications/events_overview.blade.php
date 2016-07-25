@@ -20,7 +20,7 @@
 							<td>{{ $event->name }}</td>
 							<td>{{ $event->applications()->count() }}</td>
 							<td>
-								{!! HTML::imageLink('organizer/applications/event/'.$event->id, 'assets/img/icons/show.png', 'Anzeigen', ['title' => 'Anzeigen']) !!}
+								{!! HTML::imageLink('organizer/applications/event/'. $event->id, 'assets/img/icons/show.png', 'Anzeigen', ['title' => 'Anzeigen']) !!}
 							</td>
 						</tr>
 					@endforeach

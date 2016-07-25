@@ -25,13 +25,18 @@
     display: inline-block
     font-size: 16px
     padding: 0 3px 2px
-    border-bottom: 1px solid $primaryColor
+    border-bottom: 2px solid $primaryColor
 
 #article ul
-  margin: 20px 10px
+  margin: 20px
   text-align: justify
-  padding: 10px
+  padding: 0 10px
   background: #eeeeee
+
+  & h3
+    border: none
+    font-weight: bold
+    color: $primaryColor
 
   & li
     padding-top: 10px
@@ -52,14 +57,11 @@
   & h4
     margin-top: 0
 
-#more-articles, #article-featured
-  display: flex
-
 #more-articles__header
   width: 960px
   float: left
   padding: 30px
-  margin: 10px 0 20px -10px
+  margin: 10px 0 20px
   font-weight: 200
   line-height: 2.1428571435
   color: inherit

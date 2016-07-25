@@ -2,7 +2,7 @@
 
 use Illuminate\Console\Command;
 
-use App\Models\User\Login\LoginRepository as Logins;
+use App\Models\User\Login\LoginRepository as Login;
 
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Output\ConsoleOutput;
@@ -23,27 +23,12 @@ class UserLoginsCommand extends Command {
      */
     protected $description = 'Shows last 100 logins.';
 
-    /**
-     * @var Logins
-     */
-    private $loginRepo;
-
-	/**
-	 * Create a new command instance.
-     *
-     * @param $loginRepo Logins
-	 */
-	public function __construct(Logins $loginRepo)
-	{
-		parent::__construct();
-
-		$this->loginRepo = $loginRepo;
-	}
-
 	/**
 	 * Execute the console command.
+     *
+     * @param $loginRepo Login
 	 */
-	public function handle()
+	public function handle(Login $loginRepo)
 	{
         $successful = true;
 
@@ -51,7 +36,7 @@ class UserLoginsCommand extends Command {
 			$successful = false;
 		}
 
-        $logins = $this->loginRepo->getAll(100, $successful);
+        $logins = $loginRepo->getAll(100, $successful);
 
         if (count($logins) == 0 ) {
             $this->info('There are no logins.');
@@ -68,8 +53,7 @@ class UserLoginsCommand extends Command {
      */
     private function printOutput($logins)
     {
-        $this->info('Last 100 Logins ordered by date.');
-        echo "\n";
+        $this->info('Last 100 Logins ordered by date.' . "\n");
 
         $table = new Table(new ConsoleOutput);
 

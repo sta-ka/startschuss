@@ -18,4 +18,22 @@ class UpdateBasicsRequest extends Request {
 		];
 	}
 
+    /**
+     * Persist data.
+     *
+     * @param object   $applicantRepo
+     *
+     * @return bool|int
+     */
+    public function persist($applicantRepo)
+    {
+        $applicant = $applicantRepo->findByUserId(\Sentry::getUser()->getId());
+
+        $data = [
+            'name'		=> $this->request->get('name'),
+            'birthday'	=> $this->request->get('birthday')
+        ];
+
+        return $applicant->update($data);
+    }
 }

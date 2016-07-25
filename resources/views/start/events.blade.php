@@ -9,7 +9,7 @@
 @stop
 
 @section('content')
-	<div class="span9 alpha">
+    <div class="col-xs-12 col-sm-12 col-md-9">
         @include('start.partials.searchresults_events')
 
         @if($events->total() > 0)
@@ -34,7 +34,7 @@
 
 	</div>
 
-	<div class="span3 omega">
+	<div class="col-md-3">
 		
 		@include('start.partials.searchbox_events')
 		@include('start.partials.regions')

@@ -12,13 +12,13 @@
 		@include('partials/validation_errors')
 
 		@if($company->logo)
-			{!! HTML::image('uploads/logos/medium/'.$company->logo, $company->name) !!}
+			{!! HTML::image('uploads/logos/medium/'. $company->logo, $company->name) !!}
 			<br><br>
-			{!! HTML::link('admin/companies/'.$company->id.'/delete-logo', 'Logo löschen', ['class' => 'btn btn-danger btn-sm']) !!}
+			{!! HTML::link('admin/companies/'. $company->id .'/delete-logo', 'Logo löschen', ['class' => 'btn btn-danger btn-sm']) !!}
 		@else
 			<p id="filename"></p>
 			
-			{!! Form::open(['url' =>'admin/companies/'.$company->id.'/update-logo', 'files' => true]) !!}
+			{!! Form::open(['url' =>'admin/companies/'. $company->id .'/update-logo', 'files' => true]) !!}
 
 			<div class="form-group">
 				<button class="btn btn-default btn-sm" id="browse-file" >Logo auswählen</button>

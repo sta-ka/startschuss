@@ -1,7 +1,7 @@
 <?php namespace App\Http\Controllers\Frontend;
 
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Routing\Controller;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 use App\Models\Organizer\OrganizerRepository as Organizers;
 
@@ -43,7 +43,7 @@ class OrganizersController extends Controller {
         } elseif (strlen($str) == 1 && in_array($str, str_split('abcdefghijklmnopqrstuvwxyz'))) {
             $data['organizers'] = $this->organizerRepo->getByLetter($str);
         } else {
-            \App::abort(404);
+            abort(404);
         }
 
         return view('start.organizers', $data);
@@ -55,6 +55,8 @@ class OrganizersController extends Controller {
      * @param string $slug
      *
      * @return \Illuminate\View\View
+     *
+     * @throws ModelNotFoundException
 	 */
 	public function veranstalter($slug)
 	{
@@ -65,7 +67,7 @@ class OrganizersController extends Controller {
             return view('start.organizer', $data);
         } catch (ModelNotFoundException $e) {
             notify('error', 'organizer_not_found', false);
-            return redirect('veranstalterdatenbank');
+            abort(404);
         }
 	}
 }

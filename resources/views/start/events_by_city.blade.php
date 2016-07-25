@@ -9,7 +9,7 @@
 @stop
 
 @section('content')
-	<div class="span9 alpha">
+	<div class="col-xs-12 col-sm-12 col-md-9">
 		<div id="city-description">{!!  $city->description !!}</div>
 		<br>
 		<div id="events">
@@ -34,7 +34,7 @@
 		@include('start.partials.missing_event')
 	</div>
 
-	<div class="span3 omega">
+	<div class="col-md-3">
 
 		@include('start.partials.searchbox_events')
 		@include('start.partials.regions')

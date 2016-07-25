@@ -57,7 +57,7 @@ function notify($success, $key, $append = true) {
  *
  * @return string
  */
-function renderPaginationMetaData($resource) {
+function renderPaginationMetaData(\Illuminate\Contracts\Pagination\LengthAwarePaginator $resource) {
     $metaTag = '';
 
     if ($resource->currentPage() > 1 && $resource->lastPage() > 1) {

@@ -5,7 +5,7 @@ class DbRegionRepository implements RegionRepository {
 	/**
 	 * Get all regions.
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getAll()
 	{
@@ -30,7 +30,7 @@ class DbRegionRepository implements RegionRepository {
      *
      * @param int $region_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function findById($region_id)
 	{
@@ -42,7 +42,7 @@ class DbRegionRepository implements RegionRepository {
      *
      * @param string $slug
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function findBySlug($slug)
 	{
@@ -56,7 +56,7 @@ class DbRegionRepository implements RegionRepository {
      * @param int $region_id
      * @param int $limit
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function getEventsInRegion($region_id, $limit)
 	{

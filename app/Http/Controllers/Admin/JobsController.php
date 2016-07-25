@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Controller;
 use App\Models\Company\Job\JobRepository as Jobs;
-use App\Services\Creator\JobCreator;
 
 use App\Http\Requests\Job\UpdateDataRequest;
 use App\Http\Requests\Job\UpdateSeoDataRequest;
@@ -129,8 +128,7 @@ class JobsController extends Controller {
 	 */
 	public function updateData(UpdateDataRequest $request, $job_id)
 	{
-		(new JobCreator($this->jobRepo))
-			->editData($request->all(), $job_id);
+        $request->persist($this->jobRepo, $job_id);
 
 		return redirect('admin/jobs/'.$job_id.'/show');
 	}
@@ -159,8 +157,7 @@ class JobsController extends Controller {
 	 */
 	public function updateSeoData(UpdateSeoDataRequest $request, $job_id)
 	{
-		(new JobCreator($this->jobRepo))
-			->editSeoData($request->all(), $job_id);
+        $request->persist($this->jobRepo, $job_id);
 
 		return redirect('admin/jobs/'.$job_id.'/show');
 	}
@@ -189,8 +186,7 @@ class JobsController extends Controller {
 	 */
 	public function updateSettings(UpdateSettingsRequest $request, $job_id)
 	{
-		(new JobCreator($this->jobRepo))
-			->editSettings($job_id);
+        $request->persist($this->jobRepo, $job_id);
 
 		return redirect('admin/jobs/'.$job_id.'/show');
 	}
@@ -209,7 +205,7 @@ class JobsController extends Controller {
 
 		// check if job is soft deleted
 		if ( ! $job->deleted_at) {
-			$success = $job->delete(); // soft-delete job
+			$success = $job->delete();
 			notify($success, 'job_delete');
 
             return redirect('admin/jobs');

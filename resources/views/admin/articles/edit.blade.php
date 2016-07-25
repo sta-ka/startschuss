@@ -9,7 +9,7 @@
 	<div class="span7">
 		@include('partials/validation_errors')
 
-		{!! Form::model($article, ['url' => 'admin/articles/'.$article->id.'/update', 'files' => true]) !!}
+		{!! Form::model($article, ['url' => 'admin/articles/'. $article->id .'/update', 'files' => true]) !!}
 			<div class="span5 alpha">
 				<div class="form-group">
 					{!! Form::label('title', 'Titel') !!}
@@ -33,11 +33,11 @@
 			<div class="span6 alpha">
 				<div class="form-group">
 					@if($article->image)
-						{!! HTML::image('uploads/images/small/'.$article->image, $article->title) !!}
+						{!! HTML::image('uploads/images/small/'. $article->image, $article->title) !!}
 						<br>
 						<br>
 						<div>
-							{!! HTML::link('admin/articles/'.$article->id.'/delete-image', 'Bild löschen', ['class' => 'btn btn-danger btn-sm']) !!}
+							{!! HTML::link('admin/articles/'. $article->id .'/delete-image', 'Bild löschen', ['class' => 'btn btn-danger btn-sm']) !!}
 						</div>
 					@else
 						<p id="filename"></p>

@@ -33,8 +33,8 @@
 						<td>{{ $applicant->id }}</td>
 						<td>{{ $applicant->name }}</td>
 						<td>
-							{!! HTML::imageLink('admin/applicants/'.$applicant->id.'/show', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
-							{!! HTML::imageLink('admin/applicants/'.$applicant->id.'/delete', 'assets/img/icons/erase.png', 'Löschen', ['title' => 'Löschen']) !!}
+							{!! HTML::imageLink('admin/applicants/'. $applicant->id .'/show', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
+							{!! HTML::imageLink('admin/applicants/'. $applicant->id .'/delete', 'assets/img/icons/erase.png', 'Löschen', ['title' => 'Löschen']) !!}
 						</td>
 					</tr>
 				@endforeach

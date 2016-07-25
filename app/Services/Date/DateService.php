@@ -1,5 +1,6 @@
 <?php namespace App\Services\Date;
 
+use Carbon\Carbon;
 
 /**
  * Class DateService
@@ -92,7 +93,7 @@ class DateService {
      * Return date/date span in a a human friendly format.
      *
      * @param $start_date
-     * @param bool $end_date
+     * @param $end_date
      * @param bool $long
      *
      * @return bool|string
@@ -248,6 +249,28 @@ class DateService {
         }
 
         return array_flip($this->months_fullname)[$month];
+	}
+
+	/**
+	 * Calculate time difference in months.
+     *
+     * @param $start_date
+     * @param $end_date
+     *
+     * @return integer
+     */
+	public function diffInMonths($start_date, $end_date)
+	{
+        $start_date = Carbon::parse($start_date);
+        $end_date == "16.01.2030" ? $end_date = Carbon::now() : $end_date = Carbon::parse($end_date);
+
+        $months = $start_date->diffInMonths($end_date) % 12;
+        $years = $start_date->diffInYears($end_date);
+
+        $diff['months'] = trans_choice('basics.years', $years, ['years' => $years]);
+        $diff['years']  = trans_choice('basics.months', $months, ['months' => $months]);
+
+        return implode(', ', array_filter($diff));
 	}
 
 

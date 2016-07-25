@@ -1,27 +1,26 @@
 <?php namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Services\Creator\EventCreator;
 
-use App\Models\Company\CompanyRepository as Companies;
+use App\Models\User\UserRepository as Users;
 use App\Models\Event\EventRepository as Events;
+use App\Models\Misc\Region\RegionRepository as Regions;
+use App\Models\Company\CompanyRepository as Companies;
 use App\Models\Organizer\OrganizerRepository as Organizers;
 use App\Models\Misc\Audience\AudienceRepository as Audiences;
-use App\Models\Misc\Region\RegionRepository as Regions;
-use App\Models\User\UserRepository as Users;
 
+use App\Http\Requests\Event\UploadLogoRequest;
 use App\Http\Requests\Event\CreateEventRequest;
-use App\Http\Requests\Event\UpdateGeneralDataRequest;
 use App\Http\Requests\Event\UpdateProfileRequest;
+use App\Http\Requests\Event\UpdateSeoDataRequest;
 use App\Http\Requests\Event\UpdateProgramRequest;
 use App\Http\Requests\Event\UpdateContactsRequest;
-use App\Http\Requests\Event\UpdateSeoDataRequest;
-use App\Http\Requests\Event\UploadLogoRequest;
+use App\Http\Requests\Event\UpdateGeneralDataRequest;
 
-use Input;
-use Request;
-use Sentry;
 use URL;
+use Input;
+use Sentry;
+use Request;
 
 /**
  * Class EventsController
@@ -122,9 +121,7 @@ class EventsController extends Controller {
 	 */
 	public function createEvent(CreateEventRequest $request)
 	{
-		$success = (new EventCreator($this->eventRepo))
-					->createEvent($request->all());
-
+        $success = $request->persist($this->eventRepo);
 		notify($success, 'event_created');
 
 		return redirect('admin/events');
@@ -214,8 +211,7 @@ class EventsController extends Controller {
 	 */
 	public function updateGeneralData(UpdateGeneralDataRequest $request, $event_id)
 	{
-		(new EventCreator($this->eventRepo))
-        	->editGeneralData($request->all(), $event_id);
+        $request->persist($this->eventRepo, $event_id);
 
 		return redirect('admin/events/'. $event_id .'/show');
 	}
@@ -247,8 +243,7 @@ class EventsController extends Controller {
 	 */
 	public function updateProfile(UpdateProfileRequest $request, $event_id)
 	{
-		(new EventCreator($this->eventRepo))
-        	->editProfile($request->all(), $event_id);
+        $request->persist($this->eventRepo, $event_id);
 
 		return redirect('admin/events/'. $event_id .'/show');
 	}
@@ -277,8 +272,7 @@ class EventsController extends Controller {
 	 */
 	public function updateProgram(UpdateProgramRequest $request, $event_id)
 	{
-		(new EventCreator($this->eventRepo))
-        	->editProgram($request->all(), $event_id);
+        $request->persist($this->eventRepo, $event_id);
 
 		return redirect('admin/events/'. $event_id .'/show');
 	}
@@ -307,8 +301,7 @@ class EventsController extends Controller {
 	 */
 	public function updateContacts(UpdateContactsRequest $request, $event_id)
 	{
-		(new EventCreator($this->eventRepo))
-        	->editContacts($request->all(), $event_id);
+        $request->persist($this->eventRepo, $event_id);
 
 		return redirect('admin/events/'. $event_id .'/show');
 	}
@@ -337,8 +330,7 @@ class EventsController extends Controller {
 	 */
 	public function updateSeoData(UpdateSeoDataRequest $request, $event_id)
 	{
-		(new EventCreator($this->eventRepo))
-        	->editSeoData($request->all(), $event_id);
+        $request->persist($this->eventRepo, $event_id);
 
 		return redirect('admin/events/'. $event_id .'/show');
 	}
@@ -367,8 +359,7 @@ class EventsController extends Controller {
 	 */
 	public function updateLogo(UploadLogoRequest $request, $event_id)
 	{
-		(new EventCreator($this->eventRepo))
-			->processLogo($event_id);
+        $request->persist($this->eventRepo, $event_id);
 
 		return redirect('admin/events/'. $event_id .'/edit-logo');
 	}
@@ -408,10 +399,7 @@ class EventsController extends Controller {
 	{
 		$event = $this->eventRepo->findById($event_id);
 
-		// get status of visible
-		$visible = $event->visible;
-		
-		$event->update(['visible' => ! $visible]);
+		$event->update(['visible' => ! $event->visible]);
 
 		return back();
 	}
@@ -459,9 +447,6 @@ class EventsController extends Controller {
 		$success = $this->eventRepo->addAsParticipant($event_id, $company_id);
 
 		if (Request::ajax()) {
-/*			$success ?
-				$data = Html::link('admin/events/remove-company/'. $event_id .'/'.$company_id, 'Als Teilnehmer löschen') :
-				$data = Html::link('admin/events/add-company/'. $event_id .'/'.$company_id, 'Als Teilnehmer hinzufügen');*/
 			$success ?
 				$data = json_encode([
 					'text' => 'Als Teilnehmer löschen', 
@@ -491,10 +476,6 @@ class EventsController extends Controller {
 		$success = $this->eventRepo->removeAsParticipant($event_id, $company_id);
 
 		if (Request::ajax()) {
-			/*$success ?
-				$data = Html::link('admin/events/add-company/'. $event_id .'/'.$company_id, 'Als Teilnehmer hinzufügen') :
-				$data = Html::link('admin/events/remove-company/'. $event_id .'/'.$company_id, 'Als Teilnehmer löschen');*/
-
 			$success ?
 				$data = json_encode([
 					'text' => 'Als Teilnehmer hinzufügen', 
@@ -643,7 +624,6 @@ class EventsController extends Controller {
     {
         $filename = $event->logo;
 
-        // delete logo in the database
         $event->update(['logo' => null]);
 
         // delete files

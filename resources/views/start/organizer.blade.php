@@ -8,7 +8,7 @@
 @stop
 
 @section('content')
-	<div id="organizer-details" class="span9 alpha">
+	<div id="organizer-details" class="col-xs-12 col-sm-12 col-md-8">
 		<h1 class="heading-underlined">{{ $organizer->name }}</h1>
 
 		<div id="profile">
@@ -30,9 +30,9 @@
 					<li itemscope itemtype="http://schema.org/Event">
 						<table>
 							<tr>
-								<td style="width: 130px; height: 50px">
+								<td style="width: 135px; height: 50px">
 									@if($event->logo)
-										{!! HTML::image('uploads/logos/small/'.$event->logo) !!}
+										{!! HTML::image('uploads/logos/small/'. $event->logo) !!}
 									@endif
 								</td>
 								<td colspan="3">
@@ -44,9 +44,10 @@
 							<tr>
 								<td class="date">
 									@if($event->start_date == $event->end_date)
-										<span itemprop="startDate" content="{{ Date::format($event->start_date, 'ISO')}}">
-											{{ Date::monthDate($event->start_date, $event->end_date) }}
-										</span>
+                                        <span itemprop="startDate" content="{{ Date::format($event->start_date, 'ISO')}}">
+                                            {{ Date::monthDate($event->start_date) }}
+                                        </span>
+                                        <meta itemprob="endDate" content="{{ Date::format($event->end_date, 'ISO')}}">
 									@else
 										<span itemprop="startDate" content="{{ Date::format($event->start_date, 'ISO')}}">
 											{{ Date::format($event->start_date, 'day').'. -' }}
@@ -80,48 +81,54 @@
 			@endif
 		</div>
 	</div>
-	<div id="organizer" class="span3 omega">
+	<div id="organizer" class="col-md-4">
 		@if($organizer->logo)
-			<div>
-				{!! HTML::image('uploads/logos/big/'.$organizer->logo, $organizer->name) !!}
+			<div class="col-xs-6 col-sm-4 col-md-12">
+				{!! HTML::image('uploads/logos/big/'. $organizer->logo, $organizer->name) !!}
 				<br><br>
 			</div>
 		@endif
 
-		<h5 class="heading-underlined--small">Adresse</h5>
-		@if($organizer->address1 || $organizer->address2 || $organizer->address3)			
-			@if($organizer->address1)
-				{{ $organizer->address1 }}<br>
-			@endif
-			@if($organizer->address2)
-				{{ $organizer->address2 }}<br>
-			@endif
-			@if($organizer->address3)
-				{{ $organizer->address3 }}<br>
-			@endif
-		@else
-			-
-			<br>
-		@endif
+        <div class="col-xs-6 col-sm-4 col-md-12">
+            <h5 class="heading-underlined--small">Adresse</h5>
+            @if($organizer->address1 || $organizer->address2 || $organizer->address3)
+                @if($organizer->address1)
+                    {{ $organizer->address1 }}<br>
+                @endif
+                @if($organizer->address2)
+                    {{ $organizer->address2 }}<br>
+                @endif
+                @if($organizer->address3)
+                    {{ $organizer->address3 }}<br>
+                @endif
+            @else
+                -
+                <br>
+            @endif
+        </div>
 		<br>
-		<h5 class="heading-underlined--small">Webseite des Veranstalters</h5>
-		@if($organizer->website)
-			{!! HTML::link($organizer->website, $organizer->name, ['class' => 'green', 'target' => '_blank']) !!}
-		@else
-			-
+        <div class="col-xs-6 col-sm-4 col-md-12">
+            <h5 class="heading-underlined--small">Webseite des Veranstalters</h5>
+            @if($organizer->website)
+                {!! HTML::link($organizer->website, $organizer->name, ['class' => 'green', 'target' => '_blank']) !!}
+            @else
+                -
+            @endif
+        </div>
+		<br>
+		<br>
+
+        @if($organizer->facebook || $organizer->twitter)
+            <div class="col-xs-6 col-sm-4 col-md-12">
+                <h5>Social Media</h5>
+                @if($organizer->facebook)
+                    {!! HTML::imageLink($organizer->facebook, 'assets/img/icons/facebook.png', $organizer->name, ['target' => '_blank']) !!}
+                @endif
+                @if($organizer->twitter)
+                    {!! HTML::imageLink($organizer->twitter, 'assets/img/icons/twitter.png', $organizer->name, ['target' => '_blank']) !!}
+                @endif
+            </div>
 		@endif
 
-		<br>
-		<br>
-
-		@if($organizer->facebook || $organizer->twitter)
-			<h5>Social Media</h5>
-			@if($organizer->facebook)
-				{!! HTML::imageLink($organizer->facebook, 'assets/img/icons/facebook.png', $organizer->name, ['target' => '_blank']) !!}
-			@endif
-			@if($organizer->twitter)
-				{!! HTML::imageLink($organizer->twitter, 'assets/img/icons/twitter.png', $organizer->name, ['target' => '_blank']) !!}
-			@endif
-		@endif
 	</div>
 @stop

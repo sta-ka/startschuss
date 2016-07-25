@@ -9,11 +9,11 @@
 
 @section('content')
 	<div>
-		<div class="span8 alpha" id="article">
+		<div class="col-md-8" id="article">
 			<h1 class="heading-underlined--small">{{ $article->title }}</h1>
             <div class="article__body">{!! $article->body !!}</div>
 		</div>
-		<div class="span4 omega">
+		<div class="col-md-4">
 			<h2 class="heading-underlined--small">Beliebte Artikel</h2>
 
             @each('start.partials.article', $articles, 'article')

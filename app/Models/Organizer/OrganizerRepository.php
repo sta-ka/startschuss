@@ -7,7 +7,7 @@ interface OrganizerRepository {
      *
      * @param bool $trashed
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function getAll($trashed = false);
 
@@ -25,7 +25,7 @@ interface OrganizerRepository {
      *
      * @param int $organizer_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function findById($organizer_id);
 
@@ -34,7 +34,7 @@ interface OrganizerRepository {
      *
      * @param string $slug
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function findBySlug($slug);
 
@@ -53,14 +53,14 @@ interface OrganizerRepository {
      *
      * @param int $limit
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function getPaginatedOrganizers($limit);
 
     /**
      * Randomly get 4 featured organizers.
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function getFeaturedOrganizers();
 
@@ -69,7 +69,7 @@ interface OrganizerRepository {
      *
      * @param string $str
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function getByLetter($str);
 
@@ -78,14 +78,14 @@ interface OrganizerRepository {
      *
      * @param int $organizer_id
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function getEventsForOrganizer($organizer_id);
 
     /**
      * Get last modified organizer in database.
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function getLastModifiedOrganizer();
 

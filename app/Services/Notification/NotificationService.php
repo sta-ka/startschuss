@@ -66,6 +66,7 @@ class NotificationService {
     public function display()
 	{
 		$message = \Session::get('message');
+        \Session::forget('message');
 
 		if (count($message) == 0 || $message['type'] == '') {
             return false;

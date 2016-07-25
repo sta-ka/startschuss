@@ -17,4 +17,21 @@ class CreateCompanyRequest extends Request {
 		];
 	}
 
+    /**
+     * Persist data.
+     *
+     * @param object $companyRepo
+     *
+     * @return static
+     */
+    public function persist($companyRepo)
+    {
+        $data = [
+            'name'		=> $this->request->get('name'),
+            'full_name' => $this->request->get('full_name')
+        ];
+
+        return $companyRepo->create($data);
+    }
+
 }

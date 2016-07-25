@@ -3,7 +3,6 @@
 use App\Http\Controllers\Controller;
 
 use App\Models\Misc\City\CityRepository as Cities;
-use App\Services\Creator\CityCreator;
 
 use App\Http\Requests\City\UpdateDataRequest;
 
@@ -66,8 +65,7 @@ class CitiesController extends Controller {
 	 */
 	public function update(UpdateDataRequest $request, $city_id)
 	{
-		(new CityCreator($this->cityRepo))
-			->updateData($request->all(), $city_id);
+        $request->persist($this->cityRepo, $city_id);
 
 		return redirect('admin/cities/'. $city_id .'/edit');
 	}

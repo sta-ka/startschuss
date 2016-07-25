@@ -61,9 +61,9 @@
 						@endif
 					</td>
 					<td>
-						{!! HTML::imageLink('admin/jobs/'.$job->id.'/show', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
+						{!! HTML::imageLink('admin/jobs/'. $job->id .'/show', 'assets/img/icons/page_edit.png', 'Bearbeiten', ['title' => 'Bearbeiten']) !!}
 						@if(! $job->deleted_at) 
-							{!! HTML::imageLink('admin/jobs/'.$job->id.'/delete', 'assets/img/icons/erase.png', 'Löschen', ['title' => 'Löschen']) !!}
+							{!! HTML::imageLink('admin/jobs/'. $job->id .'/delete', 'assets/img/icons/erase.png', 'Löschen', ['title' => 'Löschen']) !!}
 						@endif
 					</td>
 				</tr>

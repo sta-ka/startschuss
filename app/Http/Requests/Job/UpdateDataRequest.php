@@ -20,4 +20,26 @@ class UpdateDataRequest extends Request {
 		];
 	}
 
+    /**
+     * Persist data.
+     *
+     * @param object   $jobRepo
+     * @param int      $job_id
+     *
+     * @return bool|int
+     */
+    public function persist($jobRepo, $job_id)
+    {
+        $job = $jobRepo->findById($job_id);
+
+        $data = [
+            'title'				=> $this->request->get('title'),
+            'location'			=> $this->request->get('location'),
+            'start_date'		=> $this->request->get('start_date'),
+            'description'		=> \Purifier::clean($this->request->get('description')),
+            'requirements'		=> \Purifier::clean($this->request->get('requirements')),
+        ];
+
+        return $job->update($data);
+    }
 }

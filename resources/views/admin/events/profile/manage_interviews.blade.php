@@ -50,15 +50,13 @@
 							@endif
 
 							@if($company->pivot->interview)
-								{!! Form::open(['url' => 'admin/events/remove-interview/'.$event->id.'/'.$company->id, 'class' => 'remove-interview-tag']) !!}
+								{!! Form::open(['url' => 'admin/events/remove-interview/'. $event->id. '/'. $company->id, 'class' => 'remove-interview-tag']) !!}
 									{!! Form::submit('Löschen') !!}
 								{!! Form::close() !!}
-								{{-- HTML::link('admin/events/remove-interview/'.$event->id.'/'.$company->id, 'Löschen') --}}			
 							@else
-								{!! Form::open(['url' => 'admin/events/add-interview/'.$event->id.'/'.$company->id, 'class' => 'add-interview-tag']) !!}
+								{!! Form::open(['url' => 'admin/events/add-interview/'. $event->id .'/'. $company->id, 'class' => 'add-interview-tag']) !!}
 									{!! Form::submit('Hinzufügen') !!}
 								{!! Form::close() !!}
-								{{-- HTML::link('admin/events/add-interview/'.$event->id.'/'.$company->id, 'Hinzufügen') --}}
 							@endif
 						</td>
 					</tr>

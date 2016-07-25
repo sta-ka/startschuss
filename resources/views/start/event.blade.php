@@ -96,7 +96,7 @@
 						<li>
 							@if($company->logo)
 								<div class="image">
-									{!! HTML::image('uploads/logos/medium/'.$company->logo, $company->name, ['title' => $company->full_name]) !!}
+									{!! HTML::image('uploads/logos/medium/'. $company->logo, $company->name, ['title' => $company->full_name]) !!}
 								</div>
 							@else
 								<div class="text" title="{{ $company->full_name }}">{{ $company->name }}</div>
@@ -137,7 +137,7 @@
 								<li>
 									@if($company->logo)
 										<div class="image">
-											{!! HTML::image('uploads/logos/medium/'.$company->logo, $company->name, ['title' => $company->name]) !!}
+											{!! HTML::image('uploads/logos/medium/'. $company->logo, $company->name, ['title' => $company->name]) !!}
 										</div>
 									@else
 										<div class="text" title="{{ $company->full_name }}">{{ $company->name }}</div>
@@ -158,7 +158,7 @@
 				<strong>{!! HTML::linkRoute('veranstalter', $event->organizer->name, [$event->organizer->slug]) !!}</strong>
 			</p>
 			@if($event->organizer->logo)
-				{!! HTML::imageLink('veranstalter/'.$event->organizer->slug, 'uploads/logos/big/'.$event->organizer->logo, $event->organizer->name) !!}
+				{!! HTML::imageLink('veranstalter/'. $event->organizer->slug, 'uploads/logos/big/'. $event->organizer->logo, $event->organizer->name) !!}
 				<br>
 			@endif
 			<br>
@@ -195,7 +195,7 @@
                             <table>
                                 <tr>
                                     <td>
-                                        <span class="name">{!! HTML::link('jobmesse/'.$e->slug, Str::limit($e->name, 24), ['title' => $e->name ]) !!}</span>
+                                        <span class="name">{!! HTML::link('jobmesse/'. $e->slug, Str::limit($e->name, 24), ['title' => $e->name ]) !!}</span>
                                     </td>
                                 </tr>
                                 <tr>

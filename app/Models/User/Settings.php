@@ -2,8 +2,8 @@
 
 use Exception;
 
-class Settings
-{
+class Settings {
+
     /**
      * The User instance.
      *
