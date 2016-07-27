@@ -59,80 +59,72 @@
 @stop
 
 @section('content')
-	<div class="span3 alpha">
-		&nbsp;
-	</div>
-	<div class="span6">
+    <div class="col-xs-7 col-sm-6 col-md-6 col-sm-offset-1 col-md-offset-2">
 		@include('partials/validation_errors')
 
 		{!! Form::open(['url' => 'jobmesse-eintragen']) !!}
 
 		<fieldset>
 			<legend>Kontaktdaten</legend>
-			<div class="span3 alpha">
-				<div class="form-group">
-					<div class="input-group input-group-sm">
-						<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-						{!! Form::text('contact', Input::old('contact'), ['class' => 'form-control input-sm', 'placeholder' => 'Ansprechpartner']) !!}
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="input-group input-group-sm">
-						<span class="input-group-addon">@</span>
-						{!! Form::text('email', Input::old('email'), ['class' => 'form-control input-sm', 'placeholder' => 'E-Mail']) !!}
-					</div>
-				</div>
-			</div>
+            <div class="form-group">
+                <div class="input-group input-group-sm">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                    {!! Form::text('contact', Input::old('contact'), ['class' => 'form-control input-sm', 'placeholder' => 'Ansprechpartner']) !!}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group input-group-sm">
+                    <span class="input-group-addon">@</span>
+                    {!! Form::text('email', Input::old('email'), ['class' => 'form-control input-sm', 'placeholder' => 'E-Mail']) !!}
+                </div>
+            </div>
 		</fieldset>
 		<fieldset>
 			<legend>Veranstaltungsdaten</legend>
-			<div class="span3 alpha">
-				<div class="form-group">
-					{!! Form::label('name', 'Name der Veranstaltung') !!}
-					{!! Form::text('name', Input::old('name'), ['class' => 'form-control input-sm']) !!}
-				</div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        {!! Form::label('name', 'Name der Veranstaltung') !!}
+                        {!! Form::text('name', Input::old('name'), ['class' => 'form-control input-sm']) !!}
+                    </div>
 
-				<div class="form-group">
-					{!! Form::label('location', 'Ort') !!}
-					{!! Form::text('location', Input::old('location'), ['class' => 'form-control input-sm']) !!}
-				</div>
-			</div>
-			<div class="span6 alpha">
-				<div class="checkbox">
+                    <div class="form-group">
+                        {!! Form::label('location', 'Ort') !!}
+                        {!! Form::text('location', Input::old('location'), ['class' => 'form-control input-sm']) !!}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="checkbox">
 					<label>
 						{!! Form::checkbox('multi_date', '1', null, ['id' => 'multi-date']) !!} Mehrtägige Veranstaltung
 					</label>
 				</div>
-			</div>
-			<div class="span6 alpha">
-				<div class="form-group span2 alpha">
-					{!! Form::label('start_date', 'Startdatum')!!}
-					{!! Form::text('start_date', Input::old('start_date'), ['class' => 'form-control input-sm']) !!}
-				</div>
-				<div class="form-group span2">
-					{!! Form::label('end_date', 'Enddatum')!!}
-					{!! Form::text('end_date', Input::old('end_date'), ['class' => 'form-control input-sm']) !!}
-				</div>
-			</div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        {!! Form::label('start_date', 'Startdatum')!!}
+                        {!! Form::text('start_date', Input::old('start_date'), ['class' => 'form-control input-sm']) !!}
+                    </div>
+                    <div class="form-group">
+                        {!! Form::label('end_date', 'Enddatum')!!}
+                        {!! Form::text('end_date', Input::old('end_date'), ['class' => 'form-control input-sm']) !!}
+                    </div>
 
-			<div class="span6 alpha">
-				<div class="form-group span3 alpha">
-					{!! Form::label('region', 'Region') !!}
-					{!! Form::select('region', $regions, Input::old('region'), ['class' => 'form-control input-sm']) !!}
-				</div>
-				<div class="form-group span3 omega">
-					{!! Form::label('organizer_id', 'Veranstalter') !!}
-					{!! Form::text('organizer', Input::old('organizer'), ['class' => 'form-control input-sm']) !!}
-				</div>
-			</div>
-			<div class="span6 alpha" >
-				{!! Form::submit('Erstellen', ['class' => 'btn btn-primary btn-sm']) !!}
-			</div>
+                    <div class="form-group">
+                        {!! Form::label('region', 'Region') !!}
+                        {!! Form::select('region', $regions, Input::old('region'), ['class' => 'form-control input-sm']) !!}
+                    </div>
+                    <div class="form-group">
+                        {!! Form::label('organizer_id', 'Veranstalter') !!}
+                        {!! Form::text('organizer', Input::old('organizer'), ['class' => 'form-control input-sm']) !!}
+                    </div>
+                </div>
+            </div>
+            {!! Form::submit('Erstellen', ['class' => 'btn btn-primary btn-sm']) !!}
 		</fieldset>
 
 		{!! Form::close() !!}
-	</div>
-	<div class="span3 omega">
-		&nbsp;
 	</div>
 @stop

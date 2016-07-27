@@ -5173,7 +5173,7 @@ figure {
 .container-fluid {
   max-width: 960px; }
 
-.navbar .container-fluid {
+.navbar .container-fluid, #footer .container-fluid {
   padding: 0; }
 
 .input-group-sm {
