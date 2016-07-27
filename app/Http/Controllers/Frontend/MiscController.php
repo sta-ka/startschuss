@@ -47,7 +47,7 @@ class MiscController extends Controller {
      *
      * @var string
      */
-    private $default_timestamp = '2016-04-17';
+    private $default_timestamp = '2016-07-17';
 
     /**
      * Constructor: inject dependencies.
@@ -98,9 +98,11 @@ class MiscController extends Controller {
 		$sitemap->add(URL::to('kontakt'), $this->getIsoTimestamp(), '0.2', 'monthly');
 
         // Add dynamic pages
+        $this->addArticlePages($sitemap);
         $this->addEventPages($sitemap);
         $this->addEventsInRegionPages($sitemap);
         $this->addEventsInCityPages($sitemap);
+        $this->addEventsArchive($sitemap);
         $this->addOrganizerPages($sitemap);
 
 		return $sitemap->render('xml');
@@ -165,6 +167,35 @@ class MiscController extends Controller {
             $event = $this->eventRepo->getLastModifiedEventByOrganizer($organizer->id);
 
             $sitemap->add(URL::to('veranstalter/' . $organizer->slug), $this->getIsoTimestamp($event), '0.7', 'weekly');
+        }
+    }
+
+    /**
+     * Add all 'article' pages
+     *
+     * @param $sitemap
+     */
+    private function addArticlePages($sitemap)
+    {
+        $articles = $this->articleRepo->getFeatured(12);
+
+        foreach ($articles as $article) {
+            $sitemap->add(URL::to('karriereratgeber/' . $article->slug), $this->getIsoTimestamp($article), '0.7', 'weekly');
+        }
+    }
+
+    /**
+     * Add all 'article' pages
+     *
+     * @param $sitemap
+     */
+    private function addEventsArchive($sitemap)
+    {
+        $months = ["januar", "februar", "märz", "april", "mai", "juni", "juli", "august", "september", "oktober", "november", "dezember"];
+        $year = '2016';
+
+        foreach ($months as $month) {
+            $sitemap->add(URL::to('/jobmessen/' . $year . '/' . $month), $this->default_timestamp, '0.5', 'weekly');
         }
     }
 
