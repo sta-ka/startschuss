@@ -1,6 +1,7 @@
 <?php namespace App\Services\Date;
 
 use Carbon\Carbon;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 /**
  * Class DateService
@@ -238,14 +239,14 @@ class DateService {
      *
      * @return integer
      *
-     * @throws \Exception
+     * @throws HttpException
      */
 	public function convertMonth($month)
 	{
         $month = \Str::ucfirst($month);
 
         if( ! isset(array_flip($this->months_fullname)[$month])) {
-            throw new \Exception();
+            throw new HttpException(404);
         }
 
         return array_flip($this->months_fullname)[$month];
