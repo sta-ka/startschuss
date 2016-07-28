@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-    <html lang="de">
+<html lang="de">
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -27,8 +27,8 @@
 
             <div id="content">
                 {{ Notification::display() }}
-                <div id="main" class="container_12">
-                    <div class="span12">
+                <div id="main" class="container-fluid">
+                    <div class="col-md-12">
                         <h1>Wartungsarbeiten</h1>
                         <p>Wir sind gleich wieder zurück!</p>
                     </div>

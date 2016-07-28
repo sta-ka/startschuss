@@ -3,7 +3,7 @@
 		<div class="col-sm-3 col-md-3 hidden-xs">
 			<h5>Navigation</h5>
 			<ul class="footer-nav">
-				<li {{ set_active('home*') }}>
+				<li {{ URL::full() == URL::route('home') ? 'class = active' : '' }}>
 					{!! HTML::linkRoute('home', 'Home') !!}
 				</li>
 				<li {{ set_active('jobmesse*') }}>

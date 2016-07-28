@@ -379,7 +379,7 @@
     font-weight: bold; }
 
 #search-results {
-  width: 680px; }
+  max-width: 680px; }
 
 #search h3 {
   margin-top: 0; }
